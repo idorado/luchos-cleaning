@@ -35,13 +35,13 @@ export function HeroSection() {
             <h1 className="text-5xl md:text-7xl uppercase font-bold leading-tight mb-6 overflow-hidden ">
               <motion.span
                 className="relative inline-block text-primary px-2 py-1 mb-1 mt-1 rounded"
-                initial={{ opacity: 0.8, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
+                initial={{ opacity: 0.8, backgroundColor: "rgba(59, 130, 246, 0.05)" }}
                 animate={{
                   opacity: [0.8, 1, 0.8],
-                  backgroundColor: ["rgba(59, 130, 246, 0.1)", "rgba(59, 130, 246, 0.2)", "rgba(59, 130, 246, 0.1)"]
+                  backgroundColor: ["rgba(59, 130, 246, 0.05)", "rgba(59, 130, 246, 0.15)", "rgba(59, 130, 246, 0.05)"]
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 3,
                   repeat: Number.POSITIVE_INFINITY,
                   ease: "easeInOut"
                 }}
