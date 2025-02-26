@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils"
 import { TopBar } from "@/components/layout/top-bar"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Providers } from "@/components/providers"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,15 +35,17 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={cn(`${geistSans.variable} ${geistMono.variable}`, "antialiased")}> */}
       <body className={cn(inter.className, "antialiased")}>
-        <div className="min-h-screen flex flex-col">
-          <TopBar />
-          <Header />
-          <main className="flex-grow">
-        {children}
+        <Providers>
+          <div className="min-h-screen flex flex-col">
+            <TopBar />
+            <Header />
+            <main className="flex-grow">
+          {children}
 
-          </main>
-          <Footer />
-        </div>
+            </main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
