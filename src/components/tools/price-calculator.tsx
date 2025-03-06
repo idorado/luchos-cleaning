@@ -197,14 +197,14 @@ export function PriceCalculator() {
                   <FormLabel>Additional Services ($15-50 each)</FormLabel>
                   <div className="grid grid-cols-2 gap-2">
                     {['Window Cleaning', 'Appliance Interior', 'Carpet Cleaning', 'Deep Sanitization'].map((addon) => (
-                      <label key={addon} className="flex items-center space-x-2">
+                      <label key={addon} htmlFor={`addon-${addon}`} className="flex items-center space-x-2">
                         <Checkbox
-                          value={addon}
+                          id={`addon-${addon}`}
                           checked={field.value?.includes(addon)}
                           onCheckedChange={(checked) => {
                             const newValue = checked
                               ? [...(field.value || []), addon]
-                              : field.value?.filter((v) => v !== addon)
+                              : field.value?.filter((v: string) => v !== addon)
                             field.onChange(newValue)
                             calculateEstimate()
                           }}
