@@ -6,7 +6,11 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query"
 import { HTTPException } from "hono/http-exception"
-import { PropsWithChildren, useState } from "react"
+import { type PropsWithChildren, useState } from "react"
+import posthog from 'posthog-js'
+import { PostHogProvider as PHProvider } from 'posthog-js/react'
+import PostHogPageView from "@/app/posthog-pageview"
+import { useEffect } from 'react'
 
 export const Providers = ({ children }: PropsWithChildren) => {
   const [queryClient] = useState(
@@ -24,5 +28,22 @@ export const Providers = ({ children }: PropsWithChildren) => {
 
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  )
+}
+
+
+export function PostHogProvider({ children }: PropsWithChildren) {
+  useEffect(() => {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? '', {
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? '',
+      capture_pageview: false // Disable automatic pageview capture, as we capture manually
+    })
+  }, [])
+
+  return (
+    <PHProvider client={posthog}>
+      <PostHogPageView />
+      {children}
+    </PHProvider>
   )
 }

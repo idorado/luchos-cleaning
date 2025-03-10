@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { TopBar } from "@/components/layout/top-bar"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Providers } from "@/components/providers"
+import { Providers, PostHogProvider } from "@/components/providers"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(`${geistSans.variable} ${geistMono.variable}`, "antialiased")}> 
+        <PostHogProvider>
+
         <Providers>
           <div className="min-h-screen flex flex-col">
             <TopBar />
@@ -42,6 +44,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </Providers>
+        </PostHogProvider>
       </body>
     </html>
   );
