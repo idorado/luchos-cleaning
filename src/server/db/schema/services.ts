@@ -1,10 +1,10 @@
-import { pgTable, text, numeric, integer, timestamp, pgEnum, varchar } from "drizzle-orm/pg-core";
+import { pgTable, uuid , text, numeric, integer, timestamp, pgEnum, varchar } from "drizzle-orm/pg-core";
 
 
 export const serviceCategoryEnum = pgEnum("service_category", ["residential", "commercial", "emergency"]);
 
 export const services = pgTable("services", {
-    id: text("id").primaryKey(),
+    id: uuid("id").primaryKey(),
     serviceName: text("service_name").notNull(),
     category: serviceCategoryEnum("category").notNull(),
     type: varchar("type", { length: 50 }).notNull(),

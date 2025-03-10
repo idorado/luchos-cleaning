@@ -1,6 +1,6 @@
 CREATE TYPE "public"."service_category" AS ENUM('residential', 'commercial', 'emergency');--> statement-breakpoint
 CREATE TABLE "services" (
-	"id" text PRIMARY KEY NOT NULL,
+	"id" uuid PRIMARY KEY NOT NULL,
 	"service_name" text NOT NULL,
 	"category" "service_category" NOT NULL,
 	"type" varchar(50) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE "services" (
 );
 --> statement-breakpoint
 CREATE TABLE "testimonials" (
-	"id" text PRIMARY KEY NOT NULL,
+	"id" uuid PRIMARY KEY NOT NULL,
 	"quote" text NOT NULL,
 	"author" text NOT NULL,
 	"role" text NOT NULL,
