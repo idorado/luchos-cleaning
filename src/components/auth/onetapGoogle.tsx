@@ -2,9 +2,10 @@
 
 import Script from 'next/script'
 import { createClient } from '@/utils/supabase-browser'
-import { CredentialResponse } from 'google-one-tap'
+import type { CredentialResponse } from 'google-one-tap'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+import google from 'google-one-tap'
 
 const OneTapGoogle = () => {
   const supabase = createClient()
@@ -41,7 +42,7 @@ const OneTapGoogle = () => {
 
         /* global google */
         google.accounts.id.initialize({
-          client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+          client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "",
           callback: async (response: CredentialResponse) => {
             try {
               // send id token returned in response.credential to supabase
