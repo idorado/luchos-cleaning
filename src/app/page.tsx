@@ -94,13 +94,12 @@ export default async function Home() {
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Image 
-                src="/pro-cleaning.jpg" 
+              <img
+                src="/cleaner.png" 
                 alt="Professional cleaner with cleaning supplies" 
                 width={600} 
                 height={400}
-                className="rounded-lg shadow-lg object-cover"
-                priority
+                className="rounded-lg shadow-lg object-cover w-full h-full"
               />
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
