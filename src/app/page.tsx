@@ -102,7 +102,7 @@ export default async function Home() {
                 className="rounded-lg shadow-lg object-cover w-full h-full"
               />
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
               <ResidentialPriceCalculator />
             </div>
           </div>
