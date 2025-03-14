@@ -20,12 +20,14 @@ export default async function ResidentialPage() {
       </div>
 
       {/* Hero Image */}
-      <div className="relative h-[600px] rounded-xl overflow-hidden shadow-xl my-8">
+      <div className="relative h-72 sm:h-96 md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl my-8">
         <Image 
           src="/residential.png" 
           alt="Professional residential cleaning service" 
           fill
-          className="w-full h-full"
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1280px"
+          priority
         />
       </div>
 
