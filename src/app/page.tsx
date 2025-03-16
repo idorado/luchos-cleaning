@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator"
 import Image from "next/image"
 import Link from "next/link"
+import { Testimonial } from "@/components/cards/testimonial"
 
 const whyChooseUsReasons = [
   {
@@ -25,24 +26,6 @@ const whyChooseUsReasons = [
     icon: "✓",
     title: "Satisfaction Guaranteed",
     description: "Our service is 100% satisfaction guaranteed. If you are not completely satisfied, we'll re-clean the area at no additional cost."
-  }
-]
-
-const testimonials = [
-  {
-    quote: "A worthwhile piece of peace",
-    author: "Sarah",
-    avatar: "https://xsgames.co/randomusers/avatar.php?g=male"
-  },
-  {
-    quote: "A fantastic bit of freshness",
-    author: "Michael",
-    avatar: "https://xsgames.co/randomusers/avatar.php?g=male"
-  },
-  {
-    quote: "A refreshing gleaming review",
-    author: "Jessica",
-    avatar: "https://xsgames.co/randomusers/avatar.php?g=female"
   }
 ]
 
@@ -72,11 +55,11 @@ export default async function Home() {
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl hidden md:block">
               <Image 
-                src="/pro-cleaning.jpg" 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8WFaPuKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" 
                 alt="Professional cleaning service" 
-                fill 
-                className="object-cover"
-                priority
+                height={400}
+                width={600}
+                className=""
               />
             </div>
           </div>
@@ -95,11 +78,11 @@ export default async function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src="/cleaner.png" 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomLtAi4gGx3aBby7k62UgoriN9lVewuj0m4TMh" 
                 alt="Professional cleaner with cleaning supplies" 
                 width={600} 
                 height={400}
-                className="rounded-lg shadow-lg object-cover w-full h-full"
+                className="rounded-lg shadow-lg w-full h-full"
               />
             </div>
             <div className="bg-gray-50 p-6 rounded-lg shadow-md">
@@ -118,10 +101,10 @@ export default async function Home() {
               <CardContent className="p-6 text-center">
                 <div className="mb-4">
                   <Image 
-                    src="/residential-cleaning.png" 
+                    src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2r0LLyJ6JbmpXdcT7olMHiQWCShrEqx84YZV" 
                     alt="Residential Cleaning" 
-                    width={300} 
-                    height={200}
+                    height={300}
+                    width={300}
                     className="rounded-lg mx-auto"
                   />
                 </div>
@@ -137,10 +120,10 @@ export default async function Home() {
               <CardContent className="p-6 text-center">
                 <div className="mb-4">
                   <Image 
-                    src="/commercial-cleaning.png" 
+                    src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomLukqoKx3aBby7k62UgoriN9lVewuj0m4TMh1" 
                     alt="Commercial Cleaning" 
-                    width={300} 
-                    height={200}
+                    height={400}
+                    width={600}
                     className="rounded-lg mx-auto"
                   />
                 </div>
@@ -196,27 +179,7 @@ export default async function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Customer Experiences</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.author} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden">
-                      <img 
-                        src={testimonial.avatar} 
-                        alt={testimonial.author} 
-                        width={64} 
-                        height={64}
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <p className="text-lg font-medium mb-2">"{testimonial.quote}"</p>
-                  <p className="text-gray-600">{testimonial.author}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Testimonial />
         </div>
       </section>
 
