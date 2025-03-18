@@ -13,6 +13,8 @@
     "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.1.25",
+    "@ai-sdk/react": "^1.1.23",
     "@hono/zod-validator": "^0.4.3",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -30,6 +32,7 @@
     "@tailwindcss/postcss": "^4.0.8",
     "@tanstack/react-query": "^5.66.9",
     "@uploadthing/react": "^7.3.0",
+    "ai": "^4.1.62",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.39.3",
