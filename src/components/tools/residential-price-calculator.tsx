@@ -31,6 +31,7 @@ type PriceTierRecurring = {
   maxSqFt: number
   weeklyBiweeklyPrice: number
   monthlyPrice: number
+  oneTimePrice: number
 };
 
 type PriceTierDeep = {
@@ -42,16 +43,17 @@ type PriceTierDeep = {
 
 // Pricing tables based on the provided information
 const RECURRING_CLEANING_PRICES: PriceTierRecurring[] = [
-  { minSqFt: 0, maxSqFt: 1500, weeklyBiweeklyPrice: 125, monthlyPrice: 155 },
-  { minSqFt: 1500, maxSqFt: 2000, weeklyBiweeklyPrice: 135, monthlyPrice: 165 },
-  { minSqFt: 2000, maxSqFt: 2500, weeklyBiweeklyPrice: 165, monthlyPrice: 195 },
-  { minSqFt: 2500, maxSqFt: 3500, weeklyBiweeklyPrice: 205, monthlyPrice: 235 },
-  { minSqFt: 3500, maxSqFt: 4000, weeklyBiweeklyPrice: 235, monthlyPrice: 265 },
-  { minSqFt: 4000, maxSqFt: 4500, weeklyBiweeklyPrice: 265, monthlyPrice: 295 },
-  { minSqFt: 4500, maxSqFt: 5000, weeklyBiweeklyPrice: 295, monthlyPrice: 325 },
-  { minSqFt: 5000, maxSqFt: 5500, weeklyBiweeklyPrice: 325, monthlyPrice: 355 },
-  { minSqFt: 5500, maxSqFt: 6000, weeklyBiweeklyPrice: 355, monthlyPrice: 385 },
-  { minSqFt: 6000, maxSqFt: 10000, weeklyBiweeklyPrice: 385, monthlyPrice: 415 },
+  { minSqFt: 0, maxSqFt: 1300, weeklyBiweeklyPrice: 135, monthlyPrice: 165, oneTimePrice: 185 },
+  { minSqFt: 1300, maxSqFt: 2000, weeklyBiweeklyPrice: 145, monthlyPrice: 175, oneTimePrice: 195 },
+  { minSqFt: 2000, maxSqFt: 2500, weeklyBiweeklyPrice: 175, monthlyPrice: 205, oneTimePrice: 225 },
+  { minSqFt: 2500, maxSqFt: 3000, weeklyBiweeklyPrice: 215, monthlyPrice: 245, oneTimePrice: 265 },
+  { minSqFt: 3000, maxSqFt: 3500, weeklyBiweeklyPrice: 245, monthlyPrice: 275, oneTimePrice: 295 },
+  { minSqFt: 3500, maxSqFt: 4000, weeklyBiweeklyPrice: 275, monthlyPrice: 305, oneTimePrice: 325 },
+  { minSqFt: 4000, maxSqFt: 4500, weeklyBiweeklyPrice: 305, monthlyPrice: 335, oneTimePrice: 355 },
+  { minSqFt: 4500, maxSqFt: 5000, weeklyBiweeklyPrice: 335, monthlyPrice: 365, oneTimePrice: 385 },
+  { minSqFt: 5000, maxSqFt: 5500, weeklyBiweeklyPrice: 365, monthlyPrice: 395, oneTimePrice: 415 },
+  { minSqFt: 5500, maxSqFt: 6000, weeklyBiweeklyPrice: 395, monthlyPrice: 425, oneTimePrice: 445 },
+  { minSqFt: 6000, maxSqFt: 10000, weeklyBiweeklyPrice: 395, monthlyPrice: 425, oneTimePrice: 445 },
 ]
 
 const DEEP_CLEANING_PRICES: PriceTierDeep[] = [
@@ -63,10 +65,15 @@ const DEEP_CLEANING_PRICES: PriceTierDeep[] = [
 ]
 
 const ADDITIONAL_SERVICES = [
-  { id: 'steam-cleaning', name: 'Steam Cleaning (Beds/Pillows, Furniture)', price: 30, details: 'Per item' },
-  { id: 'refrigerator', name: 'Refrigerator Cleaning', price: 85, details: 'Deep cleaned' },
+  { id: 'steam-beds', name: 'Steam Cleaning (Beds)', price: 50, details: 'Per bed' },
+  { id: 'steam-furniture', name: 'Steam Cleaning (Furniture)', price: 10, details: 'Per piece' },
+  { id: 'refrigerator-standard', name: 'Refrigerator Cleaning (Standard)', price: 80, details: 'Standard clean' },
+  { id: 'refrigerator-deep', name: 'Refrigerator Cleaning (Deep)', price: 100, details: 'Deep clean with expired item removal' },
   { id: 'oven-self-clean', name: 'Oven Cleaning (Self-Clean Cycle)', price: 20, details: 'Quick refresh' },
-  { id: 'oven-manual', name: 'Oven Cleaning (Manual Scrubbing)', price: 60, details: 'Deep scrubbing' },
+  { id: 'oven-deep', name: 'Oven Cleaning (Deep)', price: 60, details: 'Deep scrubbing' },
+  { id: 'patio-cleaning', name: 'Patio Cleaning', price: 60, details: 'Exterior patio' },
+  { id: 'plant-watering', name: 'Plant Watering', price: 50, details: 'Indoor plants' },
+  { id: 'dog-waste', name: 'Dog Waste Cleaning', price: 25, details: 'Yard cleanup' },
   { id: 'window-in-out', name: 'Window Cleaning (In & Out)', price: 10, details: 'Per pane' },
   { id: 'window-one-side', name: 'Window Cleaning (One Side)', price: 5, details: 'Per pane' },
 ]
@@ -78,9 +85,14 @@ const calculatorSchema = z.object({
   otherService: z.enum(['deep', 'move-in-out', 'post-construction', 'pressure-washing', 'solar-panel', 'window-washing']).optional(),
   windowPanes: z.number().min(0).max(100).optional(),
   windowPanesOneSide: z.number().min(0).max(100).optional(),
-  hasPets: z.boolean().default(false),
+  numPets: z.number().min(0).max(10).default(0),
   numBathrooms: z.number().min(0).max(20).default(0),
-  numBedrooms: z.number().min(0).max(20).default(0)
+  numBedrooms: z.number().min(0).max(20).default(0),
+  flooringTypes: z.array(z.enum(['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'])).default([]),
+  hasKnickknacks: z.boolean().default(false),
+  additionalServices: z.array(z.string()).default([]),
+  steamCleaningBeds: z.number().min(0).max(10).default(0),
+  steamCleaningFurniture: z.number().min(0).max(20).default(0),
 })
 
 export function ResidentialPriceCalculator() {
@@ -97,9 +109,14 @@ export function ResidentialPriceCalculator() {
       otherService: 'deep',
       windowPanes: 0,
       windowPanesOneSide: 0,
-      hasPets: false,
+      numPets: 0,
       numBathrooms: 0,
-      numBedrooms: 0
+      numBedrooms: 0,
+      flooringTypes: [],
+      hasKnickknacks: false,
+      additionalServices: [],
+      steamCleaningBeds: 0,
+      steamCleaningFurniture: 0
     }
   });
 
@@ -109,9 +126,14 @@ export function ResidentialPriceCalculator() {
   const otherService = form.watch('otherService');
   const windowPanes = form.watch('windowPanes') || 0;
   const windowPanesOneSide = form.watch('windowPanesOneSide') || 0;
-  const hasPets = form.watch('hasPets');
+  const numPets = form.watch('numPets');
   const numBathrooms = form.watch('numBathrooms') || 0;
   const numBedrooms = form.watch('numBedrooms') || 0;
+  const flooringTypes = form.watch('flooringTypes') || [];
+  const hasKnickknacks = form.watch('hasKnickknacks');
+  const additionalServices = form.watch('additionalServices') || [];
+  const steamCleaningBeds = form.watch('steamCleaningBeds') || 0;
+  const steamCleaningFurniture = form.watch('steamCleaningFurniture') || 0;
 
   // Define calculate function with useCallback to avoid dependency issues
   const calculateEstimate = useCallback(() => {
@@ -132,8 +154,7 @@ export function ResidentialPriceCalculator() {
       if (frequency === 'monthly') {
         base = finalPriceTier.monthlyPrice;
       } else if (frequency === 'one-time') {
-        // One-time cleaning is $30 more than monthly
-        base = finalPriceTier.monthlyPrice + 30;
+        base = finalPriceTier.oneTimePrice;
       } else {
         // Weekly or bi-weekly
         base = finalPriceTier.weeklyBiweeklyPrice;
@@ -158,13 +179,39 @@ export function ResidentialPriceCalculator() {
       base = 300; // Placeholder price
     }
     
+    // Add pet fee - $15 for each additional pet (beyond the first one)
+    if (numPets > 1) {
+      addons += (numPets - 1) * 15;
+    }
+    
+    // Flooring type charges
+    if (!flooringTypes.includes('carpet')) {
+      addons += 30; // No carpet charge
+    }
+    if (flooringTypes.includes('marble')) {
+      addons += 30; // Marble flooring charge
+    }
+    
+    // Additional services
+    for (const service of additionalServices) {
+      const serviceDetails = ADDITIONAL_SERVICES.find(s => s.id === service);
+      if (serviceDetails) {
+        addons += serviceDetails.price;
+      }
+    }
+    
+    // Steam cleaning for beds and furniture
+    addons += steamCleaningBeds * 50; // $50 per bed
+    addons += steamCleaningFurniture * 10; // $10 per furniture piece
+    
     // Add window cleaning costs
     addons += (windowPanes * 10) + (windowPanesOneSide * 5);
     
     setBasePrice(base);
     setAddonsPrice(addons);
     setEstimate(base + addons);
-  }, [serviceType, squareFeet, frequency, otherService, windowPanes, windowPanesOneSide]);
+  }, [serviceType, squareFeet, frequency, otherService, windowPanes, windowPanesOneSide, 
+      numPets, flooringTypes, additionalServices, steamCleaningBeds, steamCleaningFurniture]);
 
   // Calculate estimate on initial render
   useEffect(() => {
@@ -182,40 +229,13 @@ export function ResidentialPriceCalculator() {
         <Form {...form}>
           <div className="space-y-6">
             <Tabs defaultValue="residential" value={serviceType} onValueChange={(value) => form.setValue('serviceType', value as 'residential' | 'other')} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-2 rounded-lg">
+              <TabsList className="w-full rounded-lg">
                 <TabsTrigger value="residential" className="">Residential Cleaning</TabsTrigger>
-                <TabsTrigger value="other" className="">Other Residential Services</TabsTrigger>
               </TabsList>
               <TabsContent value="residential" className="pt-3 px-2">
                 <p className="text-sm text-gray-600 mb-3 italic border-l-4 border-gray-200 pl-3">
                   Our residential cleaning services are perfect for maintaining a consistently clean home.
                 </p>
-              </TabsContent>
-              <TabsContent value="other" className="pt-3 px-2">
-                <p className="text-sm text-gray-600 mb-3 italic border-l-4 border-gray-200 pl-3">
-                  We offer a variety of specialized residential services to meet your specific cleaning needs.
-                </p>
-                <FormField control={form.control} name="otherService" render={({ field }) => (
-                  <FormItem className="bg-gray-50 p-3 rounded-lg mb-3">
-                    <FormLabel htmlFor="otherService" className="text-gray-900">Select Service</FormLabel>
-                    <Select value={field.value} onValueChange={(value) => { field.onChange(value); calculateEstimate(); }}>
-                      <FormControl>
-                        <SelectTrigger id="otherService" className="border-gray-200 focus:ring-gray-200">
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="deep">Deep Cleaning</SelectItem>
-                        <SelectItem value="move-in-out">Move-In/Move-Out Cleaning</SelectItem>
-                        <SelectItem value="post-construction">Post-Construction Cleaning</SelectItem>
-                        <SelectItem value="pressure-washing">Pressure Washing</SelectItem>
-                        <SelectItem value="solar-panel">Solar Panel Cleaning</SelectItem>
-                        <SelectItem value="window-washing">Window Washing</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )} />
               </TabsContent>
             </Tabs>
             <FormField control={form.control} name="squareFeet" render={({ field }) => (
@@ -277,15 +297,269 @@ export function ResidentialPriceCalculator() {
                   </FormItem>
                 )} />
               </div>
-              <FormField control={form.control} name="hasPets" render={({ field }) => (
+              <FormField control={form.control} name="numPets" render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="numPets" className="text-sm">Number of Pets</FormLabel>
+                  <FormControl>
+                    <Input id="numPets" type="number" min={0} max={10} {...field} onChange={(e) => { field.onChange(Number.parseInt(e.target.value) || 0); calculateEstimate(); }} className="border-gray-200 focus:ring-gray-200 h-9" />
+                  </FormControl>
+                  <p className="text-xs text-gray-500 mt-1">Each additional pet (beyond the first) adds $15 to your service.</p>
+                </FormItem>
+              )} />
+              
+              <FormField control={form.control} name="flooringTypes" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm mb-2 block">Flooring Types (Select all that apply)</FormLabel>
+                  <div className="space-y-2">
+                    {['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'].map((type) => (
+                      <FormItem key={type} className="flex items-center space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                        <FormControl>
+                          <Checkbox 
+                            checked={field.value?.includes(type)}
+                            onCheckedChange={(checked) => {
+                              const updatedValue = checked
+                                ? [...field.value, type]
+                                : field.value?.filter((value) => value !== type);
+                              field.onChange(updatedValue);
+                              calculateEstimate();
+                            }}
+                            className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600"
+                          />
+                        </FormControl>
+                        <FormLabel className="text-sm font-medium cursor-pointer m-0 capitalize">{type}</FormLabel>
+                      </FormItem>
+                    ))}
+                  </div>
+                  <div className="mt-2 space-y-1">
+                    <p className="text-xs text-gray-500">No carpet selected: Additional $30 fee</p>
+                    <p className="text-xs text-gray-500">Marble selected: Additional $30 fee</p>
+                  </div>
+                </FormItem>
+              )} />
+              
+              <FormField control={form.control} name="hasKnickknacks" render={({ field }) => (
                 <FormItem className="flex items-center space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
                   <FormControl>
-                    <Checkbox checked={field.value} onCheckedChange={(checked) => { field.onChange(checked); calculateEstimate(); }} className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600" />
+                    <Checkbox 
+                      checked={field.value}
+                      onCheckedChange={(checked) => { field.onChange(checked); calculateEstimate(); }}
+                      className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600"
+                    />
                   </FormControl>
-                  <FormLabel className="text-sm font-medium cursor-pointer m-0">Any pets in the home?</FormLabel>
+                  <FormLabel className="text-sm font-medium cursor-pointer m-0">Do you have a lot of decorative items (knick-knacks)?</FormLabel>
                 </FormItem>
               )} />
             </div>
+            
+            <div className="bg-gray-50 p-3 rounded-lg mt-3">
+              <h3 className="text-gray-900 font-medium mb-2">Additional Services</h3>
+              
+              <div className="space-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Refrigerator Cleaning</h4>
+                    <FormField control={form.control} name="additionalServices" render={({ field }) => (
+                      <div className="space-y-2">
+                        <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                          <FormControl>
+                            <Checkbox 
+                              checked={field.value?.includes('refrigerator-standard')}
+                              onCheckedChange={(checked) => {
+                                const updatedValue = checked
+                                  ? [...field.value.filter(v => v !== 'refrigerator-deep'), 'refrigerator-standard']
+                                  : field.value?.filter(v => v !== 'refrigerator-standard');
+                                field.onChange(updatedValue);
+                                calculateEstimate();
+                              }}
+                              className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                            />
+                          </FormControl>
+                          <div>
+                            <FormLabel className="text-sm font-medium cursor-pointer m-0">Standard Clean ($80)</FormLabel>
+                            <p className="text-xs text-gray-500">Basic refrigerator cleaning</p>
+                          </div>
+                        </FormItem>
+                        <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                          <FormControl>
+                            <Checkbox 
+                              checked={field.value?.includes('refrigerator-deep')}
+                              onCheckedChange={(checked) => {
+                                const updatedValue = checked
+                                  ? [...field.value.filter(v => v !== 'refrigerator-standard'), 'refrigerator-deep']
+                                  : field.value?.filter(v => v !== 'refrigerator-deep');
+                                field.onChange(updatedValue);
+                                calculateEstimate();
+                              }}
+                              className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                            />
+                          </FormControl>
+                          <div>
+                            <FormLabel className="text-sm font-medium cursor-pointer m-0">Deep Clean ($100)</FormLabel>
+                            <p className="text-xs text-gray-500">We check everything and toss expired items</p>
+                          </div>
+                        </FormItem>
+                      </div>
+                    )} />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Oven Cleaning</h4>
+                    <FormField control={form.control} name="additionalServices" render={({ field }) => (
+                      <div className="space-y-2">
+                        <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                          <FormControl>
+                            <Checkbox 
+                              checked={field.value?.includes('oven-self-clean')}
+                              onCheckedChange={(checked) => {
+                                const updatedValue = checked
+                                  ? [...field.value.filter(v => v !== 'oven-deep'), 'oven-self-clean']
+                                  : field.value?.filter(v => v !== 'oven-self-clean');
+                                field.onChange(updatedValue);
+                                calculateEstimate();
+                              }}
+                              className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                            />
+                          </FormControl>
+                          <div>
+                            <FormLabel className="text-sm font-medium cursor-pointer m-0">Self-Cleaning Cycle ($20)</FormLabel>
+                            <p className="text-xs text-gray-500">Quick refresh</p>
+                          </div>
+                        </FormItem>
+                        <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                          <FormControl>
+                            <Checkbox 
+                              checked={field.value?.includes('oven-deep')}
+                              onCheckedChange={(checked) => {
+                                const updatedValue = checked
+                                  ? [...field.value.filter(v => v !== 'oven-self-clean'), 'oven-deep']
+                                  : field.value?.filter(v => v !== 'oven-deep');
+                                field.onChange(updatedValue);
+                                calculateEstimate();
+                              }}
+                              className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                            />
+                          </FormControl>
+                          <div>
+                            <FormLabel className="text-sm font-medium cursor-pointer m-0">Deep Clean ($60)</FormLabel>
+                            <p className="text-xs text-gray-500">Manual deep scrubbing</p>
+                          </div>
+                        </FormItem>
+                      </div>
+                    )} />
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="text-sm font-medium mb-2">Steam Cleaning</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <FormField control={form.control} name="steamCleaningBeds" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor="steamCleaningBeds" className="text-sm">Beds ($50 each)</FormLabel>
+                        <FormControl>
+                          <Input 
+                            id="steamCleaningBeds" 
+                            type="number" 
+                            min={0} 
+                            max={10} 
+                            {...field} 
+                            onChange={(e) => { 
+                              field.onChange(Number.parseInt(e.target.value) || 0); 
+                              calculateEstimate(); 
+                            }} 
+                            className="border-gray-200 focus:ring-gray-200 h-9" 
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )} />
+                    
+                    <FormField control={form.control} name="steamCleaningFurniture" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel htmlFor="steamCleaningFurniture" className="text-sm">Furniture Pieces ($10 each)</FormLabel>
+                        <FormControl>
+                          <Input 
+                            id="steamCleaningFurniture" 
+                            type="number" 
+                            min={0} 
+                            max={20} 
+                            {...field} 
+                            onChange={(e) => { 
+                              field.onChange(Number.parseInt(e.target.value) || 0); 
+                              calculateEstimate(); 
+                            }} 
+                            className="border-gray-200 focus:ring-gray-200 h-9" 
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )} />
+                  </div>
+                </div>
+                
+                <FormField control={form.control} name="additionalServices" render={({ field }) => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                      <FormControl>
+                        <Checkbox 
+                          checked={field.value?.includes('patio-cleaning')}
+                          onCheckedChange={(checked) => {
+                            const updatedValue = checked
+                              ? [...field.value, 'patio-cleaning']
+                              : field.value?.filter(v => v !== 'patio-cleaning');
+                            field.onChange(updatedValue);
+                            calculateEstimate();
+                          }}
+                          className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                        />
+                      </FormControl>
+                      <div>
+                        <FormLabel className="text-sm font-medium cursor-pointer m-0">Patio Cleaning ($60)</FormLabel>
+                        <p className="text-xs text-gray-500">Exterior patio cleaning</p>
+                      </div>
+                    </FormItem>
+                    
+                    <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                      <FormControl>
+                        <Checkbox 
+                          checked={field.value?.includes('plant-watering')}
+                          onCheckedChange={(checked) => {
+                            const updatedValue = checked
+                              ? [...field.value, 'plant-watering']
+                              : field.value?.filter(v => v !== 'plant-watering');
+                            field.onChange(updatedValue);
+                            calculateEstimate();
+                          }}
+                          className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                        />
+                      </FormControl>
+                      <div>
+                        <FormLabel className="text-sm font-medium cursor-pointer m-0">Plant Watering ($50)</FormLabel>
+                        <p className="text-xs text-gray-500">Indoor plants</p>
+                      </div>
+                    </FormItem>
+                    
+                    <FormItem className="flex items-start space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
+                      <FormControl>
+                        <Checkbox 
+                          checked={field.value?.includes('dog-waste')}
+                          onCheckedChange={(checked) => {
+                            const updatedValue = checked
+                              ? [...field.value, 'dog-waste']
+                              : field.value?.filter(v => v !== 'dog-waste');
+                            field.onChange(updatedValue);
+                            calculateEstimate();
+                          }}
+                          className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600 mt-0.5"
+                        />
+                      </FormControl>
+                      <div>
+                        <FormLabel className="text-sm font-medium cursor-pointer m-0">Dog Waste Cleanup ($25)</FormLabel>
+                        <p className="text-xs text-gray-500">Yard cleanup</p>
+                      </div>
+                    </FormItem>
+                  </div>
+                )} />
+              </div>
+            </div>
+            
             <Separator className="my-1" />
             <div className="bg-accent-50 p-3 rounded-lg">
               <div className="space-y-1">
