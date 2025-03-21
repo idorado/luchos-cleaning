@@ -78,6 +78,10 @@ const ADDITIONAL_SERVICES = [
   { id: 'window-one-side', name: 'Window Cleaning (One Side)', price: 5, details: 'Per pane' },
 ]
 
+// Define flooring types as a constant to use in both schema and UI
+const FLOORING_TYPES = ['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'] as const;
+type FlooringType = typeof FLOORING_TYPES[number];
+
 const calculatorSchema = z.object({
   serviceType: z.enum(['residential', 'other']),
   squareFeet: z.number().min(700).max(10000),
@@ -88,7 +92,7 @@ const calculatorSchema = z.object({
   numPets: z.number().min(0).max(10).default(0),
   numBathrooms: z.number().min(0).max(20).default(0),
   numBedrooms: z.number().min(0).max(20).default(0),
-  flooringTypes: z.array(z.enum(['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'])).default([]),
+  flooringTypes: z.array(z.enum(FLOORING_TYPES)).default([]),
   hasKnickknacks: z.boolean().default(false),
   additionalServices: z.array(z.string()).default([]),
   steamCleaningBeds: z.number().min(0).max(10).default(0),
@@ -311,14 +315,14 @@ export function ResidentialPriceCalculator() {
                 <FormItem>
                   <FormLabel className="text-sm mb-2 block">Flooring Types (Select all that apply)</FormLabel>
                   <div className="space-y-2">
-                    {['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'].map((type) => (
+                    {FLOORING_TYPES.map((type) => (
                       <FormItem key={type} className="flex items-center space-x-2 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
                         <FormControl>
                           <Checkbox 
                             checked={field.value?.includes(type)}
                             onCheckedChange={(checked) => {
                               const updatedValue = checked
-                                ? [...field.value, type]
+                                ? [...field.value, type as FlooringType]
                                 : field.value?.filter((value) => value !== type);
                               field.onChange(updatedValue);
                               calculateEstimate();
