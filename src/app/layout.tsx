@@ -23,7 +23,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Kathy Clean",
   description: "Residential and commercial cleaning services",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomJmgQP9jvTxoXV9D2iqbpnGgyKMaCYt3F0h6r" }],
 };
 
 export default function RootLayout({
