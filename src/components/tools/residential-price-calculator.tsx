@@ -189,15 +189,15 @@ export function ResidentialPriceCalculator() {
     }
     
     // Flooring type charges
-    if (!flooringTypes.includes('carpet')) {
+    if (!flooringTypes?.includes('carpet')) {
       addons += 30; // No carpet charge
     }
-    if (flooringTypes.includes('marble')) {
+    if (flooringTypes?.includes('marble')) {
       addons += 30; // Marble flooring charge
     }
     
     // Additional services
-    for (const service of additionalServices) {
+    for (const service of additionalServices ?? []) {
       const serviceDetails = ADDITIONAL_SERVICES.find(s => s.id === service);
       if (serviceDetails) {
         addons += serviceDetails.price;
@@ -205,11 +205,11 @@ export function ResidentialPriceCalculator() {
     }
     
     // Steam cleaning for beds and furniture
-    addons += steamCleaningBeds * 50; // $50 per bed
-    addons += steamCleaningFurniture * 10; // $10 per furniture piece
+    addons += (steamCleaningBeds ?? 0) * 50; // $50 per bed
+    addons += (steamCleaningFurniture ?? 0) * 10; // $10 per furniture piece
     
     // Add window cleaning costs
-    addons += (windowPanes * 10) + (windowPanesOneSide * 5);
+    addons += ((windowPanes ?? 0) * 10) + ((windowPanesOneSide ?? 0) * 5);
     
     setBasePrice(base);
     setAddonsPrice(addons);
@@ -592,16 +592,67 @@ export function ResidentialPriceCalculator() {
             
             <Separator className="my-1" />
             <div className="bg-accent-50 p-3 rounded-lg">
-              <div className="space-y-1">
+              <h3 className="text-lg font-semibold mb-2">Cleaning Invoice</h3>
+              <div className="space-y-2">
+                {/* Base service */}
                 <div className="flex justify-between text-sm">
-                  <span>Base Price:</span>
+                  <span className="font-medium">
+                    {serviceType === 'residential' ? 
+                      `${frequency.charAt(0).toUpperCase() + frequency.slice(1)} Cleaning (${squareFeet} sq ft)` : 
+                      `${otherService ? otherService.charAt(0).toUpperCase() + otherService.slice(1) : 'Deep'} Cleaning (${squareFeet} sq ft)`}
+                  </span>
                   <span className="font-medium">${basePrice}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span>Additional Services:</span>
-                  <span className="font-medium">${addonsPrice}</span>
-                </div>
-                <Separator className="my-1" />
+                
+                {/* Pet fee */}
+                {numPets > 1 && (
+                  <div className="flex justify-between text-sm">
+                    <span>Pet Fee ({numPets - 1} additional {numPets - 1 === 1 ? 'pet' : 'pets'})</span>
+                    <span>${(numPets - 1) * 15}</span>
+                  </div>
+                )}
+                
+                {/* Flooring charges */}
+                {!flooringTypes?.includes('carpet') && (
+                  <div className="flex justify-between text-sm">
+                    <span>No Carpet Fee</span>
+                    <span>$30</span>
+                  </div>
+                )}
+                {flooringTypes?.includes('marble') && (
+                  <div className="flex justify-between text-sm">
+                    <span>Marble Flooring</span>
+                    <span>$30</span>
+                  </div>
+                )}
+                
+                {/* Additional services */}
+                {additionalServices?.map(service => {
+                  const serviceDetails = ADDITIONAL_SERVICES.find(s => s.id === service);
+                  if (!serviceDetails) return null;
+                  return (
+                    <div key={service} className="flex justify-between text-sm">
+                      <span>{serviceDetails.name}</span>
+                      <span>${serviceDetails.price}</span>
+                    </div>
+                  );
+                })}
+                
+                {/* Steam cleaning */}
+                {(steamCleaningBeds ?? 0) > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span>Steam Cleaning - Beds ({steamCleaningBeds} {steamCleaningBeds === 1 ? 'bed' : 'beds'})</span>
+                    <span>${steamCleaningBeds * 50}</span>
+                  </div>
+                )}
+                {(steamCleaningFurniture ?? 0) > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span>Steam Cleaning - Furniture ({steamCleaningFurniture} {steamCleaningFurniture === 1 ? 'piece' : 'pieces'})</span>
+                    <span>${steamCleaningFurniture * 10}</span>
+                  </div>
+                )}
+                
+                <Separator className="my-2" />
                 <div className="flex justify-between text-xl font-bold text-accent-800">
                   <span>Estimated Total:</span>
                   <span>${estimate}</span>
