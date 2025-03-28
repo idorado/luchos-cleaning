@@ -32,42 +32,23 @@ export default async function Home() {
             </div>
             <div className="relative hidden md:block">
               <Image 
-                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8WFaPuKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomFoIFS4XE8PxMQXu0OFsdjCva3UzSNcGfVBq1" 
                 alt="Professional cleaning service" 
+                width={500}
                 height={500}
-                width={600}
-                className="relative z-10"
+                className="relative"
               />
-              {/* Decorative elements */}
-              <div className="absolute top-10 right-10 w-16 h-16 text-fluorescent-cyan">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative star shape" role="img">
-                  <title>Decorative star</title>
-                  <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
-                </svg>
-              </div>
-              <div className="absolute bottom-20 left-0 w-10 h-10 text-fluorescent-cyan">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative circle shape" role="img">
-                  <title>Decorative circle</title>
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-              </div>
-              <div className="absolute bottom-10 right-20 w-8 h-8 text-fluorescent-cyan">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative small circle shape" role="img">
-                  <title>Small decorative circle</title>
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-              </div>
             </div>
           </div>
         </div>
         {/* Background decorative elements */}
-        <div className="absolute top-20 right-[5%] w-32 h-32 text-fluorescent-cyan opacity-80">
+        <div className="absolute top-20 right-[5%] w-32 h-32 text-ring opacity-80">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative large star shape" role="img">
             <title>Large decorative star</title>
             <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
           </svg>
         </div>
-        <div className="absolute bottom-10 left-[10%] w-20 h-20 text-fluorescent-cyan opacity-60">
+        <div className="absolute bottom-10 left-[10%] w-20 h-20 text-ring opacity-60">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative medium star shape" role="img">
             <title>Medium decorative star</title>
             <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
