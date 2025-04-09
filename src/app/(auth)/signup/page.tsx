@@ -1,12 +1,63 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signInWithGoogle } from "@/app/(auth)/actions";
+import { signInWithGoogle, signInWithMagicLink } from "@/app/(auth)/actions";
 import OneTapGoogle from "@/components/auth/onetapGoogle";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+// Define form schema with zod
+const formSchema = z.object({
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  fullName: z.string().min(2, {
+    message: "Full name must be at least 2 characters.",
+  }),
+});
 
 export default function SignupPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize form
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      fullName: "",
+    },
+  });
+
+  // Handle form submission
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsSubmitting(true);
+      await signInWithMagicLink(
+        values.email,
+        values.fullName,
+      );
+    } catch (error) {
+      console.error("Error during magic link signup:", error);
+      form.setError("root", {
+        message: "Failed to send magic link. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
@@ -27,7 +78,7 @@ export default function SignupPage() {
           </p>
         </div>
 
-        <form className="space-y-6">
+        <div className="space-y-6">
           <Button
             onClick={() => signInWithGoogle()}
             type="button"
@@ -51,16 +102,49 @@ export default function SignupPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <Input type="email" placeholder="Email" />
-            <Button 
-              type="button"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Send Magic Link
-            </Button>
-          </div>
-        </form>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="you@example.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Full Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="John Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {form.formState.errors.root && (
+                <p className="text-sm font-medium text-destructive">
+                  {form.formState.errors.root.message}
+                </p>
+              )}
+              <Button 
+                type="submit"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Magic Link"}
+              </Button>
+            </form>
+          </Form>
+        </div>
         
         <div className="mt-8 border-t border-gray-200 pt-6 text-center text-sm text-gray-600">
           Already have an account?{' '}
