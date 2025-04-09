@@ -16,8 +16,6 @@ export async function signInWithMagicLink(email: string, fullName: string) {
       emailRedirectTo: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/auth/confirm` : 'http://localhost:3000/auth/confirm'}`,
     }
   })
-console.log(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/auth/confirm` : 'http://localhost:3000/auth/confirm'}`)
-  console.log(data)
 
   if (error) {
     console.error('Error signing up with magic link:', error)
