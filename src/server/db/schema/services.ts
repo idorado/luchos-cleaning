@@ -1,6 +1,6 @@
 import { uuid, text, numeric, timestamp, pgEnum, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
-import { createTable } from "./_table"
+import { createTable, enumToPgEnum } from "./_table"
 
 export enum ServiceCategory {
     RESIDENTIAL = "residential",
@@ -8,11 +8,6 @@ export enum ServiceCategory {
     EMERGENCY = "emergency"
 }
 
-export function enumToPgEnum<T extends Record<string, any>>(
-    myEnum: T,
-): [T[keyof T], ...T[keyof T][]] {
-    return Object.values(myEnum).map((value: any) => `${value}`) as any
-}
 
 export const serviceCategoryEnum = pgEnum("service_category", enumToPgEnum(ServiceCategory));
 
