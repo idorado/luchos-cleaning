@@ -44,7 +44,7 @@
   --destructive-foreground: var(--white);
   --border: var(--space-cadet);
   --input: var(--space-cadet);
-  --ring: var(--fluorescent-cyan);
+  --ring: var(--blue-ribbon);
   
   /* Chart colors */
   --chart-1: hsla(45, 70%, 60%, 1);  /* Gold */

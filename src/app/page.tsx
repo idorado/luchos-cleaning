@@ -17,7 +17,7 @@ export default async function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-white">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-ring">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
                 Clean <span className="text-background">Spaces</span>,<br />
                 <span className="text-background">Brighter </span>Lives
               </h1>
@@ -25,7 +25,7 @@ export default async function Home() {
                 We transform spaces into welcoming, safe, and productive environments where people thrive.
               </p>
               <div className="pt-4">
-                <Button size="lg" className="bg-ring hover:bg-ring/90 text-secondary  font-bold">
+                <Button size="lg" className="font-bold">
                   CONTACT US
                 </Button>
               </div>
@@ -42,13 +42,13 @@ export default async function Home() {
           </div>
         </div>
         {/* Background decorative elements */}
-        <div className="absolute top-20 right-[5%] w-32 h-32 text-ring opacity-80">
+        <div className="absolute top-20 right-[5%] w-32 h-32 text-primary ">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative large star shape" role="img">
             <title>Large decorative star</title>
             <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
           </svg>
         </div>
-        <div className="absolute bottom-10 left-[10%] w-20 h-20 text-ring opacity-60">
+        <div className="absolute bottom-10 left-[10%] w-20 h-20 text-primary">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative medium star shape" role="img">
             <title>Medium decorative star</title>
             <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
