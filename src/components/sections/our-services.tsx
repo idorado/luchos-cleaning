@@ -27,7 +27,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, image
         <p className="text-gray-600 mb-4">
           {description}
         </p>
-        <Button asChild variant="default" className="self-start bg-cyan-500 hover:bg-cyan-600 text-white">
+        <Button asChild variant="default" className="self-start ">
           <Link href="/estimate" className="flex items-center gap-2">
             ESTIMATE HERE
             <ArrowRight className="w-4 h-4" />
@@ -69,7 +69,7 @@ export default function OurServices() {
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto" id="services">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-navy-800 mb-4">Our services</h2>
+        <h2 className="text-4xl font-bold mb-4">Our services</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           With over <span className="font-semibold">10 years of experience</span>, we deliver top-quality cleaning services backed by our <span className="font-semibold">48-hour satisfaction guarantee</span>.
           Our rigorous cleaning standards and eco-friendly options ensure a healthy, sparkling clean environment.

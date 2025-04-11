@@ -10,7 +10,7 @@ interface FeatureCardProps {
 const FeatureCard: FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-sm flex flex-col items-center md:items-start text-center md:text-left">
-      <div className="mb-4 text-cyan-500">
+      <div className="mb-4 text-primary">
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-navy-800 mb-3">{title}</h3>
