@@ -13,19 +13,19 @@ export default async function Home() {
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
       
-      <section className="relative bg-primary py-16 md:py-20 lg:py-24 overflow-hidden">
+      <section className="relative bg-foreground py-16 md:py-20 lg:py-24 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-white">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-ring">
-                Clean <span className="text-secondary">Spaces</span>,<br />
-                <span className="text-secondary">Brighter </span>Lives
+                Clean <span className="text-background">Spaces</span>,<br />
+                <span className="text-background">Brighter </span>Lives
               </h1>
               <p className="text-lg">
                 We transform spaces into welcoming, safe, and productive environments where people thrive.
               </p>
               <div className="pt-4">
-                <Button size="lg" className="bg-ring hover:bg-ring/90 text-primary font-bold">
+                <Button size="lg" className="bg-ring hover:bg-ring/90 text-secondary  font-bold">
                   CONTACT US
                 </Button>
               </div>
@@ -62,7 +62,7 @@ export default async function Home() {
 
 
       {/* Customer Experiences */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Customer Experiences</h2>
           <Testimonial />
