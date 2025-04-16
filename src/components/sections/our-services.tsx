@@ -14,24 +14,26 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, imageAlt, link }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-4 bg-slate-50 rounded-lg overflow-hidden h-80">
-      <div className="md:w-3/5 relative h-80 w-full md:h-auto">
+    <div className="flex flex-col lg:flex-row gap-6 bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <div className="w-full lg:w-2/5 relative h-56 sm:h-64 md:h-72 lg:h-auto">
         <Image 
           src={imageUrl} 
           alt={imageAlt} 
           fill 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover" 
+          priority
         />
       </div>
-      <div className="md:w-3/5 p-6 flex flex-col justify-center">
-        <h3 className="text-2xl font-semibold text-navy-700 mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">
+      <div className="w-full lg:w-3/5 p-4 sm:p-6 flex flex-col justify-center">
+        <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">{title}</h3>
+        <p className="text-sm sm:text-base text-gray-600 mb-4">
           {description}
         </p>
-        <Button asChild variant="default" className="self-start ">
-          <Link href={link} className="flex items-center gap-2">
+        <Button asChild variant="default" className="self-start mt-auto">
+          <Link href={link} className="flex items-center gap-2 text-sm sm:text-base">
             ESTIMATE HERE
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
           </Link>
         </Button>
       </div>
@@ -72,27 +74,30 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto" id="services">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Our services</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+    <section className="py-8 md:py-16 px-4 max-w-7xl mx-auto" id="services">
+      <div className="text-center mb-8 md:mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Our services</h2>
+        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
           With over <span className="font-semibold">10 years of experience</span>, we deliver top-quality cleaning services backed by our <span className="font-semibold">48-hour satisfaction guarantee</span>.
           Our rigorous cleaning standards and eco-friendly options ensure a healthy, sparkling clean environment.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8">
+      <div className="flex flex-col gap-6 md:gap-8 md:w-3/4 mx-auto">
         {services.map((service) => (
-          <ServiceCard 
-            key={service.title}
-            title={service.title}
-            description={service.description}
-            imageUrl={service.imageUrl}
-            imageAlt={service.imageAlt}
-            link={service.link}
-          />
+          <div 
+            key={service.title} 
+            className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+          >
+            <ServiceCard 
+              title={service.title}
+              description={service.description}
+              imageUrl={service.imageUrl}
+              imageAlt={service.imageAlt}
+              link={service.link}
+            />
+          </div>
         ))}
       </div>
-    </section>
-  );
+    </section>  );
 }

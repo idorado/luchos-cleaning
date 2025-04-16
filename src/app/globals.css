@@ -141,16 +141,6 @@
   font-display: swap;
 }
 
-@layer base {
-  :root {
-    --font-all-round-gothic: "All Round Gothic", sans-serif;
-    --font-poppins: "Poppins", sans-serif;
-  }
-
-}
-
-
-
 :root {
   /* Core color palette */
   --space-cadet: hsla(227, 47%, 21%, 1);
@@ -288,6 +278,8 @@
 
 @theme {
   --font-sans: "allRoundGothic", "Poppins";
+  --font-all-round-gothic: "All Round Gothic", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 @layer base {
