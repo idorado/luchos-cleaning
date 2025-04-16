@@ -13,48 +13,14 @@ export default async function CommercialPage() {
 			description:
 				"Specialized cleaning for safe, healthy environments for children and staff.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-primary"
-				>
-					<path
-						d="M6 22L24 8l18 14v16a2 2 0 01-2 2H8a2 2 0 01-2-2V22z"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<path d="M18 40V28h12v12" stroke="currentColor" strokeWidth="2" />
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOa14iZLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu" alt="Preschools & Daycares"/>
 			),
 		},
 		{
 			title: "Pet Stores",
 			description: "Clean, odor-free spaces for pets and customers alike.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-primary"
-				>
-					<rect
-						x="8"
-						y="20"
-						width="32"
-						height="20"
-						rx="2"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<path
-						d="M4 20h40l-4-10H8l-4 10z"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom89FJzAKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" alt="Pet Stores"/>
 			),
 		},
 		{
@@ -62,33 +28,7 @@ export default async function CommercialPage() {
 			description:
 				"Strict protocols for hygienic, compliant healthcare environments.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-primary"
-				>
-					<rect
-						x="10"
-						y="14"
-						width="28"
-						height="26"
-						rx="2"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<path d="M24 22v8M20 26h8" stroke="currentColor" strokeWidth="2" />
-					<rect
-						x="18"
-						y="8"
-						width="12"
-						height="6"
-						rx="2"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUMazhBuxbLyY5TVln2vGePNI6BEHMuo4rXcz" alt="Medical Offices & Healthcare"/>
 			),
 		},
 		{
@@ -96,20 +36,7 @@ export default async function CommercialPage() {
 			description:
 				"Community-focused cleaning for shared living spaces and amenities.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-accent"
-				>
-					<path
-						d="M6 22L24 8l18 14v16a2 2 0 01-2 2H8a2 2 0 01-2-2V22z"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<path d="M18 40V28h12v12" stroke="currentColor" strokeWidth="2" />
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUWa1k9uxbLyY5TVln2vGePNI6BEHMuo4rXcz" alt="HOA's"/>
 			),
 		},
 		{
@@ -117,25 +44,7 @@ export default async function CommercialPage() {
 			description:
 				"Sanitized equipment and spaces for healthy, active lifestyles.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-accent"
-				>
-					<rect
-						x="14"
-						y="20"
-						width="20"
-						height="8"
-						rx="2"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<circle cx="14" cy="24" r="4" stroke="currentColor" strokeWidth="2" />
-					<circle cx="34" cy="24" r="4" stroke="currentColor" strokeWidth="2" />
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom3s8OSHQ7wMhU5pckd8lfSqEHr2VL9OoNGxPs" alt="Fitness Centers, Gyms & Studios"/>
 			),
 		},
 		{
@@ -143,41 +52,7 @@ export default async function CommercialPage() {
 			description:
 				"Comprehensive solutions for large and multi-site properties.",
 			icon: (
-				<svg
-					width="48"
-					height="48"
-					fill="none"
-					viewBox="0 0 48 48"
-					className="text-primary"
-				>
-					<rect
-						x="10"
-						y="18"
-						width="28"
-						height="22"
-						rx="2"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<rect
-						x="18"
-						y="26"
-						width="4"
-						height="6"
-						rx="1"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-					<rect
-						x="26"
-						y="26"
-						width="4"
-						height="6"
-						rx="1"
-						stroke="currentColor"
-						strokeWidth="2"
-					/>
-				</svg>
+				<img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomQrFNlQz8aAfRP5i946jBEorHLxSGqWcp3OkX" alt="Facility Management Companies"/>
 			),
 		},
 	];
@@ -214,9 +89,9 @@ export default async function CommercialPage() {
 			</HeroSection>
 
 			{/* Industries We Specialize In */}
-			<div className="flex flex-col items-center justify-center gap-8 py-24 bg-gray-100">
+			<section className="flex flex-col items-center justify-center gap-8 py-24 bg-gray-100">
 				<div className="container mx-auto px-4 text-center text-sm text-muted">
-					<h3 className="text-lg font-semibold mb-2 text-2xl md:text-3xl lg:text-4xl text-primary-foreground">
+					<h3 className="font-semibold mb-2 text-2xl md:text-3xl lg:text-4xl text-primary-foreground">
 						Industries we specialize in
 					</h3>
 					<p className="mb-4 text-lg">
@@ -227,21 +102,23 @@ export default async function CommercialPage() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-					{industries.map((industry) => (
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full max-w-6xl px-4">
+					{industries.map((industry, index) => (
 						<div
 							key={industry.title}
-							className="bg-white rounded-xl shadow p-8 flex flex-col items-start"
+							className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-6 md:p-8 flex flex-col items-center md:items-start text-center md:text-left"
 						>
-							<div className="mb-6">{industry.icon}</div>
+							<div className="mb-4 md:mb-6 w-16 h-16 flex items-center justify-center">
+								{industry.icon}
+							</div>
 							<h3 className="font-bold text-lg md:text-xl text-primary-foreground mb-2">
 								{industry.title}
 							</h3>
-							<p className="text-gray-600">{industry.description}</p>
+							<p className="text-gray-600 text-sm md:text-base">{industry.description}</p>
 						</div>
 					))}
 				</div>
-			</div>
+			</section>
 
 			<BusinessCleaningEstimateForm />
 		</main>
