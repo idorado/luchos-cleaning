@@ -19,5 +19,7 @@ export const publicRoutes = [
   '/contact',
   '/about-us',
   '/pricing',
-  '/faq'
+  '/faq',
+  '/api/request/create',
+  '/api/*'
 ];
