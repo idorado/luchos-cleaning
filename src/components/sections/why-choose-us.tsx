@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 px-4 bg-slate-50" id="why-choose-us">
+    <section className="p-16 bg-slate-50" id="why-choose-us">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-navy-800 mb-4">Why choose us?</h2>

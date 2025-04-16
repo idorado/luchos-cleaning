@@ -15,12 +15,12 @@ export default async function Home() {
       {/* Hero Section */}
       
       <HeroSection>
-        <div className="space-y-4 md:space-y-6 text-white text-center md:text-left">
+        <div className="space-y-4 md:space-y-6 text-white text-center p-4 md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
             Clean <span className="text-background">Spaces</span>,<br />
             <span className="text-background">Brighter </span>Lives
           </h1>
-          <p className="text-base sm:text-lg">
+          <p className="text-lg">
             We transform spaces into welcoming, safe, and productive environments where people thrive.
           </p>
           <div className="pt-4">

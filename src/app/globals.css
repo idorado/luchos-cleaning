@@ -277,9 +277,9 @@
 }
 
 @theme {
-  --font-sans: "allRoundGothic", "Poppins";
-  --font-all-round-gothic: "All Round Gothic", sans-serif;
+  --font-sans: "Poppins", "All Round Gothic";
   --font-poppins: "Poppins", sans-serif;
+  --font-all-round-gothic: "All Round Gothic", sans-serif;
 }
 
 @layer base {
@@ -288,5 +288,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-all-round-gothic;
   }
 }
