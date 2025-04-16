@@ -22,8 +22,8 @@
   --foreground: var(--space-cadet);
   
   /* Card and popover */
-  --card: var(--space-cadet);
-  --card-foreground: var(--white);
+  --card: var(--white);
+  --card-foreground: var(--space-cadet);
   --popover: var(--space-cadet);
   --popover-foreground: var(--white);
   

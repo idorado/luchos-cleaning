@@ -43,19 +43,19 @@ export default function OurServices() {
     {
       title: "Residential cleaning",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOseD8ULSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse",
       imageAlt: "Professional cleaner with cleaning supplies in a modern kitchen"
     },
     {
       title: "Commercial cleaning",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomgApQF107oMnJUltKIuW62gREasYvcL4ed0kp",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8nF7NwKhMCiFKE7nTrZgcpJWtXBskwHlzmqf",
       imageAlt: "Professional cleaners working in an office space"
     },
     {
       title: "Window washing",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkLrUC7BMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG",
       imageAlt: "Professional window cleaner washing windows"
     },
     {
