@@ -96,8 +96,8 @@ importers:
         specifier: ^4.7.5
         version: 4.7.5
       jstack:
-        specifier: ^1.0.8
-        version: 1.0.8(hono@4.7.5)(react@19.0.0)(zod@3.24.2)
+        specifier: ^1.1.1
+        version: 1.1.1(hono@4.7.5)(react@19.0.0)(zod@3.24.2)
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -2033,15 +2033,15 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  jstack-shared@0.0.3:
-    resolution: {integrity: sha512-392rtWhf56Eeq4gvIvm5cNqEfARn9GP2JrF/fntesGmCcSgwbVrXnCM3DMXUY7y5C2Z54StGfEzpVzCEHld73A==}
+  jstack-shared@0.0.4:
+    resolution: {integrity: sha512-Qo8CwwONnqJuOS5lsfGSGFG8MEBBGtsz6s95lr0QSM6xnmwd7Nvz2X3SIPRdvx1K1PQ0dG8rAGBU1TGVJ6ZQvA==}
     peerDependencies:
       hono: '>=4.6.17'
       react: '>=16.8.0'
       zod: '>=3.24.1'
 
-  jstack@1.0.8:
-    resolution: {integrity: sha512-R2I+pZ365ACwMLP0mm1gJAKClTywuGx6PFY1gGHp9H6E2xUixxY++M+xjTW63WaMGBWV1ZxggkOSCRjelRZ4UA==}
+  jstack@1.1.1:
+    resolution: {integrity: sha512-ku9WDmB0DK9RXtnGF8nXi+Z6V0IBlznYDIl2rtn/u7+7OOBihTaNMNy4V0d9g4s3twgZd5+xFo5ctOPcdZN4hw==}
     peerDependencies:
       hono: '>=4.6.17'
       react: '>=16.8.0'
@@ -4174,16 +4174,16 @@ snapshots:
       chalk: 5.4.1
       diff-match-patch: 1.0.5
 
-  jstack-shared@0.0.3(hono@4.7.5)(react@19.0.0)(zod@3.24.2):
+  jstack-shared@0.0.4(hono@4.7.5)(react@19.0.0)(zod@3.24.2):
     dependencies:
       hono: 4.7.5
       react: 19.0.0
       zod: 3.24.2
 
-  jstack@1.0.8(hono@4.7.5)(react@19.0.0)(zod@3.24.2):
+  jstack@1.1.1(hono@4.7.5)(react@19.0.0)(zod@3.24.2):
     dependencies:
       hono: 4.7.5
-      jstack-shared: 0.0.3(hono@4.7.5)(react@19.0.0)(zod@3.24.2)
+      jstack-shared: 0.0.4(hono@4.7.5)(react@19.0.0)(zod@3.24.2)
       react: 19.0.0
       zod: 3.24.2
 
