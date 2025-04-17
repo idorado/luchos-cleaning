@@ -1,6 +1,6 @@
 import { uuid, text, numeric, timestamp, pgEnum, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
-import { createTable, enumToPgEnum } from "./_table"
+import { createTable } from "./_table"
 
 export enum ServiceCategory {
     RESIDENTIAL = "residential",
@@ -8,8 +8,7 @@ export enum ServiceCategory {
     EMERGENCY = "emergency"
 }
 
-
-export const serviceCategoryEnum = pgEnum("service_category", enumToPgEnum(ServiceCategory));
+export const serviceCategoryEnum = pgEnum("service_category", ServiceCategory);
 
 export const services = createTable("services", {
     id: uuid("id").primaryKey(),
