@@ -4,6 +4,7 @@ import "./globals.css";
 import { TopBar } from "@/components/layout/top-bar"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Toaster} from "@/components/ui/sonner";
 import { Providers, PostHogProvider } from "@/components/providers"
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <Toaster />
         </Providers>
         </PostHogProvider>
       </body>
