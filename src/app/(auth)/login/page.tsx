@@ -1,9 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { createClient } from '@/utils/supabase-browser'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage
+} from '@/components/ui/form'
 import { signInWithGoogle } from '@/app/(auth)/actions'
 import OneTapGoogle from "@/components/auth/onetapGoogle"
 import Image from 'next/image'
@@ -11,15 +21,21 @@ import Link from 'next/link'
 
 export default function LoginPage() {
   const supabase = createClient()
-  const [email, setEmail] = useState('')
+  const formSchema = z.object({
+  email: z.string().email({ message: 'Please enter a valid email address' })
+})
 
-  const handlePasswordlessLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const { error } = await supabase.auth.signInWithOtp({ email })
-    if (error) {
-      console.error('Error sending magic link:', error)
-    }
+const form = useForm<z.infer<typeof formSchema>>({
+  resolver: zodResolver(formSchema),
+  defaultValues: { email: '' },
+})
+
+const handlePasswordlessLogin = async (values: z.infer<typeof formSchema>) => {
+  const { error } = await supabase.auth.signInWithOtp({ email: values.email })
+  if (error) {
+    console.error('Error sending magic link:', error)
   }
+}
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
@@ -40,17 +56,24 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <form onSubmit={handlePasswordlessLogin} className="space-y-6">
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <Button type="submit" className="w-full">
-            Send Magic Link
-          </Button>
+        <Form {...form}>
+  <form onSubmit={form.handleSubmit(handlePasswordlessLogin)} className="space-y-6">
+    <FormField
+      control={form.control}
+      name="email"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Email</FormLabel>
+          <FormControl>
+            <Input type="email" placeholder="Enter your email" {...field} />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+    <Button type="submit" className="w-full">
+      Send Magic Link
+    </Button>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -84,6 +107,7 @@ export default function LoginPage() {
             </Link>
           </div>
         </form>
+      </Form>
         
         <div className="mt-8 border-t border-gray-200 pt-6">
           <p className="text-center text-xs text-gray-500">
