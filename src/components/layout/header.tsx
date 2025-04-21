@@ -1,7 +1,5 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,9 +12,7 @@ import {
 
 import { ContactUsModal } from "@/components/modals/contact-us";
 
-export function Header() {
-  const [open, setOpen] = useState(false);
-  
+export async function Header() {
   return (
     <header className="sticky top-0 z-50 bg-foreground py-3">
       <div className="container mx-auto px-4">
@@ -101,7 +97,7 @@ export function Header() {
             </NavigationMenu>
           </div>
 
-          <ContactUsModal open={open} onOpenChange={setOpen} />
+          <ContactUsModal/>
         </div>
       </div>
     </header>

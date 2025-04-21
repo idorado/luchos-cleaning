@@ -1,13 +1,9 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator"
 import Image from "next/image"
-import Link from "next/link"
 import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
 import HeroSection from "@/components/HeroSection"
+import { ContactUsModal } from "@/components/modals/contact-us"
 
 export default async function Home() {
   return (
@@ -24,9 +20,7 @@ export default async function Home() {
             We transform spaces into welcoming, safe, and productive environments where people thrive.
           </p>
           <div className="pt-4">
-            <Button size="lg" className="font-bold w-full sm:w-auto">
-              CONTACT US
-            </Button>
+            <ContactUsModal/>
           </div>
         </div>
         <div className="relative hidden md:block w-full h-full">
