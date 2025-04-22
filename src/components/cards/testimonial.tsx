@@ -1,63 +1,106 @@
 "use client"
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { useQuery } from '@tanstack/react-query'
-import { Star } from 'lucide-react'
 import { client } from "@/lib/client"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Star } from 'lucide-react'
+import { Card, CardContent } from "@/components/ui/card"
+import AutoPlay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel"
+
+// Sample testimonial data to match the image
+const sampleTestimonials = [
+  {
+    id: "1",
+    quote: "Kathy Clean is great service at a fair price point. Communication is always timely and easy to make schedules around as needed. If something is ever missed there is always an option for a reclean to make it right which I have only had to ask for one time and it was partially my fault because I didn't realize leaving a door closed was code for skip this area. I highly recommend Kathy Clean!",
+    author: "Alysha Deaver",
+    rating: 5
+  },
+  {
+    id: "2",
+    quote: "I was referred by a neighbor. Kathy Clean was very professional and it set an appt to start on a cleaning schedule w/in a few days. Person came yesterday and did an absolutely AMAZING job. You can tell she took great pride in what she does. Very professional. I was very impressed.",
+    author: "Donna Whalen",
+    rating: 5
+  },
+  {
+    id: "3",
+    quote: "Kathy Clean did a 5 star job! The floors and bathroom were spotless, the kitchen squicky clean, and the house smelled amazing. She even went above and beyond and cleaned the baseboards",
+    author: "Jessica Dukart",
+    rating: 5
+  }
+]
 
 export function Testimonial() {
   const { data: testimonials, isPending } = useQuery({
     queryKey: ["testimonials-recent"],
     queryFn: async () => {
-      const res = await client.testimonials.recent.$get();
-      return res.json()
+      try {
+        const res = await client.testimonials.recent.$get();
+        return res.json()
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+        return sampleTestimonials; // Fallback to sample data
+      }
     },
+    initialData: sampleTestimonials // Use sample data initially
   })
 
   if (isPending) {
     return (
-      <Card className="w-full">
-        <CardContent className="flex items-center justify-center p-8">
+      <div className="w-full">
+        <div className="flex items-center justify-center p-8">
           <div className="flex flex-col items-center gap-2">
             <div className="size-8 animate-spin rounded-full border-4 border-muted border-t-primary" />
             <span className="text-sm text-muted-foreground">Loading testimonials...</span>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     );
   }
 
   return (
-    <Card className="w-full">
-      <CardContent className="p-6">
-        {testimonials && testimonials.length > 0 ? (
-          <div className="grid md:grid-cols-2 gap-3">
+    <div className="w-full py-12 flex flex-col items-center">
+      {testimonials && testimonials.length > 0 ? (
+        <Carousel className="w-full max-w-full md:max-w-4xl lg:max-w-6xl"
+        opts={{
+          align: "start",
+          loop: true,
+          slidesToScroll: 1,
+          containScroll: "trimSnaps",
+        }}
+        plugins={[AutoPlay({
+          delay: 2000,
+        })]}
+        >
+          <CarouselContent className="-ml-4 md:-ml-6">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="border p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <p className="text-base italic mb-2">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-3">
-                  { (
-                    <Avatar className="size-10">
-                      <AvatarImage 
-                        src={`https://xsgames.co/randomusers/avatar.php?g=${testimonial.author.includes("Michael") || testimonial.author.includes("Jessica") || testimonial.author.includes("Maria") || testimonial.author.includes("Samantha") ? "female" : "male"}`}
-                        alt={`${testimonial.author} avatar`}
-                      />
-                      <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                  )}
-                  <div>
-                    <h4 className="font-semibold">{testimonial.author}</h4>
-                    <p className="text-xs text-gray-600">{testimonial.role}</p>
-                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded inline-block mt-1">{testimonial.service}</span>
-                  </div>
-                </div>
-              </div>
+              <CarouselItem key={testimonial.id} className="pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3">
+                <Card className="h-[500px] flex flex-col">
+                  <CardContent className="pt-6 flex-1 flex flex-col">
+                    <div className="flex mb-2">
+                      {Array(5).fill(0).map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-[#6366f1] text-[#6366f1]" />
+                      ))}
+                    </div>
+                    <p className="text-base mb-6">{testimonial.quote}</p>
+                    <div className="mt-auto flex items-center gap-3">
+                      <h4 className="font-semibold">{testimonial.author}</h4>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
             ))}
-          </div>
-        ) : (
-          <p className="text-center text-muted-foreground">No testimonials available.</p>
-        )}
-      </CardContent>
-    </Card>
+          </CarouselContent>
+          <CarouselPrevious className="bg-[#00ffff] hover:bg-[#00e0e0] border-none" />
+          <CarouselNext className="bg-[#00ffff] hover:bg-[#00e0e0] border-none" />
+        </Carousel>
+      ) : (
+        <p className="text-center text-muted-foreground">No testimonials available.</p>
+      )}
+    </div>
   )
 }
