@@ -18,17 +18,10 @@ import { client } from "@/lib/client";
 
 const ContactUsFormSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
-  email: z.string().email("Invalid email").optional().or(z.literal("")),
-  phone: z.string().regex(/^\+?[0-9]{7,15}$/, "Invalid phone number").optional().or(z.literal("")),
-}).refine(
-  (data) => (data.email && data.email.trim() !== "") || (data.phone && data.phone.trim() !== ""),
-  {
-    message: "Please provide either an email or a phone number.",
-    path: ["email", "phone"],
-  }
-);
+  email: z.string().email("Invalid email").min(1, "Email is required"),
+});
 
-type ContactUsFormValues = z.infer<typeof ContactUsFormSchema>;
+type ContactUsFormValues = z.infer<typeof ContactUsFormSchema>; // { fullName: string; email: string }
 
 export function ContactUsModal() {
   const [open, setOpen] = useState(false);
@@ -36,7 +29,6 @@ export function ContactUsModal() {
     defaultValues: {
       fullName: "",
       email: "",
-      phone: "",
     },
     mode: "onTouched",
     resolver: zodResolver(ContactUsFormSchema),
@@ -45,8 +37,8 @@ export function ContactUsModal() {
   const onSubmitForm = async (values: ContactUsFormValues) => {
     form.reset();
     console.log(values);
-    const { fullName, email, phone } = values;
-    const res = await client.contact.create.$post({ fullName, email, phone });
+    const { fullName, email } = values;
+    const res = await client.contact.create.$post({ fullName, email });
     console.log(res);
     setOpen(false);
   };
@@ -60,7 +52,7 @@ export function ContactUsModal() {
         </DialogTrigger>
       <DialogContent className="">
         <DialogHeader>
-          <DialogTitle className="text-foreground">Contact Us</DialogTitle>
+          <DialogTitle className="text-foreground">Request a Quote</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmitForm)} className="space-y-4 text-primary">
@@ -92,19 +84,7 @@ export function ContactUsModal() {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-foreground">Phone</FormLabel>
-                  <FormControl>
-                    <Input type="tel" placeholder="Enter your phone number" {...field} className="text-foreground" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+
             <Button type="submit" className="w-full mt-2" variant="default">Submit</Button>
           </form>
         </Form>

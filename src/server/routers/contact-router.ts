@@ -6,11 +6,10 @@ import { z } from "zod";
 export const contactRouter = j.router({
     create: publicProcedure.input(z.object({
         fullName: z.string().min(1, "Full name is required"),
-        email: z.string().email("Invalid email").optional().or(z.literal("")),
-        phone: z.string().regex(/^\+?[0-9]{7,15}$/, "Invalid phone number").optional().or(z.literal("")),
+        email: z.string().email("Invalid email").min(1, "Email is required"),
     })).post( async ({ ctx, c, input }) => {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        const { fullName, email, phone } = input
+        const { fullName, email } = input;
         const { data, error } = await resend.emails.send({
             from: 'Kathy Clean <requests@support.kathyclean.com>',
             to: ['ljaramillo@kathyclean.com'],
@@ -24,8 +23,7 @@ export const contactRouter = j.router({
                     <div style="padding: 20px;">
                         <h3 style="color: #007bff; border-bottom: 1px solid #eee; padding-bottom: 10px;">Contact Information</h3>
                         <p><strong>Name:</strong> ${fullName}</p>
-                        ${email ? `<p><strong>Email:</strong> ${email}</p>` : ''}
-                        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+                        <p>The user would like to be contacted at: <strong>${email}</strong></p>
                     </div>
                     <div style="background-color: #f8f8f8; padding: 15px; border-radius: 0 0 6px 6px; text-align: center; font-size: 12px; color: #666;">
                         <p>This request was submitted on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}</p>
