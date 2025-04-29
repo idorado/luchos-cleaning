@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {GoogleTagManager} from "next/third-parties/google"
+import {GoogleTagManager} from "@next/third-parties/google"
 import "./globals.css";
 
 import { TopBar } from "@/components/layout/top-bar"
