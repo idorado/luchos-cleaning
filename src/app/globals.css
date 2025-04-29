@@ -145,6 +145,7 @@
   --fluorescent-cyan: hsla(177, 98%, 50%, 1);
   --white: hsla(0, 0%, 100%, 1);
   --destructive: hsla(0, 84%, 60%, 1);
+  --destructive-foreground: oklch(99% 0 0);
   
   /* Light theme mapping */
   --background: var(--white);
@@ -169,8 +170,6 @@
   --accent-foreground: var(--fluorescent-cyan);
   
   /* Functional colors */
-  --destructive: hsla(0, 84%, 60%, 1);
-  --destructive-foreground: var(--white);
   --border: var(--space-cadet);
   --input: var(--space-cadet);
   --ring: var(--blue-ribbon);

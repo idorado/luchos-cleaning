@@ -166,9 +166,9 @@ export default async function ResidentialPage() {
 				<ServiceCards />
 			</div>
 
-			<div className="py-16 flex flex-col md:flex-row items-center gap-8">
-				<div className="bg-white rounded-lg shadow-md p-6">
-					<h3 className="text-lg font-semibold mb-4">Request a Quote</h3>
+			<section className="py-16 flex flex-col md:flex-row items-center gap-8">
+				<div className="bg-white rounded-lg p-6 w-full md:w-1/2">
+					<h3 className="text-5xl font-bold mb-4">Request a Quote</h3>
 					<p className="text-gray-600 mb-4">
 						For more than a decade, we've been delivering spotless, streak-free
 						windows to homes and businesses. Formerly known as C-Thru Cleaning
@@ -178,7 +178,7 @@ export default async function ResidentialPage() {
 					</p>
 				</div>
 				<ResidentialPriceCalculator />
-			</div>
+			</section>
 
 			{/* Additional Services */}
 			<div className="flex flex-col items-center justify-center py-16  bg-gray-100 px-4">
