@@ -78,9 +78,6 @@ const ADDITIONAL_SERVICES = [
   { id: 'window-one-side', name: 'Window Cleaning (One Side)', price: 5, details: 'Per pane' },
 ]
 
-// Define flooring types as a constant to use in both schema and UI
-const FLOORING_TYPES = ['hardwood', 'carpet', 'tile', 'slate', 'marble', 'other'] as const;
-type FlooringType = typeof FLOORING_TYPES[number];
 
 const calculatorSchema = z.object({
   serviceType: z.enum(['residential', 'other']),
@@ -92,7 +89,6 @@ const calculatorSchema = z.object({
   numPets: z.number().min(0).max(10).default(0),
   numBathrooms: z.number().min(0).max(20).default(0),
   numBedrooms: z.number().min(0).max(20).default(0),
-  flooringTypes: z.array(z.enum(FLOORING_TYPES)).default([]),
   hasKnickknacks: z.boolean().default(false),
   additionalServices: z.array(z.string()).default([]),
   steamCleaningBeds: z.number().min(0).max(10).default(0),
@@ -116,7 +112,6 @@ export function ResidentialPriceCalculator() {
       numPets: 0,
       numBathrooms: 0,
       numBedrooms: 0,
-      flooringTypes: [],
       hasKnickknacks: false,
       additionalServices: [],
       steamCleaningBeds: 0,
@@ -133,7 +128,6 @@ export function ResidentialPriceCalculator() {
   const numPets = form.watch('numPets');
   const numBathrooms = form.watch('numBathrooms') || 0;
   const numBedrooms = form.watch('numBedrooms') || 0;
-  const flooringTypes = form.watch('flooringTypes') || [];
   const hasKnickknacks = form.watch('hasKnickknacks');
   const additionalServices = form.watch('additionalServices') || [];
   const steamCleaningBeds = form.watch('steamCleaningBeds') || 0;
@@ -188,13 +182,6 @@ export function ResidentialPriceCalculator() {
       addons += (numPets - 1) * 15;
     }
     
-    // Flooring type charges
-    if (!flooringTypes?.includes('carpet')) {
-      addons += 30; // No carpet charge
-    }
-    if (flooringTypes?.includes('marble')) {
-      addons += 30; // Marble flooring charge
-    }
     
     // Additional services
     for (const service of additionalServices ?? []) {
@@ -215,7 +202,7 @@ export function ResidentialPriceCalculator() {
     setAddonsPrice(addons);
     setEstimate(base + addons);
   }, [serviceType, squareFeet, frequency, otherService, windowPanes, windowPanesOneSide, 
-      numPets, flooringTypes, additionalServices, steamCleaningBeds, steamCleaningFurniture]);
+      numPets, additionalServices, steamCleaningBeds, steamCleaningFurniture]);
 
   // Calculate estimate on initial render
   useEffect(() => {
@@ -308,62 +295,6 @@ export function ResidentialPriceCalculator() {
                     <Input id="numPets" type="number" min={0} max={10} {...field} onChange={(e) => { field.onChange(Number.parseInt(e.target.value) || 0); calculateEstimate(); }} className="border-gray-200 focus:ring-gray-200 h-9" />
                   </FormControl>
                   <p className="text-xs text-gray-500 mt-1">Each additional pet (beyond the first) adds $15 to your service.</p>
-                </FormItem>
-              )} />
-              
-              <FormField control={form.control} name="flooringTypes" render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm mb-2 block">Flooring Types (Select all that apply)</FormLabel>
-                  <div className="space-y-2">
-                    {FLOORING_TYPES.map((type) => {
-                      // Define image paths for each flooring type
-                      const flooringImages = {
-                        hardwood: "/images/flooring/hardwood.jpg",
-                        carpet: "/images/flooring/carpet.jpg",
-                        tile: "/images/flooring/tile.jpg",
-                        slate: "/images/flooring/slate.jpg",
-                        marble: "/images/flooring/marble.jpg",
-                      };
-                      
-                      return (
-                        <FormItem key={type} className="flex items-center space-x-3 rounded-md border border-gray-200 bg-white p-2 hover:bg-gray-50 transition-colors">
-                          {type !== 'other' ? (
-                            <div className="flex-shrink-0 w-10 h-10 overflow-hidden rounded-md border border-gray-200">
-                              <img 
-                                src={flooringImages[type as keyof typeof flooringImages]} 
-                                alt={`${type} flooring`}
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                  // Fallback image if the specific one fails to load
-                                  (e.target as HTMLImageElement).src = "/images/flooring/hardwood.jpg";
-                                }}
-                              />
-                            </div>
-                          ) : null}
-                          <div className="flex items-center space-x-2 flex-grow">
-                            <FormControl>
-                              <Checkbox 
-                                checked={field.value?.includes(type)}
-                                onCheckedChange={(checked) => {
-                                  const updatedValue = checked
-                                    ? [...field.value, type as FlooringType]
-                                    : field.value?.filter((value) => value !== type);
-                                  field.onChange(updatedValue);
-                                  calculateEstimate();
-                                }}
-                                className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600"
-                              />
-                            </FormControl>
-                            <FormLabel className="text-sm font-medium cursor-pointer m-0 capitalize">{type}</FormLabel>
-                          </div>
-                        </FormItem>
-                      );
-                    })}
-                  </div>
-                  <div className="mt-2 space-y-1">
-                    <p className="text-xs text-gray-500">No carpet selected: Additional $30 fee</p>
-                    <p className="text-xs text-gray-500">Marble selected: Additional $30 fee</p>
-                  </div>
                 </FormItem>
               )} />
               
@@ -609,20 +540,6 @@ export function ResidentialPriceCalculator() {
                   <div className="flex justify-between text-sm">
                     <span>Pet Fee ({numPets - 1} additional {numPets - 1 === 1 ? 'pet' : 'pets'})</span>
                     <span>${(numPets - 1) * 15}</span>
-                  </div>
-                )}
-                
-                {/* Flooring charges */}
-                {!flooringTypes?.includes('carpet') && (
-                  <div className="flex justify-between text-sm">
-                    <span>No Carpet Fee</span>
-                    <span>$30</span>
-                  </div>
-                )}
-                {flooringTypes?.includes('marble') && (
-                  <div className="flex justify-between text-sm">
-                    <span>Marble Flooring</span>
-                    <span>$30</span>
                   </div>
                 )}
                 
