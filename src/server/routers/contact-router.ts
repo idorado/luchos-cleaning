@@ -44,9 +44,6 @@ export const contactRouter = j.router({
         serviceType: z.enum(['residential', 'other']),
         squareFeet: z.number().min(700).max(10000),
         frequency: z.enum(['weekly', 'bi-weekly', 'monthly', 'one-time']),
-        otherService: z.enum(['deep', 'move-in-out', 'post-construction', 'pressure-washing', 'solar-panel', 'window-washing']).optional(),
-        windowPanes: z.number().min(0).max(100).optional(),
-        windowPanesOneSide: z.number().min(0).max(100).optional(),
         numPets: z.number().min(0).max(10).default(0),
         numBathrooms: z.number().min(0).max(20).default(0),
         numBedrooms: z.number().min(0).max(20).default(0),
@@ -59,10 +56,9 @@ export const contactRouter = j.router({
         phone: z.string().min(1, "Phone number is required"),
     })).post(async ({ ctx, c, input }) => {
         const { 
-            serviceType, squareFeet, frequency, otherService, 
+            serviceType, squareFeet, frequency, 
             numPets, additionalServices, steamCleaningBeds, 
-            steamCleaningFurniture, windowPanes, windowPanesOneSide,
-            totalPrice, numBathrooms, numBedrooms, fullName, email, phone
+            steamCleaningFurniture, totalPrice, numBathrooms, numBedrooms, fullName, email, phone
         } = input;
         
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -83,7 +79,7 @@ export const contactRouter = j.router({
                         <p><strong>Phone:</strong> ${phone}</p>
                         
                         <h3 style="color: #007bff; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 20px;">Service Details</h3>
-                        <p><strong>Service Type:</strong> ${serviceType}${otherService ? ` (${otherService})` : ''}</p>
+                        <p><strong>Service Type:</strong> ${serviceType}</p>
                         <p><strong>Square Footage:</strong> ${squareFeet} sq ft</p>
                         <p><strong>Frequency:</strong> ${frequency}</p>
                         <p><strong>Bedrooms:</strong> ${numBedrooms}</p>
@@ -96,12 +92,10 @@ export const contactRouter = j.router({
                             ${additionalServices.map(service => `<li>${service}</li>`).join('')}
                         </ul>` : ''}
                         
-                        ${(steamCleaningBeds > 0 || steamCleaningFurniture > 0 || windowPanes > 0 || windowPanesOneSide > 0) ? `
+                        ${(steamCleaningBeds > 0 || steamCleaningFurniture > 0 ) ? `
                         <h3 style="color: #007bff; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 20px;">Extras</h3>
                         ${steamCleaningBeds > 0 ? `<p><strong>Steam Cleaning (Beds):</strong> ${steamCleaningBeds}</p>` : ''}
-                        ${steamCleaningFurniture > 0 ? `<p><strong>Steam Cleaning (Furniture):</strong> ${steamCleaningFurniture}</p>` : ''}
-                        ${windowPanes > 0 ? `<p><strong>Window Panes (Both Sides):</strong> ${windowPanes}</p>` : ''}
-                        ${windowPanesOneSide > 0 ? `<p><strong>Window Panes (One Side):</strong> ${windowPanesOneSide}</p>` : ''}` : ''}
+                        ${steamCleaningFurniture > 0 ? `<p><strong>Steam Cleaning (Furniture):</strong> ${steamCleaningFurniture}</p>` : ''}` : ''}
                         
                         <h3 style="color: #007bff; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 20px;">Pricing</h3>
                         <p style="font-size: 18px;"><strong>Estimated Price:</strong> $${totalPrice}</p>

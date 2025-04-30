@@ -194,18 +194,6 @@ const calculatorSchema = z.object({
 	serviceType: z.enum(["residential", "other"]),
 	squareFeet: z.number().min(700).max(10000),
 	frequency: z.enum(["weekly", "bi-weekly", "monthly", "one-time"]),
-	otherService: z
-		.enum([
-			"deep",
-			"move-in-out",
-			"post-construction",
-			"pressure-washing",
-			"solar-panel",
-			"window-washing",
-		])
-		.optional(),
-	windowPanes: z.number().min(0).max(100).optional(),
-	windowPanesOneSide: z.number().min(0).max(100).optional(),
 	numPets: z.number().min(0).max(10).default(0),
 	numBathrooms: z.number().min(0).max(20).default(0),
 	numBedrooms: z.number().min(0).max(20).default(0),
@@ -229,9 +217,6 @@ export function ResidentialPriceCalculator() {
 			serviceType: "residential",
 			squareFeet: 1500,
 			frequency: "weekly",
-			otherService: "deep",
-			windowPanes: 0,
-			windowPanesOneSide: 0,
 			numPets: 0,
 			numBathrooms: 0,
 			numBedrooms: 0,
@@ -247,9 +232,6 @@ export function ResidentialPriceCalculator() {
 	const serviceType = form.watch("serviceType");
 	const squareFeet = form.watch("squareFeet");
 	const frequency = form.watch("frequency");
-	const otherService = form.watch("otherService");
-	const windowPanes = form.watch("windowPanes") || 0;
-	const windowPanesOneSide = form.watch("windowPanesOneSide") || 0;
 	const numPets = form.watch("numPets");
 	const numBathrooms = form.watch("numBathrooms") || 0;
 	const numBedrooms = form.watch("numBedrooms") || 0;
@@ -282,7 +264,7 @@ export function ResidentialPriceCalculator() {
 				// Weekly or bi-weekly
 				base = finalPriceTier.weeklyBiweeklyPrice;
 			}
-		} else if (serviceType === "other" && otherService === "deep") {
+		} else if (serviceType === "other" ) {
 			// Find the appropriate deep cleaning price tier
 			const deepCleaningTier = DEEP_CLEANING_PRICES.find(
 				(tier) => squareFeet >= tier.minSqFt && squareFeet < tier.maxSqFt,
@@ -323,8 +305,6 @@ export function ResidentialPriceCalculator() {
 		addons += (steamCleaningBeds ?? 0) * 50; // $50 per bed
 		addons += (steamCleaningFurniture ?? 0) * 10; // $10 per furniture piece
 
-		// Add window cleaning costs
-		addons += (windowPanes ?? 0) * 10 + (windowPanesOneSide ?? 0) * 5;
 
 		setBasePrice(base);
 		setAddonsPrice(addons);
@@ -333,9 +313,6 @@ export function ResidentialPriceCalculator() {
 		serviceType,
 		squareFeet,
 		frequency,
-		otherService,
-		windowPanes,
-		windowPanesOneSide,
 		numPets,
 		additionalServices,
 		steamCleaningBeds,
@@ -876,7 +853,7 @@ export function ResidentialPriceCalculator() {
 											<span className="font-medium">
 												{serviceType === "residential"
 													? `${frequency.charAt(0).toUpperCase() + frequency.slice(1)} Cleaning (${squareFeet} sq ft)`
-													: `${otherService ? otherService.charAt(0).toUpperCase() + otherService.slice(1) : "Deep"} Cleaning (${squareFeet} sq ft)`}
+													: `${serviceType === "other" ? serviceType.charAt(0).toUpperCase() + serviceType.slice(1) : "deep"} Cleaning (${squareFeet} sq ft)`}
 											</span>
 											<span className="font-medium">${basePrice}</span>
 										</div>
