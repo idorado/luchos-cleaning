@@ -15,8 +15,8 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
     <main className="flex flex-col min-h-screen">
       <HeroSection
         category="SERVICES"
-        title={`Residential Services${location ? ` in ${location}` : ""}`}
-        description="A clean home protects your family, creates a comfortable environment, and leaves a lasting impression. We help your home thrive with top-quality professional cleaning."
+        title={`House Cleaning${location ? ` in ${location}` : ""}`}
+        description="Need house cleaning in denver near you? Kathy Clean offers affordable, top-rated solutions backed by satisfied local customers."
         linkUrl="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage"
         linkText="REQUEST A SERVICE"
         imgUrl="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
