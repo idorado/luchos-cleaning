@@ -10,8 +10,8 @@ import { Providers, PostHogProvider } from "@/components/providers"
 
 
 export const metadata: Metadata = {
-  title: "Kathy Clean",
-  description: "Residential and commercial cleaning services",
+  title: "Residential & Commercial Cleaning in Denver | Kathy Clean",
+  description: "Trusted for over 10 years, Kathy Clean offers top-rated residential and commercial cleaning, window cleaning, pressure washing, and more across Denver, Parker, Castle Rock, and surrounding areas. Backed by a 48-hour satisfaction guarantee.",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
 };
 
