@@ -1,3 +1,4 @@
+"use server"
 import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"

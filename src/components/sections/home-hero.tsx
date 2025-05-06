@@ -2,17 +2,19 @@ import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 const HomeHero = () => {
   return (
     <HeroSection>
-      <div className="space-y-4 md:space-y-6 text-white text-center p-4 md:text-left">
+      <div className="space-y-2 text-white text-center p-4 md:text-left">
+        <Badge className="">Clean Spaces, Brighter Lives</Badge>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
-          Clean <span className="text-background">Spaces</span>,<br />
-          <span className="text-background">Brighter </span>Lives
+          Top-rated <span className="text-background">Residential & Commercial</span><br />
+          Cleaning Services<span className="text-background"> in Denver</span> 
         </h1>
         <p className="text-lg">
-          We transform spaces into welcoming, safe, and productive environments where people thrive.
+          We deliver spotless, healthy, and welcoming environments—perfect for busy homes, productive offices, and everything in between.
         </p>
         <div className="pt-4">
           <Button
