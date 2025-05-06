@@ -123,7 +123,7 @@ export function Footer() {
 						<ul className="space-y-4">
 							<li>
 								<Link
-									href="/residential"
+									href="/house-cleaning-denver"
 									className="text-white hover:text-cyan-500"
 								>
 									Residential cleaning
@@ -131,7 +131,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/commercial"
+									href="/commercial-cleaning-denver"
 									className="text-white hover:text-cyan-500"
 								>
 									Commercial cleaning
@@ -139,7 +139,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/windows"
+									href="/window-cleaning-denver"
 									className="text-white hover:text-cyan-500"
 								>
 									Window washing
@@ -147,7 +147,7 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/other-services"
+									href="/other-services-denver"
 									className="text-white hover:text-cyan-500"
 								>
 									Other services
@@ -184,10 +184,10 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									href="/about-us"
+									href="/contact"
 									className="text-white hover:text-cyan-500"
 								>
-									About Us
+									Contact Us
 								</Link>
 							</li>
 						</ul>
