@@ -22,7 +22,7 @@ const HomeHero = () => {
             className="font-medium"
             asChild
           >
-            <Link href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage">
+            <Link href="/request-quote">
               REQUEST A QUOTE
             </Link>
           </Button>

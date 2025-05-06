@@ -1,4 +1,4 @@
-"use client";
+"use server"
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -19,10 +19,8 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-import { useState } from "react";
 
-export function Header() {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export async function Header() {
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">
 			<div className="container mx-auto px-4">
@@ -199,7 +197,7 @@ export function Header() {
 					</div>
 					<div className="hidden md:block">
 						<Button variant="default" className="font-medium" asChild>
-							<Link href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage">
+							<Link href="/request-quote">
 								REQUEST A QUOTE
 							</Link>
 						</Button>

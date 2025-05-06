@@ -17,7 +17,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
         category="SERVICES"
         title={`House Cleaning${location ? ` in ${location}` : ""}`}
         description="Need house cleaning in denver near you? Kathy Clean offers affordable, top-rated solutions backed by satisfied local customers."
-        linkUrl="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage"
+        linkUrl="/request-quote"
         linkText="REQUEST A SERVICE"
         imgUrl="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
         imgAlt="Professional residential cleaning service"
