@@ -61,7 +61,7 @@ const services: ServiceType[] = [
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomuTf8JIORAPXijlg8vVLbWSoDk4xMqEyCKh2B"
   },
   {
-    id: "window-washing",
+    id: "window-cleaning",
     name: "Window Washing",
     description: "Crystal clear windows that let natural light shine through and improve your view.",
     features: [

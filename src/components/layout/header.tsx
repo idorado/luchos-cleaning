@@ -82,7 +82,7 @@ export async function Header() {
 														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 													>
 														<div className="text-sm font-medium leading-none">
-															Window Washing
+															Window Cleaning
 														</div>
 														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
 															Crystal clear window cleaning
@@ -176,7 +176,7 @@ export async function Header() {
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
 									<Link href="/services/windows" className="w-full">
-										Window Washing
+										Window Cleaning
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>

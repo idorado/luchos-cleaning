@@ -228,7 +228,7 @@ export default function ContactPage() {
             </Card>
             <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-2">Window Washing</h3>
+                <h3 className="text-xl font-semibold mb-2">Window Cleaning</h3>
                 <p className="text-gray-600 mb-4">Interior & Exterior • Residential • Commercial • High-Rise</p>
                 <Button variant="outline" className="w-full" asChild>
                   <a href="/windows">Learn More</a>

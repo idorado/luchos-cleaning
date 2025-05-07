@@ -142,7 +142,7 @@ export function Footer() {
 									href="/window-cleaning-denver"
 									className="text-white hover:text-cyan-500"
 								>
-									Window washing
+									Window Cleaning
 								</Link>
 							</li>
 							<li>
