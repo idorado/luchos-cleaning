@@ -1,3 +1,4 @@
+"use client";
 import type { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,30 +15,34 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, imageAlt, link }) => {
   return (
-    <div className="flex flex-col gap-4 bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-[360px] sm:h-[500px]">
-      <div className="relative h-64 sm:h-80 md:h-96">
-        <Image 
-          src={imageUrl} 
-          alt={imageAlt} 
-          fill 
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover" 
-          priority
-        />
+    <Link href={link} className="group block focus:outline-none" tabIndex={-1} style={{ textDecoration: 'none' }}>
+      <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[370px] mx-auto h-full min-h-[500px] cursor-pointer">
+        <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
+          <Image 
+            src={imageUrl} 
+            alt={imageAlt} 
+            fill
+            sizes="370px"
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <div className="p-4 sm:p-6 flex flex-col flex-1">
+          <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">{title}</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-4">
+            {description}
+          </p>
+          <span onClick={e => e.stopPropagation()}>
+            <Button asChild variant="default" className="self-start mt-auto bg-primary/60 hover:bg-primary/70" tabIndex={0}>
+              <Link href={link} className="flex items-center gap-2 text-sm sm:text-base" tabIndex={0}>
+                Learn More
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+              </Link>
+            </Button>
+          </span>
+        </div>
       </div>
-      <div className="p-4 sm:p-6 flex flex-col justify-between h-full">
-        <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">{title}</h3>
-        <p className="text-sm sm:text-base text-gray-600 flex-1 mb-4 overflow-hidden">
-          {description}
-        </p>
-        <Button asChild variant="default" className="self-start mt-auto bg-primary/60 hover:bg-primary/70">
-          <Link href={link} className="flex items-center gap-2 text-sm sm:text-base">
-            Learn More
-            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-          </Link>
-        </Button>
-      </div>
-    </div>
+    </Link>
   );
 };
 
@@ -45,21 +50,21 @@ export default function OurServices() {
   const services = [
     {
       title: "Residential Cleaning",
-      description: "Enjoy a spotless home with our professional residential cleaning services in Denver and nearby areas. We handle kitchens, bathrooms, bedrooms, and more with eco-friendly products and attention to detail. Perfect for weekly, bi-weekly, or one-time deep cleans.", imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse",
+      description: "Enjoy a spotless home with our trusted residential cleaning services in Denver and surrounding areas. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.", imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
       imageAlt: "Professional cleaner with cleaning supplies in a modern kitchen",
       link: "/house-cleaning-denver"
     },
     {
       title: "Commercial Cleaning",
-      description: "Keep your workspace clean, healthy, and welcoming with our expert commercial cleaning services. We serve offices, clinics, retail spaces, and more across Denver and surrounding cities. Some of our clients include Whole Foods, Starbucks, Ikea, Rivian and Petsmart.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8nF7NwKhMCiFKE7nTrZgcpJWtXBskwHlzmqf",
+      description: "Keep your workspace clean, healthy, and professional with our expert commercial cleaning services. We serve offices, clinics, retail stores, and more across Denver area. Trusted by brands like Whole Foods, Starbucks, IKEA, Rivian, and PetSmart.",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV",
       imageAlt: "Professional cleaners working in an office space",
       link: "/commercial-cleaning-denver"
     },
     {
       title: "Window Cleaning",
       description: "Get crystal-clear windows that brighten your space and boost curb appeal. We provide streak-free window cleaning for homes and businesses, inside and out. Serving Denver, Parker, Castle Rock, and beyond with safe, professional care.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0KAm82nznWpD8lt52ycuGbAavdFLke9Ugf7J",
       imageAlt: "Professional window cleaner washing windows",
       link: "/window-cleaning-denver"
     },
@@ -79,7 +84,7 @@ export default function OurServices() {
     },
     {
       title: "Other Services",
-      description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
+      description: "Excellence is in the details. From emergency cleaning to move-in/move-out and post-construction cleaning, we follow rigorous checklists to ensure no spot is missed. Our team brings the same precision to every job—every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
       imageAlt: "Professional cleaner in protective gear providing sanitization services",
       link: "/other-services-denver"
@@ -88,12 +93,15 @@ export default function OurServices() {
 
   return (
     <section className="py-8 md:py-16 px-4 max-w-7xl mx-auto" id="services">
-      <div className="text-center mb-8 md:mb-12">
-  <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
-    Our Residential and Commercial Services from Denver to Castle Rock
+      <div className="mb-8 md:mb-12">
+  <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center">
+    Our Residential and Commercial<br />Services in Denver
   </h2>
   <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-    With over 10 years of experience, Kathy Clean provides top-rated residential and commercial cleaning across Denver and surrounding areas, including Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock. We also specialize in window cleaning, pressure washing, and gutter cleaning, all backed by our 48-hour satisfaction guarantee. Our expert team follows strict cleaning standards and offers eco-friendly options to give your home or business a spotless, healthy shine—every time.
+    With over <strong>10 years of experience</strong>, Kathy Clean provides top-rated residential and commercial cleaning in Denver, Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock.
+<br />
+<br />
+We also specialize in <strong>window cleaning</strong>, <strong>pressure washing</strong>, and <strong>gutter cleaning</strong>, all backed by our <strong>48-hour satisfaction guarantee</strong>.
   </p>
 </div>
 
