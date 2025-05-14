@@ -85,7 +85,7 @@ export default function OurServices() {
     {
       title: "Other Services",
       description: "Excellence is in the details. From emergency cleaning to move-in/move-out and post-construction cleaning, we follow rigorous checklists to ensure no spot is missed. Our team brings the same precision to every job—every time.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcyI8dPo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
       imageAlt: "Professional cleaner in protective gear providing sanitization services",
       link: "/other-services-denver"
     }

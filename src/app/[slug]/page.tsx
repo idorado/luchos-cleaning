@@ -51,7 +51,9 @@ export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   })));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const {slug} = await params;
   const { service, location } = getServiceAndLocation(slug);
 
@@ -59,6 +61,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `House Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
       description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+      alternates: {
+        canonical: `https://www.kathyclean.com/house-cleaning-${location?.id}`
+      }
     };
   }
 

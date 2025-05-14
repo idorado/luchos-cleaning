@@ -58,18 +58,18 @@ const services: ServiceType[] = [
       "Our equipment is calibrated to clean thoroughly without damaging delicate surfaces.",
       "Dramatically improves curb appeal and extends the life of your exterior surfaces."
     ],
-    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomuTf8JIORAPXijlg8vVLbWSoDk4xMqEyCKh2B"
+    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNysLnp8Qqho34HzWAgdjRlcDPJntsL1f2TIb"
   },
   {
     id: "window-cleaning",
-    name: "Window Washing",
+    name: "Window Cleaning",
     description: "Crystal clear windows that let natural light shine through and improve your view.",
     features: [
       "Professional-grade tools and solutions for streak-free, spotless windows.",
       "We clean both interior and exterior windows, including screens and tracks.",
       "Trained technicians can safely reach windows on upper floors."
     ],
-    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNysLnp8Qqho34HzWAgdjRlcDPJntsL1f2TIb"
+    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomuTf8JIORAPXijlg8vVLbWSoDk4xMqEyCKh2B"
   }
 ];
 

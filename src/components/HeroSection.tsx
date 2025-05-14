@@ -32,14 +32,14 @@ const HeroSection: FC<HeroSectionProps> = ({
   imgPriority = false,
 }) => {
   return (
-    <section className="relative bg-foreground overflow-hidden">
+    <section className="relative bg-foreground overflow-hidden min-h-[340px] md:min-h-[420px]">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {children ? (
             children
           ) : (
             <>
-              <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
+              <div className="space-y-4 md:space-y-6 py-16 md:py-24 text-white text-center md:text-left">
                 {category && <Badge className="bg-primary">{category}</Badge>}
                 {title && <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{title}</h1>}
                 {description && <p className="text-base sm:text-lg">{description}</p>}
