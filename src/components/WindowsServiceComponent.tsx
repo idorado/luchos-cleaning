@@ -11,7 +11,6 @@ import ReviewHighlight from "@/components/sections/review-highlight";
 import ReadyForCleaning from "@/components/sections/ready-for-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlight from "@/components/sections/service-area-highlight";
-import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator";
 
 interface WindowsServiceComponentProps {
   location: string;

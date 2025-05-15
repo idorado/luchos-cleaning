@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import CommercialServiceComponent from "@/components/CommercialServiceComponent";
 import WindowsServiceComponent from "@/components/WindowsServiceComponent";
 import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
+import type { Metadata } from "next";
 
 // Define services and locations
 const services = [
@@ -64,7 +65,6 @@ export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   })));
 }
 
-import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const {slug} = await params;
@@ -76,7 +76,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
       alternates: {
         canonical: `https://www.kathyclean.com/house-cleaning-${location?.id}`
-      }
+      },
+      openGraph: {
+        title: `House Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+        description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+        url: `https://www.kathyclean.com/house-cleaning-${location?.id}`,
+        siteName: 'Kathy Clean',
+        locale: 'en_US',
+        type: 'website',
+      },
     };
   }
 
@@ -84,13 +92,53 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `Commercial Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
       description: `Looking for commercial cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+      alternates: {
+        canonical: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`
+      },
+      openGraph: {
+        title: `Commercial Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+        description: `Looking for commercial cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+        url: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`,
+        siteName: 'Kathy Clean',
+        locale: 'en_US',
+        type: 'website',
+      },
     };
   }
 
   if (service?.id === 'window-cleaning') {
     return {
-      title: `Window Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-      description: `Looking for window cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+      title: `Window Cleaning ${location ? ` in ${location.name}` : ''} | Professional Window Cleaners`,
+      description: `Professional window cleaning services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team. Serving homes and businesses ${location? `in ${location?.name}` : ''} and surrounding areas.`,
+      alternates: {
+        canonical: `https://www.kathyclean.com/window-cleaning-${location?.id}`
+      },
+      openGraph: {
+        title: `Window Cleaning in ${location?.name} | Kathy Clean`,
+        description: `Professional window cleaning services in ${location?.name}. Get crystal clear windows with our expert team.`,
+        url: `https://www.kathyclean.com/window-cleaning-${location?.id}`,
+        siteName: 'Kathy Clean',
+        locale: 'en_US',
+        type: 'website',
+      },
+    };
+  }
+
+  if (service?.id === 'pressure-washing') {
+    return {
+      title: `Pressure Washing ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+      description: `Professional pressure washing services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team. Serving homes and businesses ${location? `in ${location?.name}` : ''} and surrounding areas.`,
+      alternates: {
+        canonical: `https://www.kathyclean.com/pressure-washing-${location?.id}`
+      },
+      openGraph: {
+        title: `Pressure Washing ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+        description: `Professional pressure washing services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team.`,
+        url: `https://www.kathyclean.com/pressure-washing-${location?.id}`,
+        siteName: 'Kathy Clean',
+        locale: 'en_US',
+        type: 'website',
+      },
     };
   }
 
@@ -122,6 +170,7 @@ export default async function ServiceLocationPage({ params }: { params: Promise<
   if (service?.id === 'window-cleaning'){
     return <WindowsServiceComponent location={location?.name || ''} />
   }
+
 
 
   return notFound();
