@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {GoogleTagManager} from "@next/third-parties/google"
+import Script from "next/script"
 import "./globals.css";
 
 import { Header } from "@/components/layout/header"
@@ -29,6 +30,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-M3T7KSXH" />
+      {/* Google tag (gtag.js) */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17062489970" strategy="afterInteractive"/>
+<Script id="gtag-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17062489970');
+  `}
+</Script>
+
       <body className="antialiased"> 
         <PostHogProvider>
 
@@ -44,6 +56,23 @@ export default function RootLayout({
           <Toaster />
         </Providers>
         </PostHogProvider>
+        <Script id="tally-conversion-listener" strategy="afterInteractive">
+  {`
+    window.addEventListener("message", function(event) {
+      if (
+        event.origin === "https://tally.so" &&
+        typeof event.data === "string" &&
+        event.data.includes('"event":"Tally.FormSubmitted"')
+      ) {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-17062489970/XHAECLjasMkaEPLeg8g_",
+          });
+        }
+      }
+    });
+  `}
+</Script>
       </body>
     </html>
   );
