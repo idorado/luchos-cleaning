@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import {GoogleTagManager} from "@next/third-parties/google"
 import Script from "next/script"
+import { Poppins } from "next/font/google"
 import "./globals.css";
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Providers, PostHogProvider } from "@/components/providers"
+import { PostHogProvider } from "@/components/providers"
 
 
 export const metadata: Metadata = {
@@ -21,13 +22,18 @@ export const metadata: Metadata = {
   }
 };
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <GoogleTagManager gtmId="GTM-M3T7KSXH" />
       {/* Google tag (gtag.js) */}
       <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17062489970" strategy="afterInteractive"/>
@@ -43,7 +49,6 @@ export default function RootLayout({
       <body className="antialiased"> 
         <PostHogProvider>
 
-        <Providers>
           <div className="min-h-screen flex flex-col">
       
             <Header />
@@ -52,7 +57,6 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
-        </Providers>
         </PostHogProvider>
         <Script id="tally-conversion-listener" strategy="afterInteractive">
   {`
