@@ -1,0 +1,27 @@
+import { ThumbsUp, Users, ShieldCheck } from "lucide-react";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
+import WhyTrustBenefits from "@/components/sections/why-trust-benefits";
+
+interface WhyTrustWindowCleaningProps {
+  location?: string;
+}
+
+export default function WhyTrustWindowCleaning({ location }: WhyTrustWindowCleaningProps) {
+  return (
+    <section className="bg-[#F4F4F4] border-t border-b border-border py-12 md:py-16">
+      <div className="max-w-5xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-navy-800 mb-4">
+          Why {location || 'Denver'} Trusts Our Window Cleaning Services
+        </h2>
+        <p className="text-base md:text-lg text-[#454545] max-w-4xl mx-auto text-left mb-10">
+          We've been cleaning windows across Colorado for over a decade, from homes to storefronts, and even solar panels. Previously known as Cthru Cleaning Services, our experienced team delivers spotless results with care, professionalism, and attention to detail.
+        </p>
+        <WhyTrustBenefits />
+        
+        <div className="flex justify-center">
+          <RequestQuoteButton />
+        </div>
+      </div>
+    </section>
+  );
+}

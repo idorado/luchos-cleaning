@@ -24,22 +24,40 @@ export default function WindowCleaningBenefits() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[#F8FAFC] rounded-2xl shadow p-6 flex flex-col items-center text-center">
-            <div className="mb-4">
-              <svg width="40" height="40" fill="none" viewBox="0 0 40 40"><path d="M20 3v34M3 20h34" stroke="#1E293B" strokeWidth="2" strokeLinecap="round"/><circle cx="20" cy="20" r="18" stroke="#1E293B" strokeWidth="2"/></svg>
+            <div className="mb-4 w-10 h-10 relative">
+              <Image 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8bCv1OKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" 
+                alt="Curb appeal icon"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <h4 className="text-xl font-bold text-navy-800 mb-2">Boosts Curb Appeal</h4>
             <p className="text-navy-700">Clean windows make your home or business look cared for — inside and out. It’s one of the easiest ways to improve first impressions.</p>
           </div>
           <div className="bg-[#F8FAFC] rounded-2xl shadow p-6 flex flex-col items-center text-center">
-            <div className="mb-4">
-              <svg width="40" height="40" fill="none" viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="2" stroke="#1E293B" strokeWidth="2"/><path d="M20 8v24" stroke="#1E293B" strokeWidth="2"/></svg>
+            <div className="mb-4 w-10 h-10 relative">
+              <Image 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomCQ0qvZWmdS94e3Vt5PNnp8hM7jiI6fuBvsZx" 
+                alt="Glass protection icon"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <h4 className="text-xl font-bold text-navy-800 mb-2">Prevents Glass Damage</h4>
             <p className="text-navy-700">Hard water stains and dirt buildup can etch and damage glass over time. Regular cleaning protects your windows and extends their life.</p>
           </div>
           <div className="bg-[#F8FAFC] rounded-2xl shadow p-6 flex flex-col items-center text-center">
-            <div className="mb-4">
-              <svg width="40" height="40" fill="none" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" stroke="#1E293B" strokeWidth="2"/><path d="M20 8v4M20 28v4M8 20h4M28 20h4" stroke="#1E293B" strokeWidth="2"/></svg>
+            <div className="mb-4 w-10 h-10 relative">
+              <Image 
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2AdwQa1J6JbmpXdcT7olMHiQWCShrEqx84YZ" 
+                alt="Natural light icon"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <h4 className="text-xl font-bold text-navy-800 mb-2">Better Natural Light</h4>
             <p className="text-navy-700">Dirty windows block sunlight. Clean windows let more light in, making your space brighter and more welcoming.</p>

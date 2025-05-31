@@ -79,36 +79,19 @@ export default async function OurServices() {
 		{
 			title: "Window Cleaning",
 			description:
-				"Get crystal-clear windows that brighten your space and boost curb appeal. We provide streak-free window cleaning for homes and businesses, inside and out. Serving Denver, Parker, Castle Rock, and beyond with safe, professional care.",
+				"Get crystal-clear windows that brighten your space. We offer streak-free window cleaning for homes, offices, storefronts, and more. We use professional tools and eco-friendly products for a flawless finish every time. Proudly serving Denver, Parker, Castle Rock, Lone Tree, and surrounding areas.",
 			imageUrl:
 				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0KAm82nznWpD8lt52ycuGbAavdFLke9Ugf7J",
 			imageAlt: "Professional window cleaner washing windows",
 			link: "/window-cleaning-denver",
 		},
-		{
-			title: "Pressure Washing",
-			description:
-				"Restore the look of your exterior surfaces with our high-powered pressure washing services. We clean driveways, patios, siding, fences, and more, removing dirt, grime, and buildup. Ideal for homes and commercial properties across the Denver area.",
-			imageUrl:
-				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNysLnp8Qqho34HzWAgdjRlcDPJntsL1f2TIb",
-			imageAlt: "Professional using a pressure washer on an exterior surface",
-			link: "/pressure-washing-denver",
-		},
-		{
-			title: "Gutter Cleaning",
-			description:
-				"Prevent clogs and water damage with our thorough gutter cleaning service. We remove debris and ensure smooth drainage for homes and buildings of all sizes. Reliable, mess-free service across Denver, Highlands Ranch, Lone Tree, and more.",
-			imageUrl:
-				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomeqbllFgQpAgcBK3Nd2aXOnqjJo4Lvf0YytD6",
-			imageAlt: "Technician cleaning residential gutters on a ladder",
-			link: "/gutter-cleaning-denver",
-		},
+
 		{
 			title: "Other Services",
 			description:
-				"Excellence is in the details. From emergency cleaning to move-in/move-out and post-construction cleaning, we follow rigorous checklists to ensure no spot is missed. Our team brings the same precision to every job—every time.",
+				"From emergency cleaning and move-in/move-out services to post-construction cleaning, pressure washing, and gutter cleaning, we serve Denver and surrounding areas with precision. Our team follows detailed checklists to ensure no spot is missed—every job, every time.",
 			imageUrl:
-				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcyI8dPo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
+				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomxFeTU8PQRcBU1VN4YrWbTIXj8k39sPLKdZiv",
 			imageAlt:
 				"Professional cleaner in protective gear providing sanitization services",
 			link: "/other-services-denver",
@@ -125,21 +108,21 @@ export default async function OurServices() {
 				</h2>
 				<p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
 					With over <strong>10 years of experience</strong>, Kathy Clean
-					provides top-rated residential and commercial cleaning in Denver,
+					provides top-rated residential and commercial cleaning services in Denver,
 					Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop,
 					Washington Park, Cherry Creek, University Park, Highland, and Castle
 					Rock.
 					<br />
 					<br />
-					We also specialize in <strong>window cleaning</strong>,{" "}
-					<strong>pressure washing</strong>, and{" "}
-					<strong>gutter cleaning</strong>, all backed by our{" "}
+					We specialize in <strong>residential cleaning</strong>,{" "}
+					<strong>commercial cleaning</strong>, and{" "}
+					<strong>window cleaning</strong>, all backed by our{" "}
 					<strong>48-hour satisfaction guarantee</strong>.
 				</p>
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
-				{services.map((service) => (
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 max-w-5xl mx-auto">
+				{services.slice(0, 4).map((service) => (
 					<div
 						key={service.title}
 						className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"

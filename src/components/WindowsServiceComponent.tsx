@@ -5,9 +5,9 @@ import Link from "next/link";
 import PhoneButton from "@/components/PhoneButton";
 import AdditionalServices from "@/components/AdditionalServices";
 import { ServiceCards } from "@/components/cards/services";
-import WhyTrustUsSection from "@/components/sections/why-trust-us";
+import WhyTrustWindowCleaning from "@/components/sections/why-trust-window-cleaning";
 import WhyBusinessesHomesChooseUs from "@/components/sections/why-businesses-homes-choose-us";
-import ReviewHighlight from "@/components/sections/review-highlight";
+import ReviewHighlightWindowCleaning from "@/components/sections/review-highlight-window-cleaning";
 import ReadyForWindowCleaning from "@/components/sections/ready-for-window-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightWindowCleaning from "@/components/sections/service-area-highlight-window-cleaning";
@@ -43,19 +43,19 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
           <img
-            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom7kikp9ZtXGKlhay63LPE1S0ONMW59oTDszeB"
+            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkroY4QBMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp"
             alt="Professional window cleaning service"
-            width={480}
-            height={480}
+            width={400}
+            height={400}
             className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 480, maxHeight: 480 }}
+            style={{ color: 'transparent', maxWidth: 400, maxHeight: 400 }}
           />
         </div>
       </HeroSection>
 
-      <WhyTrustUsSection location={location} serviceType="window cleaning" />
+      <WhyTrustWindowCleaning location={location} />
       <WhyBusinessesHomesChooseUs />
-      <ReviewHighlight location={location} />
+      <ReviewHighlightWindowCleaning location={location} />
       <ThreeStepProcess />
       <ReadyForWindowCleaning location={location} />
       <ServiceAreaHighlightWindowCleaning location={location} />

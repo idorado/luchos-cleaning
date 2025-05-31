@@ -28,8 +28,7 @@ export function Header() {
 		{ href: '/house-cleaning-denver', title: 'Residential Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-denver', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 		{ href: '/window-cleaning-denver', title: 'Window Cleaning', description: 'Crystal clear window cleaning' },
-		{ href: '/pressure-washing-denver', title: 'Pressure Washing', description: 'Professional pressure washing services' },
-		{ href: '/gutter-cleaning-denver', title: 'Gutter Cleaning', description: 'Cleaning and maintenance of gutters and downspouts' },
+		{ href: '/other-services-denver', title: 'Other Services', description: 'Pressure washing, Gutter cleaning, emergency cleaning and more' },
 	];
 	const locations = [
 		{ href: '/house-cleaning-denver', name: 'Denver' },
