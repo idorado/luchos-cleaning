@@ -8,9 +8,10 @@ interface CtaButtonProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-export const CtaButton = ({ href, children, className }: CtaButtonProps) => {
+export const CtaButton = ({ href, children, className, onClick }: CtaButtonProps) => {
   const params = useSearchParams();
   const query = Object.fromEntries(params.entries());
   return (
@@ -22,6 +23,7 @@ export const CtaButton = ({ href, children, className }: CtaButtonProps) => {
       className={cn(
         className
       )}
+      onClick={onClick}
     >
       {children}
     </Link>
