@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -11,7 +12,7 @@ interface CtaButtonProps {
   onClick?: () => void;
 }
 
-export const CtaButton = ({ href, children, className, onClick }: CtaButtonProps) => {
+const CtaButtonWrapper = ({ href, children, className, onClick }: CtaButtonProps) => {
   const params = useSearchParams();
   const query = Object.fromEntries(params.entries());
   return (
@@ -27,5 +28,15 @@ export const CtaButton = ({ href, children, className, onClick }: CtaButtonProps
     >
       {children}
     </Link>
+  )
+}
+
+export const CtaButton = ({ href, children, className, onClick }: CtaButtonProps) => {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center h-full">Loading...</div>}>
+      <CtaButtonWrapper href={href} className={className} onClick={onClick}>
+        {children}
+      </CtaButtonWrapper>
+    </Suspense>
   );
 };
