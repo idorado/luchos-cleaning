@@ -1,6 +1,7 @@
 import { TbHomeStar, TbWindow, TbSun } from "react-icons/tb";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { CtaButton } from "@/components/ui/CtaButton";
+import { Link } from "lucide-react";
 
 export default function WhyCleanBenefits() {
   return (
@@ -32,7 +33,7 @@ export default function WhyCleanBenefits() {
             className="font-medium mx-auto px-8 py-3 text-lg shadow-lg hover:scale-105 transition-all"
             asChild
           >
-            <Link href="/request-quote">REQUEST A QUOTE</Link>
+            <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
           </Button>
         </div>
       </div>

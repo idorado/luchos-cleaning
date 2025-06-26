@@ -3,6 +3,7 @@ import { Star } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import AutoPlay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
+import { CtaButton } from "@/components/ui/CtaButton";
 import {
   Carousel,
   CarouselContent,
@@ -116,7 +117,7 @@ export function Testimonial() {
         className="mt-6 font-medium mx-auto"
         asChild
       >
-        <Link href="/request-quote">REQUEST A QUOTE</Link>
+        <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
       </Button>
     </div>
   )

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { CtaButton } from "@/components/ui/CtaButton";
 import PhoneButton from "@/components/PhoneButton";
 
 const HomeHero = () => {
@@ -22,9 +23,9 @@ const HomeHero = () => {
             className="font-medium"
             asChild
           >
-            <Link href="/request-quote">
+            <CtaButton href="/request-quote">
               REQUEST A QUOTE
-            </Link>
+            </CtaButton>
           </Button>
           <PhoneButton />
         </div>

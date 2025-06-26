@@ -1,5 +1,5 @@
 import React from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Button } from "@/components/ui/button";
 import PhoneButton from "@/components/PhoneButton";
 import { ArrowRight, Phone } from "lucide-react";
@@ -66,7 +66,7 @@ export default function OtherServicesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild className="bg-primary hover:bg-primary/90 text-black">
-                  <Link href="/request-quote" className="flex items-center">
+                  <CtaButton href="/request-quote" className="flex items-center">
                     Request a Quote
                   </Link>
                 </Button>
