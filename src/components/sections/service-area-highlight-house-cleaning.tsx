@@ -20,12 +20,17 @@ const MAP_IFRAME_URLS: Record<string, string> = {
 export default function ServiceAreaHighlightHouseCleaning({ location }: ServiceAreaHighlightHouseCleaningProps) {
   const loc = location || "Denver";
   const mapUrl = MAP_IFRAME_URLS[loc] || MAP_IFRAME_URLS["Denver"];
+  // Get the base location for the map (Denver for neighborhoods, specific city for others)
+  const baseLocation = loc.includes('Park') || loc === 'Highland' || loc === 'Hilltop' || loc === 'Cherry Creek' 
+    ? 'Denver' 
+    : loc;
+
   return (
     <section className="py-12">
       <div className="max-w-4xl mx-auto rounded-3xl bg-white px-6 py-10 flex flex-col items-center text-center shadow-lg">
-        <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Servicing the {loc} Area</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Servicing {loc}</h2>
         <p className="text-lg text-navy-700 mb-8">
-          Our house cleaning team proudly serves Denver and its surrounding neighborhoods, ensuring a spotless home wherever you are in the city.
+          Our house cleaning team proudly serves {loc} and its surrounding areas, ensuring a spotless home for all our clients in the {baseLocation} region.
         </p>
         <div className="w-full h-96 rounded-xl overflow-hidden">
           <iframe

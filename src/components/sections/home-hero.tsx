@@ -10,9 +10,10 @@ const HomeHero = () => {
   return (
     <HeroSection>
       <div className="space-y-2 text-white text-center p-4 md:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
-          Top-rated <span className="text-background">Residential & Commercial</span><br />
-          Cleaning Services<span className="text-background"> in Denver</span> 
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          <span className="text-primary">House & Commercial Cleaning</span>
+          <br />
+          <span className="text-background">Experts in Denver, Centennial, Parker & Castle Rock.</span>
         </h1>
         <p className="text-lg">
           We deliver spotless, healthy, and welcoming environments—perfect for busy homes, productive offices, and everything in between.

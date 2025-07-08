@@ -17,11 +17,11 @@ const testimonials = [
   {
     id: "fe6c0a96-0add-4234-beca-42bbd7597fd8",
     quote: "I have been with Kathy Clean for years and am totally happy.  They do a great job and I'm highly satisfied.  I would recommend their service!",
-    author: "nonya durham",
+    author: "Nonya Durham",
     role: "Homeowner",
     service: "Residential Cleaning",
     created_at: "2025-03-10 16:35:24.187303+00",
-    updated_at: "2025-03-10 16:35:24.187303+00"
+    updated_at: "2025-07-07 22:09:33-03:00"
   },
   {
     id: "4ef1a912-a011-4cff-bb06-106ddecc7f29",
@@ -52,12 +52,12 @@ const testimonials = [
   },
   {
     id: "51e43889-ccbc-4a21-a007-42495e2bbbab",
-    quote: "Alicia has always done a great job",
-    author: "Gordon Harvey",
+    quote: "I've used Kathy Clean for many years and am impressed with how their cleaners are personable and have a high attention to detail. The front scheduling staff are great(!) and work hard to accommodate special requests. Highly recommend Kathy Clean.",
+    author: "Rik Williams",
     role: "",
     service: "",
     created_at: "2025-03-10 16:35:24.187303+00",
-    updated_at: "2025-03-10 16:36:30+00"
+    updated_at: "2025-07-07 22:08:01-03:00"
   },
   {
     id: "6cc7ae1b-3b56-41b8-bb15-680068f1350d",
@@ -91,7 +91,7 @@ export function Testimonial() {
                 <CardContent className="pt-4 pb-4 px-4 flex-1 flex flex-col">
                   <div className="flex items-center gap-1 mb-2">
                     {Array(5).fill(0).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   <p className="text-[15px] text-gray-700 leading-snug mb-4 line-clamp-5">{testimonial.quote}</p>

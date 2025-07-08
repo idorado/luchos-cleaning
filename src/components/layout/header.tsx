@@ -26,10 +26,10 @@ import React, { useState } from "react";
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const services = [
-		{ href: '/house-cleaning-denver', title: 'Residential Cleaning', description: 'Professional home cleaning services' },
+		{ href: '/house-cleaning-denver', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-denver', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 		{ href: '/window-cleaning-denver', title: 'Window Cleaning', description: 'Crystal clear window cleaning' },
-		{ href: '/other-services-denver', title: 'Other Services', description: 'Pressure washing, Gutter cleaning, emergency cleaning and more' },
+		{ href: '/other-services-denver', title: 'Other Services', description: 'Pressure Washing, Post Construction Cleaning, Emergency Cleaning and more' },
 	];
 	const locations = [
 		{ href: '/house-cleaning-denver', name: 'Denver' },
@@ -98,6 +98,7 @@ export function Header() {
 									</DropdownMenu>
 									<Link href="/service-areas" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Locations</Link>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
 									<CtaButton href="/request-quote" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Request a Quote</CtaButton>
 									<div className="mt-2"><PhoneButton /></div>
 								</nav>
@@ -139,6 +140,13 @@ export function Header() {
 									<NavigationMenuLink asChild>
 										<Link href="/about-us" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
 											About Us
+										</Link>
+									</NavigationMenuLink>
+								</NavigationMenuItem>
+								<NavigationMenuItem>
+									<NavigationMenuLink asChild>
+										<Link href="/work-with-us" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
+											Work With Us
 										</Link>
 									</NavigationMenuLink>
 								</NavigationMenuItem>

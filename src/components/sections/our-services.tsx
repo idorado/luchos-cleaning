@@ -40,9 +40,9 @@ const ServiceCard: FC<ServiceCardProps> = ({
 					/>
 				</div>
 				<div className="p-4 sm:p-6 flex flex-col flex-1">
-					<h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">
+					<h2 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">
 						{title}
-					</h3>
+					</h2>
 					<p className="text-sm sm:text-base text-gray-600 mb-4">
 						{description}
 					</p>
@@ -59,9 +59,9 @@ const ServiceCard: FC<ServiceCardProps> = ({
 export default async function OurServices() {
 	const services = [
 		{
-			title: "Residential Cleaning",
+			title: "House Cleaning",
 			description:
-				"Enjoy a spotless home with our trusted residential cleaning services in Denver and surrounding areas. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.",
+				"Enjoy a spotless home with our trusted house cleaning services in Denver and surrounding areas. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.",
 			imageUrl:
 				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
 			imageAlt:
@@ -71,7 +71,7 @@ export default async function OurServices() {
 		{
 			title: "Commercial Cleaning",
 			description:
-				"Keep your workspace clean, healthy, and professional with our expert commercial cleaning services. We serve offices, clinics, retail stores, and more across Denver area. Trusted by brands like Whole Foods, Starbucks, IKEA, Rivian, and PetSmart.",
+				"Keep your workspace clean, healthy, and professional with our expert janitorial services. We serve offices, clinics, retail stores, and more across Denver area. Trusted by brands like Whole Foods, Starbucks, IKEA, Rivian, and PetSmart.",
 			imageUrl:
 				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV",
 			imageAlt: "Professional cleaners working in an office space",
@@ -88,9 +88,9 @@ export default async function OurServices() {
 		},
 
 		{
-			title: "Other Services",
+			title: "Other Cleaning Services",
 			description:
-				"From emergency cleaning and move-in/move-out services to post-construction cleaning, pressure washing, and gutter cleaning, we serve Denver and surrounding areas with precision. Our team follows detailed checklists to ensure no spot is missed—every job, every time.",
+				"From emergency cleaning and move-in/move-out services to post-construction cleaning, and pressure washing, we serve Denver and surrounding areas with precision. Our team follows detailed checklists to ensure no spot is missed—every job, every time.",
 			imageUrl:
 				"https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomxFeTU8PQRcBU1VN4YrWbTIXj8k39sPLKdZiv",
 			imageAlt:
@@ -103,23 +103,25 @@ export default async function OurServices() {
 		<section className="py-8 md:py-16 px-4 max-w-7xl mx-auto" id="services">
 			<div className="mb-8 md:mb-12">
 				<h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center">
-					Our Residential and Commercial
+					Our House and Commercial Cleaning
 					<br />
-					Services in Denver
+					Services in Denver Area
 				</h2>
 				<p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-					With over <strong>10 years of experience</strong>, Kathy Clean
-					provides top-rated residential and commercial cleaning services in Denver,
-					Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop,
-					Washington Park, Cherry Creek, University Park, Highland, and Castle
-					Rock.
-					<br />
-					<br />
-					We specialize in <strong>residential cleaning</strong>,{" "}
-					<strong>commercial cleaning</strong>, and{" "}
-					<strong>window cleaning</strong>, all backed by our{" "}
-					<strong>48-hour satisfaction guarantee</strong>.
+					With over <strong>10 years of experience</strong>, Kathy Clean delivers top-rated house cleaning and commercial cleaning services across the Denver area. We proudly serve neighborhoods and cities including Denver, Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock.
 				</p>
+
+				<div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
+					We specialize in:
+					<ul className="list-disc pl-6 mt-2 space-y-2">
+						<li>House cleaning (regular, deep, move-in/move-out)</li>
+						<li>Commercial and office cleaning</li>
+						<li>Window cleaning</li>
+					</ul>
+					<p className="mt-4">
+						All services are backed by our <strong>48-hour satisfaction guarantee</strong> — your peace of mind is our priority.
+					</p>
+				</div>
 			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 max-w-5xl mx-auto">
