@@ -10,7 +10,6 @@ const services = [
   { id: 'commercial-cleaning', name: 'Commercial Cleaning', description: 'Comprehensive cleaning solutions for businesses and commercial spaces.' },
   { id: 'window-cleaning', name: 'Window Cleaning', description: 'Crystal clear windows inside and out for homes and businesses.' },
   { id: 'pressure-washing', name: 'Pressure Washing', description: 'High-powered cleaning for exterior surfaces.' },
-  { id: 'gutter-cleaning', name: 'Gutter Cleaning', description: 'Thorough cleaning and maintenance of gutters and downspouts.' },
 ];
 
 const locations = [
