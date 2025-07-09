@@ -2,8 +2,6 @@ export const services = [
   'house-cleaning',
   'commercial-cleaning',
   'window-cleaning',
-  'pressure-washing',
-  'gutter-cleaning',
 ] as const;
 
 export const locations = [
