@@ -97,7 +97,7 @@ export default function RequestQuote() {
         {/* Left Column - Cards */}
         <div className="w-full lg:w-1/2 space-y-6">
           {/* Why Choose Kathy Clean Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+          <div className="bg-white/50 p-6 rounded-lg shadow-md border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Kathy Clean?</h3>
             
             {/* Item 1 */}
@@ -154,7 +154,7 @@ export default function RequestQuote() {
           </div>
           
           {/* Testimonials Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white/50 p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-bold text-gray-900 mb-6">What Our Customers Say</h3>
             
             {/* Testimonial 1 */}
@@ -204,7 +204,7 @@ export default function RequestQuote() {
           </div>
           
           {/* Get In Touch Card */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white/50 p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Get In Touch</h3>
             <p className="text-gray-600 mb-4">
               Our friendly team is here to answer your questions and help you book your cleaning service.

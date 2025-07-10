@@ -15,13 +15,38 @@ import { ResidentialPriceCalculator } from "@/components/tools/residential-price
 
 // Accept location as prop
 interface ResidentialServiceComponentProps {
-  location: string;
+  location?: string; // Haciendo location opcional con el operador ?
 }
 
 
-const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = async ({ location }) => {
-  // Format location for display
-  const displayLocation = location || 'Denver';
+// Mapeo de ubicaciones a URLs de Google Maps
+const locationMapUrls: { [key: string]: string } = {
+  'Denver': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196281.12940378934!2d-104.9951965!3d39.7642549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sDenver%2C%20CO!5e0!3m2!1sen!2sus!4v1620000000000',
+  'Englewood': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102823.62253929685!2d-104.994167!3d39.647765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sEnglewood%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Greenwood Village': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196281.12940378934!2d-104.9018105!3d39.6092059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sGreenwood%20Village%2C%20CO!5e0!3m2!1sen!2sus!4v1620000000000',
+  'Littleton': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102823.62253929685!2d-105.008057!3d39.613321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sLittleton%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Parker': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30652.60938438324!2d-104.7809982!3d39.5186001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c8b2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sParker%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Castle Rock': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102823.62253929685!2d-104.9594353!3d39.3722128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sCastle%20Rock%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Lone Tree': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9362517!3d39.534801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sLone%20Tree%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Highlands Ranch': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102784.0012590511!2d-105.0212517!3d39.543236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sHighlands%20Ranch%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Centennial': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102823.62253929685!2d-104.9951986!3d39.6470058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7f7a3c25cfa3%3A0x74c9fb8a0c3f23ea!2sCentennial%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Central Park': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9342517!3d39.757236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sCentral%20Park%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Hilltop': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9952517!3d39.728236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sHilltop%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Washington Park': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9712517!3d39.703236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sWashington%20Park%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Cherry Creek': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9952517!3d39.728236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sCherry%20Creek%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'University Park': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-104.9952517!3d39.668236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sUniversity%20Park%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus',
+  'Highland': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-105.0152517!3d39.758236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sHighland%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus'
+};
+
+// Función para obtener la URL del mapa según la ubicación
+const getMapUrl = (location: string | undefined): string => {
+  const loc = location || 'Denver';
+  return locationMapUrls[loc] || locationMapUrls['Denver'];
+};
+
+const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = async ({ location = 'Denver' }) => {
+  // Format location for display - asegurando que siempre sea un string
+  const displayLocation = typeof location === 'string' ? location : 'Denver';
   const isDenverArea = ['Denver', 'Central Park', 'Hilltop', 'Washington Park', 'Cherry Creek', 'University Park', 'Highland'].includes(displayLocation);
   
   return (
