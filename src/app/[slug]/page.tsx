@@ -3,12 +3,16 @@ import CommercialServiceComponent from "@/components/CommercialServiceComponent"
 import WindowsServiceComponent from "@/components/WindowsServiceComponent";
 import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
 import type { Metadata } from "next";
+import { MoveInMoveOutServiceComponent } from '@/components/MoveInMoveOutServiceComponent';
+import PostConstructionServiceComponent from '@/components/PostConstructionServiceComponent';
 
 // Define services and locations
 const services = [
   { id: 'house-cleaning', name: 'House Cleaning', description: 'Professional residential cleaning services for your home.' },
   { id: 'commercial-cleaning', name: 'Commercial Cleaning', description: 'Comprehensive cleaning solutions for businesses and commercial spaces.' },
   { id: 'window-cleaning', name: 'Window Cleaning', description: 'Crystal clear windows inside and out for homes and businesses.' },
+  { id: 'move-in-move-out', name: 'Move In Move Out', description: 'Crystal clear windows inside and out for homes and businesses.' },
+  { id: 'post-construction', name: 'Post Construction', description: 'Crystal clear windows inside and out for homes and businesses.' },
 ];
 
 const locations = [
@@ -42,15 +46,14 @@ const locations = [
   { id: 'watkins', name: 'Watkins', description: 'Affordable and expert cleaning in Watkins.' },
 ];
 
-function parseSlug(slug: string) {
-  const parts = slug.split('-');
-  let serviceEndIndex = 1;
-  if (['house', 'commercial', 'window'].includes(parts[0] || '')) {
-    serviceEndIndex = 2;
+function parseSlug(slug: string): { serviceId: string | null; locationId: string | null } {
+  for (const service of services) {
+    if (slug.startsWith(service.id)) {
+      const locationId = slug.substring(service.id.length + 1);
+      return { serviceId: service.id, locationId };
+    }
   }
-  const serviceId = parts.slice(0, serviceEndIndex).join('-');
-  const locationId = parts.slice(serviceEndIndex).join('-');
-  return { serviceId, locationId };
+  return { serviceId: null, locationId: null };
 }
 
 function getServiceAndLocation(slug: string) {
@@ -66,71 +69,38 @@ export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   })));
 }
 
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const {slug} = await params;
   const { service, location } = getServiceAndLocation(slug);
 
-  if (service?.id === 'house-cleaning') {
+  if (!service) {
     return {
-      title: `House Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-      description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
-      alternates: {
-        canonical: `https://www.kathyclean.com/house-cleaning-${location?.id}`
-      },
-      openGraph: {
-        title: `House Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-        description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
-        url: `https://www.kathyclean.com/house-cleaning-${location?.id}`,
-        siteName: 'Kathy Clean',
-        locale: 'en_US',
-        type: 'website',
-      },
+      title: 'Service Not Found | Kathy Clean',
+      description: 'The requested service could not be found.',
     };
   }
 
-  if (service?.id === 'commercial-cleaning') {
-    return {
-      title: `Commercial Cleaning Services in ${location?.name || 'Denver'} | Kathy Clean`,
-      description: `Professional commercial cleaning services${location ? ` in ${location.name}` : ''}. Trusted by businesses across the area.`,
-      alternates: {
-        canonical: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`
-      },
-      openGraph: {
-        title: `Commercial Cleaning Services in ${location?.name || 'Denver'} | Kathy Clean`,
-        description: `Professional commercial cleaning services${location ? ` in ${location.name}` : ''}. Trusted by businesses across the area.`,
-        url: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`,
-        siteName: 'Kathy Clean',
-        locale: 'en_US',
-        type: 'website',
-      },
-    };
-  }
-
-  if (service?.id === 'window-cleaning') {
-    return {
-      title: `Window Cleaning ${location ? ` in ${location.name}` : ''} | Professional Window Cleaners`,
-      description: `If you're looking for window cleaning companies in ${location?.name || 'Denver'}, CO, look no further than Kathy Clean Window Cleaning. Learn more about our services.`,
-      alternates: {
-        canonical: `https://www.kathyclean.com/window-cleaning-${location?.id}`
-      },
-      openGraph: {
-        title: `Window Cleaning in ${location?.name || 'Denver'} | Kathy Clean`,
-        description: `If you're looking for window cleaning companies in ${location?.name || 'Denver'}, CO, look no further than Kathy Clean Window Cleaning. Learn more about our services.`,
-        url: `https://www.kathyclean.com/window-cleaning-${location?.id}`,
-        siteName: 'Kathy Clean',
-        locale: 'en_US',
-        type: 'website',
-      },
-    };
-  }
-
+  const locationName = location ? ` in ${location.name}` : '';
+  const title = `${service.name}${locationName} | Kathy Clean`;
+  const description = `Looking for ${service.name.toLowerCase()} near you${locationName}? Kathy Clean offers trusted and affordable services. Book a free quote today.`;
+  const canonical = `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : ''}`;
 
   return {
-    title: '404 Not Found | Kathy Clean',
-    description: 'Page not found',
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: 'Kathy Clean',
+      locale: 'en_US',
+      type: 'website',
+    },
   };
-} 
+}
 
 export default async function ServiceLocationPage({ params }: { params: Promise<{ slug: string }> }) {
   // Check if slug is valid
@@ -141,21 +111,19 @@ export default async function ServiceLocationPage({ params }: { params: Promise<
   }
   
   const { service, location } = getServiceAndLocation(slug);
- 
 
-  if (service?.id === 'house-cleaning'){
-    return <ResidentialServiceComponent location={location?.name || ''} />;
+  switch (service?.id) {
+    case 'house-cleaning':
+      return <ResidentialServiceComponent location={location?.name || ''} />;
+    case 'commercial-cleaning':
+      return <CommercialServiceComponent location={location?.name || ''} />;
+    case 'window-cleaning':
+      return <WindowsServiceComponent location={location?.name || ''} />;
+    case 'move-in-move-out':
+      return <MoveInMoveOutServiceComponent location={location?.name || ''} />;
+    case 'post-construction':
+      return <PostConstructionServiceComponent location={location?.name || ''} />;
+    default:
+      return notFound();
   }
-
-  if (service?.id === 'commercial-cleaning'){
-    return <CommercialServiceComponent location={location?.name || ''} />
-  }
-
-  if (service?.id === 'window-cleaning'){
-    return <WindowsServiceComponent location={location?.name || ''} />
-  }
-
-
-
-  return notFound();
 }
