@@ -95,7 +95,7 @@ export default function EmergencyPage() {
             </div>
             <div>
               <Button size="lg" className="bg-blue-800 hover:bg-blue-900" asChild>
-                <CtaButton href="/request-quote">REQUEST A SERVICE</CtaButton>
+                <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
               </Button>
             </div>
           </div>

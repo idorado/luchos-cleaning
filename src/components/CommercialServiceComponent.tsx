@@ -15,6 +15,7 @@ import ReadyForCleanerWorkspaceSection from "@/components/sections/ready-for-cle
 import CustomerReviewsSection from "@/components/sections/customer-reviews";
 import FourStepSetupSection from "@/components/sections/four-step-setup";
 import ServiceAreaHighlightGeneric from "@/components/sections/service-area-highlight-generic";
+import FeatureBar from "@/components/ui/FeatureBar";
 
 interface CommercialServiceComponentProps {
   location: string;
@@ -57,6 +58,7 @@ const CommercialServiceComponent = async ({ location }: CommercialServiceCompone
               <span className="text-black">(303) 681-2559</span>
             </div>
           </div>
+          <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
           <img

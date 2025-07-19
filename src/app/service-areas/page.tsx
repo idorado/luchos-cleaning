@@ -157,7 +157,7 @@ export default function ServiceAreas() {
               ].map((location, index) => (
                 <a 
                   key={index}
-                  href={`/house-cleaning-${location.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/cleaning-services-${location.toLowerCase().replace(/\s+/g, '-')}`}
                   className="group flex items-center justify-center p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex items-center space-x-3">

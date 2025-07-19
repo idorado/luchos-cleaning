@@ -12,6 +12,7 @@ import ReadyForWindowCleaning from "@/components/sections/ready-for-window-clean
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightWindowCleaning from "@/components/sections/service-area-highlight-window-cleaning";
 import WindowCleaningBenefits from "@/components/sections/window-cleaning-benefits";
+import FeatureBar from "@/components/ui/FeatureBar";
 
 interface WindowsServiceComponentProps {
   location: string;
@@ -40,6 +41,7 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
               <PhoneButton />
             </div>
           </div>
+          <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
           <img

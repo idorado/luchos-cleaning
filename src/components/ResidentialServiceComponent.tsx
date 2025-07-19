@@ -12,6 +12,7 @@ import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightHouseCleaning from "@/components/sections/service-area-highlight-house-cleaning";
 import WellnessBenefits from "@/components/sections/wellness-benefits";
 import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator";
+import FeatureBar from "@/components/ui/FeatureBar";
 
 // Accept location as prop
 interface ResidentialServiceComponentProps {
@@ -62,13 +63,14 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
               asChild
             >
               <CtaButton href="/request-quote" className="w-full">
-                REQUEST A SERVICE
+                REQUEST A QUOTE
               </CtaButton>
             </Button>
             <div className="w-full sm:w-auto min-w-[180px] h-10">
               <PhoneButton />
             </div>
           </div>
+          <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
           <img

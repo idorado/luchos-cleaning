@@ -176,7 +176,7 @@ export async function ServicesSection() {
         <FAQ />
 
         <div className="text-center mt-12">
-          <Button size="lg" asChild><CtaButton href="/request-quote">Request a Quote</CtaButton></Button>
+          <Button size="lg" asChild><CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton></Button>
           <Button variant="outline" size="lg" className="ml-4">
             Schedule a Consultation
           </Button>
