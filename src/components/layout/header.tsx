@@ -44,6 +44,7 @@ export function Header() {
 		{ href: '/house-cleaning-littleton', name: 'Littleton' },
 		{ href: '/house-cleaning-sheridan', name: 'Sheridan' },
 		{ href: '/house-cleaning-greenwood-village', name: 'Greenwood Village' },
+		{ href: '/service-areas', name: 'View All Locations' },
 	];
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">
@@ -96,7 +97,16 @@ export function Header() {
 											))}
 										</DropdownMenuContent>
 									</DropdownMenu>
-									<Link href="/service-areas" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Locations</Link>
+									<DropdownMenu>
+										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
+										<DropdownMenuContent className="bg-foreground text-white">
+											{locations.map(l => (
+												<DropdownMenuItem asChild key={l.href} onClick={() => setMobileMenuOpen(false)}>
+													<Link href={l.href}>{l.name}</Link>
+												</DropdownMenuItem>
+											))}
+										</DropdownMenuContent>
+									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
 									<CtaButton href="/request-quote" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Request a Quote</CtaButton>
@@ -130,11 +140,22 @@ export function Header() {
 									</NavigationMenuContent>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
-									<NavigationMenuLink asChild>
-										<Link href="/service-areas" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
-											Locations
-										</Link>
-									</NavigationMenuLink>
+									<NavigationMenuTrigger className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium" >
+										Locations
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
+										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+											{locations.map(l => (
+												<li key={l.href}>
+													<NavigationMenuLink asChild>
+														<Link href={l.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															<div className="text-sm font-medium leading-none">{l.name}</div>
+														</Link>
+													</NavigationMenuLink>
+													</li>
+												))}
+										</ul>
+									</NavigationMenuContent>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
 									<NavigationMenuLink asChild>
