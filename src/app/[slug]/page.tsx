@@ -83,24 +83,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const locationName = location ? ` in ${location.name}` : '';
-  const title = `${service.name}${locationName} | Kathy Clean`;
-  const description = `Looking for ${service.name.toLowerCase()} near you${locationName}? Kathy Clean offers trusted and affordable services. Book a free quote today.`;
-  const canonical = `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : ''}`;
+  const locationName = location ? ` in ${location.name}` : 'Denver';
+  const title = `Professional Cleaning Services in ${locationName} | Kathy Clean`;
+  const description = `Professional house cleaning and maid services in ${locationName}, CO. Deep cleaning, move-in/move-out, and regular maintenance with a 100% satisfaction guarantee.`;
+  const canonical = `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : 'denver'}`;
 
   return {
     title,
     description,
-    alternates: {
-      canonical,
-    },
     openGraph: {
-      title,
+      title, 
       description,
       url: canonical,
       siteName: 'Kathy Clean',
       locale: 'en_US',
       type: 'website',
+    }, 
+    alternates: {
+      canonical,
     },
   };
 }
