@@ -32,18 +32,15 @@ export function Header() {
 		{ href: '/other-services-denver', title: 'Other Services', description: 'Pressure Washing, Post Construction Cleaning, Emergency Cleaning and more' },
 	];
 	const locations = [
-		{ href: '/cleaning-services-denver', name: 'Denver' },
-		{ href: '/cleaning-services-centennial', name: 'Centennial' },
 		{ href: '/cleaning-services-castle-rock', name: 'Castle Rock' },
+		{ href: '/cleaning-services-centennial', name: 'Centennial' },
+		{ href: '/cleaning-services-denver', name: 'Denver' },
 		{ href: '/cleaning-services-englewood', name: 'Englewood' },
-		{ href: '/cleaning-services-highlands-ranch', name: 'Highlands Ranch' },
-		{ href: '/cleaning-services-parker', name: 'Parker' },
-		{ href: '/cleaning-services-lone-tree', name: 'Lone Tree' },
-		{ href: '/cleaning-services-aurora', name: 'Aurora' },
-		{ href: '/cleaning-services-lakewood', name: 'Lakewood' },
-		{ href: '/cleaning-services-littleton', name: 'Littleton' },
-		{ href: '/cleaning-services-sheridan', name: 'Sheridan' },
 		{ href: '/cleaning-services-greenwood-village', name: 'Greenwood Village' },
+		{ href: '/cleaning-services-highlands-ranch', name: 'Highlands Ranch' },
+		{ href: '/cleaning-services-littleton', name: 'Littleton' },
+		{ href: '/cleaning-services-lone-tree', name: 'Lone Tree' },
+		{ href: '/cleaning-services-parker', name: 'Parker' },
 		{ href: '/service-areas', name: 'View All Locations' },
 	];
 	return (

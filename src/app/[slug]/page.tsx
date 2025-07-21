@@ -83,10 +83,156 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const locationName = location ? ` in ${location.name}` : 'Denver';
-  const title = `Professional Cleaning Services in ${locationName} | Kathy Clean`;
-  const description = `Professional house cleaning and maid services in ${locationName}, CO. Deep cleaning, move-in/move-out, and regular maintenance with a 100% satisfaction guarantee.`;
-  const canonical = `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : 'denver'}`;
+  const locationName = location ? location.name : 'Denver';
+  const locationId = location?.id || 'denver';
+  
+  // Custom title and description for house cleaning service
+  const isHouseCleaning = service.id === 'house-cleaning';
+  const title = isHouseCleaning 
+    ? `House Cleaning in ${locationName} | Kathy Clean`
+    : `Professional ${service.name} in ${locationName} | Kathy Clean`;
+    
+  const description = isHouseCleaning
+    ? `Reliable house cleaning in ${locationName}: recurring, deep, and move-out services. Trusted team, spotless results. Schedule your free estimate today!`
+    : `Professional ${service.name.toLowerCase()} services in ${locationName}, CO. ${service.description}`;
+    
+  const canonical = isHouseCleaning
+    ? `https://www.kathyclean.com/house-cleaning-${locationId}`
+    : `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : 'denver'}`;
+
+  // Schema.org JSON-LD for house cleaning location pages
+  const schemaMarkup = (() => {
+    if (!isHouseCleaning) return null;
+    
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Kathy Clean",
+      "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+      "@id": `https://www.kathyclean.com/house-cleaning-${locationId}`,
+      "url": `https://www.kathyclean.com/house-cleaning-${locationId}`,
+      "telephone": "+1-303-681-2559",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7500 E Arapahoe Rd #200",
+        "addressLocality": "Centennial",
+        "addressRegion": "CO",
+        "postalCode": "80112",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5952,
+        "longitude": -104.9003
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Place",
+        "name": locationName
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `House Cleaning in ${locationName}`,
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "House Cleaning",
+              "areaServed": {
+                "@type": "Place",
+                "name": locationName
+              }
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/kathyclean",
+        "https://www.instagram.com/kathyclean",
+        "https://g.co/kgs/tifVeFC"
+      ]
+    };
+
+    // Add location-specific overrides
+    switch(locationId) {
+      case 'denver':
+        // Using the exact structure provided for Denver
+        return {
+          ...schema,
+          "@id": "https://www.kathyclean.com/house-cleaning-denver",
+          "url": "https://www.kathyclean.com/house-cleaning-denver",
+          "areaServed": {
+            "@type": "Place",
+            "name": "Denver"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "House Cleaning in Denver",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "House Cleaning",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Denver"
+                  }
+                }
+              }
+            ]
+          }
+        };
+      
+      case 'parker':
+        // Using the exact structure provided for Parker
+        return {
+          ...schema,
+          "@id": "https://www.kathyclean.com/house-cleaning-parker",
+          "url": "https://www.kathyclean.com/house-cleaning-parker",
+          "areaServed": {
+            "@type": "Place",
+            "name": "Parker"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "House Cleaning in Parker",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "House Cleaning",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Parker"
+                  }
+                }
+              }
+            ]
+          }
+        };
+      
+      default:
+        // For other locations, use the dynamic version
+        return schema;
+    }
+  })();
 
   return {
     title,
