@@ -7,10 +7,13 @@ import HomeHero from "@/components/sections/home-hero"
 import { ServicesSection } from "@/components/sections/services-section"
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import FeatureBar from "@/components/ui/FeatureBar"
+import JsonLd from "@/components/json-ld";
+import { home } from "@/config/json-ld";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
+        <main className="flex flex-col min-h-screen">
+      <JsonLd data={home()} />
       <HomeHero />
 
       <OurServices />
