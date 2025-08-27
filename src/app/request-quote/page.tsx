@@ -1,31 +1,20 @@
 "use client";
 
-import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function RequestQuote() {
-  useEffect(() => {
-    const d = document;
-    const w = "https://tally.so/widgets/embed.js";
-    
-    const v = function() {
-      if (typeof window.Tally !== 'undefined') {
-        window.Tally.loadEmbeds();
-      } else {
-        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e: any) => {
-          e.src = e.dataset.tallySrc;
-        });
-      }
-    };
+  const [iframeSrc, setIframeSrc] = useState(
+    "https://tally.so/embed/nGyB9p?transparentBackground=1"
+  );
 
-    if (typeof window.Tally !== 'undefined') {
-      v();
-    } else if (d.querySelector('script[src="' + w + '"]') === null) {
-      const s = d.createElement("script");
-      s.src = w;
-      s.onload = v;
-      s.onerror = v;
-      d.body.appendChild(s);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = window.location.search;
+      if (params) {
+        setIframeSrc(
+          `https://tally.so/embed/nGyB9p?transparentBackground=1&${params.substring(1)}`
+        );
+      }
     }
   }, []);
 
@@ -81,7 +70,7 @@ export default function RequestQuote() {
         <div className="w-full lg:hidden mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="relative pb-[160%] h-0 overflow-hidden">
             <iframe 
-              src="https://tally.so/embed/nGyB9p?transparentBackground=1"
+              src={iframeSrc}
               loading="lazy" 
               width="100%" 
               height="100%" 
@@ -239,7 +228,7 @@ export default function RequestQuote() {
         <div className="hidden lg:block w-full lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="relative pb-[160%] h-0 overflow-hidden">
             <iframe 
-              src="https://tally.so/embed/nGyB9p?transparentBackground=1"
+              src={iframeSrc}
               loading="lazy" 
               width="100%" 
               height="100%" 
@@ -253,7 +242,6 @@ export default function RequestQuote() {
         </div>
       </div>
       </div>
-      <Script src="https://tally.so/widgets/embed.js" strategy="afterInteractive" />
     </div>
   );
 }
