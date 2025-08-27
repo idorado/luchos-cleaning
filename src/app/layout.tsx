@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {GoogleTagManager} from "@next/third-parties/google"
 import Script from "next/script"
 import { Poppins } from "next/font/google"
@@ -59,7 +60,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </PostHogProvider>
-        <UtmPersistence />
+        <Suspense fallback={null}>
+          <UtmPersistence />
+        </Suspense>
         <Script id="tally-conversion-listener" strategy="afterInteractive">
   {`
     window.addEventListener("message", function(event) {
