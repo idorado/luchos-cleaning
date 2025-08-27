@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 const UTM_KEYS = [
   "utm_source",
@@ -102,10 +102,34 @@ export default function UtmPersistence() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const searchString = searchParams?.toString() ?? "";
+  const router = useRouter();
 
   useEffect(() => {
-    const urlUtms = parseSearchUtms(searchString);
+    // 1) If we have stored first-touch UTMs, ensure they appear in the URL (without overwriting existing params)
     let stored = loadFirstTouch();
+    if (stored) {
+      const params = new URLSearchParams(searchString);
+      let changed = false;
+      const storedObj = stored as Record<string, any>;
+      UTM_KEYS.forEach((k) => {
+        const hasInUrl = params.get(k);
+        const val = storedObj[k as string];
+        if (!hasInUrl && val) {
+          params.set(k, String(val));
+          changed = true;
+        }
+      });
+      if (changed) {
+        const qs = params.toString();
+        router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+        return; // wait for next render with updated URL
+      }
+    }
+
+    // 2) Normal capture + persistence flow
+    const urlUtms = parseSearchUtms(searchString);
+    // Load again in case storage was empty previously
+    stored = stored || loadFirstTouch();
     if (urlUtms && !stored) {
       stored = { ...urlUtms };
       saveFirstTouch(stored);
