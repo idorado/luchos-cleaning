@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -14,6 +15,7 @@ import ServiceAreaHighlightGeneric from "@/components/sections/service-area-high
 import JsonLd from "@/components/json-ld";
 import {commercialCleaning} from "@/config/json-ld"
 import FeatureBar from "@/components/ui/FeatureBar";
+import { ensureHttps } from "@/lib/images";
 
 interface CommercialServiceComponentProps {
   location: string;
@@ -60,14 +62,16 @@ const CommercialServiceComponent = async ({ location }: CommercialServiceCompone
           <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <img
-            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNqiHdB8Qqho34HzWAgdjRlcDPJntsL1f2TIb"
-            alt="Professional commercial cleaning service"
-            width={400}
-            height={400}
-            className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 400, maxHeight: 400 }}
-          />
+          <div className="relative w-[400px] h-[400px]">
+            <Image
+              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNqiHdB8Qqho34HzWAgdjRlcDPJntsL1f2TIb")}
+              alt="Professional commercial cleaning service"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              className="object-cover rounded-lg shadow-md"
+              priority
+            />
+          </div>
         </div>
       </HeroSection>
 

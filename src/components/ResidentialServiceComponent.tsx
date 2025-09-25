@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -14,6 +15,7 @@ import WellnessBenefits from "@/components/sections/wellness-benefits";
 import FeatureBar from "@/components/ui/FeatureBar";
 import {houseCleaning} from "@/config/json-ld";
 import JsonLd from "@/components/json-ld";
+import { ensureHttps } from "@/lib/images";
 
 // Accept location as prop
 interface ResidentialServiceComponentProps {
@@ -75,14 +77,16 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
           <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <img
-            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa"
-            alt="Professional residential cleaning service"
-            width={480}
-            height={480}
-            className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 480, maxHeight: 480 }}
-          />
+          <div className="relative w-[480px] h-[480px]">
+            <Image
+              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa")}
+              alt="Professional residential cleaning service"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              className="object-cover rounded-lg shadow-md"
+              priority
+            />
+          </div>
         </div>
       </HeroSection>
 

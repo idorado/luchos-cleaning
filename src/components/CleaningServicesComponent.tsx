@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -9,6 +10,7 @@ import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import { lifeInLocationContent } from "@/components/sections/lifeInLocationContent";
 import { cleaningServices } from "@/config/json-ld";
 import JsonLd from "@/components/json-ld";
+import { ensureHttps } from "@/lib/images";
 
 interface CleaningServicesComponentProps {
   location?: string;
@@ -265,14 +267,16 @@ export default async function CleaningServicesComponent({
           <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <img
-            src={imageUrl}
-            alt={`Professional cleaning services in ${location}`}
-            width={480}
-            height={480}
-            className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 480, maxHeight: 480 }}
-          />
+          <div className="relative w-[480px] h-[480px]">
+            <Image
+              src={ensureHttps(imageUrl)}
+              alt={`Professional cleaning services in ${location}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              className="object-cover rounded-lg shadow-md"
+              priority
+            />
+          </div>
         </div>
       </HeroSection>
 
@@ -302,7 +306,13 @@ export default async function CleaningServicesComponent({
             {/* House Cleaning */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy" alt="House cleaning living room" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy")} 
+                  alt="House cleaning living room" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">House Cleaning</h3>
@@ -313,7 +323,13 @@ export default async function CleaningServicesComponent({
             {/* Commercial Cleaning */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV" alt="Commercial cleaning supermarket" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV")} 
+                  alt="Commercial cleaning supermarket" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">Commercial Cleaning</h3>
@@ -324,7 +340,13 @@ export default async function CleaningServicesComponent({
             {/* Window Cleaning */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0KAm82nznWpD8lt52ycuGbAavdFLke9Ugf7J" alt="Window cleaning" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0KAm82nznWpD8lt52ycuGbAavdFLke9Ugf7J")} 
+                  alt="Window cleaning" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">Window Cleaning</h3>
@@ -335,7 +357,13 @@ export default async function CleaningServicesComponent({
             {/* Pressure Washing */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomp9p0B7mIQG02vMEqiTUtkudb5jB1eo97yKV8" alt="Pressure washing" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomp9p0B7mIQG02vMEqiTUtkudb5jB1eo97yKV8")} 
+                  alt="Pressure washing" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">Pressure Washing</h3>
@@ -346,7 +374,13 @@ export default async function CleaningServicesComponent({
             {/* Move-in/Move-out Cleaning */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomsfefZuv4Gml7jzqpuCQV5ZONW3Kk98Uwa0PA" alt="Move-in/Move-out cleaning" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomsfefZuv4Gml7jzqpuCQV5ZONW3Kk98Uwa0PA")} 
+                  alt="Move-in/Move-out cleaning" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">Move-in/Move-out Cleaning</h3>
@@ -357,7 +391,13 @@ export default async function CleaningServicesComponent({
             {/* Post Construction Cleaning */}
             <div className="flex flex-col bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full max-w-[720px] mx-auto h-full min-h-[500px]">
               <div className="relative w-full h-[220px] sm:h-[270px] md:h-[300px] flex-shrink-0">
-                <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomH7tq3hDgqPBhUKN3FksyTY8bIpuvZ9xz7RM0" alt="Post construction cleaning" className="object-cover w-full h-full" />
+                <Image 
+                  src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomH7tq3hDgqPBhUKN3FksyTY8bIpuvZ9xz7RM0")} 
+                  alt="Post construction cleaning" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-4 sm:p-6 flex flex-col flex-1">
                 <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">Post Construction Cleaning</h3>

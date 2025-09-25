@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -9,6 +10,7 @@ import ThreeStepProcess from "@/components/sections/three-step-process";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import {postConstructionCleaning} from "@/config/json-ld"
 import JsonLd from "@/components/json-ld";
+import { ensureHttps } from "@/lib/images";
 
 interface PostConstructionServiceComponentProps {
   location?: string;
@@ -42,14 +44,16 @@ export default async function PostConstructionServiceComponent({ location = 'Den
           </div>
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <img
-            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa"
-            alt="Post-construction cleaning service"
-            width={480}
-            height={480}
-            className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 480, maxHeight: 480 }}
-          />
+          <div className="relative w-[480px] h-[480px]">
+            <Image
+              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa")}
+              alt="Post-construction cleaning service"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              className="object-cover rounded-lg shadow-md"
+              priority
+            />
+          </div>
         </div>
       </HeroSection>
 

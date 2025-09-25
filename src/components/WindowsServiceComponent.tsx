@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -15,6 +16,7 @@ import WindowCleaningBenefits from "@/components/sections/window-cleaning-benefi
 import FeatureBar from "@/components/ui/FeatureBar";
 import {windowCleaning} from "@/config/json-ld"
 import JsonLd from "@/components/json-ld";
+import { ensureHttps } from "@/lib/images";
 
 interface WindowsServiceComponentProps {
   location: string;
@@ -47,14 +49,16 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
           <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <img
-            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkroY4QBMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp"
-            alt="Professional window cleaning service"
-            width={400}
-            height={400}
-            className="object-cover rounded-lg shadow-md"
-            style={{ color: 'transparent', maxWidth: 400, maxHeight: 400 }}
-          />
+          <div className="relative w-[400px] h-[400px]">
+            <Image
+              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkroY4QBMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp")}
+              alt="Professional window cleaning service"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              className="object-cover rounded-lg shadow-md"
+              priority
+            />
+          </div>
         </div>
       </HeroSection>
 
