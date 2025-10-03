@@ -1,4 +1,5 @@
 import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
+import { canonicalPath } from "@/lib/canonical";
 
 export default function HouseCleaningService() {
   return <ResidentialServiceComponent location="Denver" />;
@@ -10,12 +11,12 @@ export const metadata = {
   openGraph: {
     title: 'House Cleaning & Maid Service with Satisfaction Guarantee | Kathy Clean',
     description: 'Professional house cleaning and maid services with a satisfaction guarantee. Serving Denver and surrounding areas with top-quality residential cleaning.',
-    url: 'https://www.kathyclean.com/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee',
+    url: canonicalPath('our-services', 'house-cleaning-and-maid-service-with-satisfaction-guarantee'),
     siteName: 'Kathy Clean',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.kathyclean.com/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee',
+    canonical: canonicalPath('our-services', 'house-cleaning-and-maid-service-with-satisfaction-guarantee'),
   },
 };

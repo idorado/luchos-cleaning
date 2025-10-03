@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from "next";
+import { canonicalPath } from "@/lib/canonical";
 
 import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
 import CommercialServiceComponent from '@/components/CommercialServiceComponent';
@@ -97,8 +98,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : `Professional ${service.name.toLowerCase()} services in ${locationName}, CO. ${service.description}`;
     
   const canonical = isHouseCleaning
-    ? `https://www.kathyclean.com/house-cleaning-${locationId}`
-    : `https://www.kathyclean.com/${service.id}${location ? `-${location.id}` : 'denver'}`;
+    ? canonicalPath(`house-cleaning-${locationId}`)
+    : canonicalPath(`${service.id}${location ? `-${location.id}` : 'denver'}`);
 
 
     // Add location-specific overrides
