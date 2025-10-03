@@ -3,17 +3,24 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://kathyclean.com',
   generateRobotsTxt: true,
 
-  // Sacamos rutas que no queremos indexar como páginas
+  // No listar en el sitemap rutas que no queremos posicionar
   exclude: [
-    '/sitemap',        // la ruta App Router /sitemap no se lista como página
-    '/robots.txt',     // el archivo en sí no es una URL a posicionar
+    '/sitemap',
+    '/robots.txt',
     '/api/*',
     '/admin/*',
     '/404',
     '/500',
   ],
 
-  // Normalizamos URLs (sin barra final salvo la home) y seteamos señales
+  // Políticas del robots.txt (mantiene Allow / y bloquea /api y /admin)
+  robotsTxtOptions: {
+    policies: [
+      { userAgent: '*', allow: '/', disallow: ['/api/', '/admin/'] },
+    ],
+  },
+
+  // Normaliza URLs: sin barra final salvo la home; señales por defecto
   transform: async (_config, path) => {
     const loc = path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
     const priority = loc === '/' ? 1.0 : 0.7;
