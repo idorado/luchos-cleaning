@@ -9,6 +9,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PostHogProvider } from "@/components/providers"
 import UtmPersistence from "@/components/analytics/UtmPersistence"
+import TallyListener from '@/components/analytics/TallyListener';
 
 
 export const metadata: Metadata = {
@@ -103,6 +104,7 @@ export default function RootLayout({
     });
   `}
 </Script>
+        <TallyListener />
       </body>
     </html>
   );
