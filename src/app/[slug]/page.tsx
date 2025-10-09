@@ -8,6 +8,7 @@ import WindowsServiceComponent from '@/components/WindowsServiceComponent';
 import { MoveInMoveOutServiceComponent } from '@/components/MoveInMoveOutServiceComponent';
 import PostConstructionServiceComponent from '@/components/PostConstructionServiceComponent';
 import CleaningServicesComponent from '@/components/CleaningServicesComponent';
+import { HouseCleaningFAQ } from '@/components/sections/house-cleaning-faq';
 
 // Define services and locations
 const services = [
@@ -133,7 +134,12 @@ export default async function ServiceLocationPage({ params }: { params: Promise<
 
   switch (service?.id) {
     case 'cleaning-services':
-      return <CleaningServicesComponent location={location?.name || ''} />;
+      return (
+        <main className="flex flex-col min-h-screen">
+          <CleaningServicesComponent location={location?.name || ''} />
+          <HouseCleaningFAQ location={location?.name || ''} />
+        </main>
+      );
     case 'house-cleaning':
       return <ResidentialServiceComponent location={location?.name || ''} />;
     case 'commercial-cleaning':
