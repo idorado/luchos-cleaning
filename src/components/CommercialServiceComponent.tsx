@@ -8,6 +8,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import IndustriesSpecialized from "@/components/sections/industries-specialized";
 import WhyInvestInCommercialCleaningSection from "@/components/sections/why-invest-in-commercial-cleaning";
 import WhyTrustJanitorialSection from "@/components/sections/why-trust-janitorial";
+import { CommercialCleaningFAQ } from "@/components/sections/commercial-cleaning-faq";
 import ReadyForCleanerWorkspaceSection from "@/components/sections/ready-for-cleaner-workspace";
 import CustomerReviewsSection from "@/components/sections/customer-reviews";
 import FourStepSetupSection from "@/components/sections/four-step-setup";
@@ -80,15 +81,15 @@ const CommercialServiceComponent = async ({ location }: CommercialServiceCompone
       <IndustriesSpecialized location={location} />
 
       <ReadyForCleanerWorkspaceSection />
-      <CustomerReviewsSection />
       <FourStepSetupSection />
       <ServiceAreaHighlightGeneric
         location={location}
         serviceTitle="Commercial Cleaning Services in"
         subtitle="Office, Retail & Janitorial Cleaning You Can Count On"
-        description={`Kathy Clean delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. Our trained professionals use high-quality products and proven systems to ensure your space is spotless, safe, and welcoming. Whether it’s a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
+        description={`Kathy Clean delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. Our trained professionals use high-quality products and proven systems to ensure your space is spotless, safe, and welcoming. Whether it's a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
       />
       <WhyInvestInCommercialCleaningSection />
+      <CommercialCleaningFAQ location={location} />
     </main>
   );
 };
