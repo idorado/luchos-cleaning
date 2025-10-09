@@ -4,54 +4,52 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 const faqItems = [
   {
-    question: "What areas do you service?",
-    answer: "We cover all major metropolitan areas within a 50-mile radius. Contact us for specific location availability."
+    question: "What cleaning services does Kathy Clean offer in the Denver area?",
+    answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, commercial cleaning, and window cleaning across Denver, Centennial, Parker, Castle Rock, and nearby areas."
   },
   {
-    question: "Do you use eco-friendly cleaning products?",
-    answer: "Yes! We offer green cleaning options using EPA Safer Choice certified products upon request."
+    question: "Are you licensed, bonded, and insured in Colorado?",
+    answer: "Yes! Kathy Clean is fully licensed, bonded, and insured for residential and commercial cleaning throughout Colorado. We'll gladly provide a Certificate of Insurance upon request."
   },
   {
-    question: "How does your pricing work for commercial contracts?",
-    answer: "Commercial pricing is based on square footage, frequency, and specific facility requirements. We provide customized quotes after a free site assessment."
+    question: "How do I get a quote for cleaning services near Denver?",
+    answer: "You can request a free, no-obligation quote directly on our website or by calling (303) 681-2559. We'll confirm your address, service type, and home size to give you an exact estimate."
   },
   {
-    question: "Can I schedule cleaning outside business hours?",
-    answer: "Absolutely! We offer evening and weekend appointments for commercial clients to minimize business disruption."
+    question: "Do you bring your own supplies and equipment?",
+    answer: "Yes. All cleaners come fully equipped with professional-grade products, vacuums, and tools. If you prefer eco-friendly cleaning or have your own products, we're happy to use them."
   },
   {
-    question: "What's included in your deep cleaning service?",
-    answer: "Our deep clean includes: appliance interiors, baseboards, window tracks, cabinet fronts, and hard-to-reach areas."
+    question: "Do you offer discounts for recurring cleaning?",
+    answer: "Absolutely. Our weekly and bi-weekly clients enjoy discounted rates and priority scheduling—helping you save money while keeping your home spotless year-round."
   },
   {
-    question: "Are your cleaners insured and background-checked?",
-    answer: "Yes, all team members undergo rigorous background checks and carry full liability insurance."
+    question: "Which areas do you serve?",
+    answer: "We serve Denver, Centennial, Parker, Castle Rock, Greenwood Village, Highlands Ranch, Englewood, Lone Tree, and surrounding communities."
   },
   {
-    question: "How do I prepare for my first cleaning?",
-    answer: "Simply secure pets, remove valuables, and let us know about any special requirements. We'll handle the rest!"
+    question: "What if I'm not satisfied with the cleaning?",
+    answer: "Your satisfaction is guaranteed. If something wasn't cleaned to your expectations, let us know within 48 hours and we'll re-clean the area at no extra cost."
   },
   {
-    question: "What's your cancellation policy?",
-    answer: "We require 24-hour notice for residential cancellations and 48-hour notice for commercial appointments."
-  },
-  {
-    question: "Do you provide supplies and equipment?",
-    answer: "Yes, we bring all necessary equipment and premium cleaning supplies. You only need to provide access."
-  },
-  {
-    question: "How does your satisfaction guarantee work?",
-    answer: "If unsatisfied, contact us within 48 hours and we'll re-clean the affected area at no additional cost."
+    question: "What makes Kathy Clean different?",
+    answer: "We focus on reliability, consistency, and communication. You'll get the same trusted cleaner whenever possible, a dedicated support team for scheduling, and quality guaranteed after every visit."
   }
 ]
 
-export function FAQ() {
+interface FAQProps {
+  hideTitle?: boolean;
+}
+
+export function FAQ({ hideTitle = false }: FAQProps) {
   return (
     <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
-      </CardHeader>
-      <CardContent>
+      {!hideTitle && (
+        <CardHeader>
+          <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
+        </CardHeader>
+      )}
+      <CardContent className={hideTitle ? 'pt-6' : ''}>
         <Accordion type="single" collapsible className="w-full">
           {faqItems.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

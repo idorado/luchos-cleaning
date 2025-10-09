@@ -87,23 +87,6 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <UtmPersistence />
         </Suspense>
-        <Script id="tally-conversion-listener" strategy="afterInteractive">
-  {`
-    window.addEventListener("message", function(event) {
-      if (
-        event.origin === "https://tally.so" &&
-        typeof event.data === "string" &&
-        event.data.includes('"event":"Tally.FormSubmitted"')
-      ) {
-        if (typeof window.gtag === "function") {
-          window.gtag("event", "conversion", {
-            send_to: "AW-17062489970/XHAECLjasMkaEPLeg8g_",
-          });
-        }
-      }
-    });
-  `}
-</Script>
         <TallyListener />
       </body>
     </html>

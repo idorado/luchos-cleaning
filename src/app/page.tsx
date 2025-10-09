@@ -7,6 +7,7 @@ import CompaniesCountOnUs from "@/components/sections/companies-count-on-us";
 import HomeHero from "@/components/sections/home-hero"
 import { ServicesSection } from "@/components/sections/services-section"
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
+import { FAQ } from "@/components/sections/faq"
 import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
 import { home } from "@/config/json-ld";
@@ -59,6 +60,15 @@ export default async function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Reviews From Wonderful Customers</h2>
           <Testimonial />
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <FAQ hideTitle={true} />
+          </div>
         </div>
       </section>
     </main>
