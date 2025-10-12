@@ -91,8 +91,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Custom title and description for house cleaning service
   const isHouseCleaning = service.id === 'house-cleaning';
   const title = isHouseCleaning 
-    ? `House Cleaning in ${locationName} | Kathy Clean`
-    : `Professional ${service.name} in ${locationName} | Kathy Clean`;
+    ? `House Cleaning in ${locationName}`
+    : `Professional ${service.name} in ${locationName}`;
     
   const description = isHouseCleaning
     ? `Reliable house cleaning in ${locationName}: recurring, deep, and move-out services. Trusted team, spotless results. Schedule your free estimate today!`
