@@ -241,6 +241,92 @@ export default function RequestQuote() {
           </div>
         </div>
       </div>
+
+      <section className="bg-white/60 border-t border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 py-12 max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+
+          <div className="space-y-8 text-gray-800">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">How soon will I get my quote?</h3>
+              <p className="mb-2">Most quotes are sent within a few minutes during business hours.</p>
+              <p>Once we receive your request, our team reviews your home’s details (size, rooms, service type) and sends a customized estimate straight to your inbox or phone.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Is the quote free and with no obligation?</h3>
+              <p className="mb-2">Yes, all quotes are 100% free and no-obligation.</p>
+              <p>We’ll give you transparent pricing upfront; no hidden fees, no surprises. You decide if and when to move forward.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">What information do you need to give me a quote?</h3>
+              <p className="mb-3">We usually ask for:</p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Your address (to confirm service area)</li>
+                <li>Home size or number of bedrooms/bathrooms</li>
+                <li>Type of cleaning (recurring, deep, move in/out, post-construction, etc.)</li>
+              </ul>
+              <p className="mt-3">The more details you provide, the more accurate your quote will be.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Do I need someone to come to my home for an estimate?</h3>
+              <p>Not necessarily. In most cases, we can quote your cleaning online or by phone using your home’s size and condition. For large homes or commercial properties, we might schedule a quick walkthrough if needed.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">How do I confirm my cleaning once I receive the quote?</h3>
+              <p>You can simply let us know by text, calling or just appoving the quote online in one click. We’ll reserve your preferred date and assign a cleaner right away.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Do I have to pay anything upfront?</h3>
+              <p>For one-time or first-time cleanings, we require a credit card on file to secure your booking, but you’re only charged after the cleaning is complete. Recurring clients are billed automatically after each visit.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Can I change or cancel my appointment after booking?</h3>
+              <p>Of course. Just let us know at least 24 hours in advance to reschedule without a fee. We’re flexible and can adjust your cleaning day whenever you need.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Do you serve my area?</h3>
+              <p>We serve Denver, Centennial, Parker, Castle Rock, Greenwood Village, Highlands Ranch, Englewood, Littleton and surrounding areas. If you’re nearby, we likely already clean for one of your neighbors!</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">What’s included in my cleaning?</h3>
+              <p>That depends on the service you choose. We’ll confirm exactly what’s included in your quote.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Do you bring your own cleaning supplies?</h3>
+              <p>Yes, we bring everything needed: products, vacuums, and tools. If you prefer eco-friendly cleaning or want us to use your own products, just let us know.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">What if I’m not happy with my cleaning?</h3>
+              <p>We stand behind our work. If something wasn’t cleaned to your expectations, contact us within 48 hours and we’ll re-clean the area for free.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Do you offer recurring cleaning discounts?</h3>
+              <p>Yes! Weekly and bi-weekly clients receive discounted rates and priority scheduling. If you start with a one-time cleaning, you can always switch to recurring later.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Who are your cleaners? Are they background checked?</h3>
+              <p>All our cleaners are fully trained, background checked, and insured. We only hire experienced professionals who meet our standards for reliability, honesty, and attention to detail.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Why should I choose Kathy Clean?</h3>
+              <p>Because we make cleaning simple, reliable, and stress-free. From your first quote to your regular cleanings, we handle everything with transparency, real-time updates, and a 48-hour satisfaction guarantee.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       </div>
     </div>
   );
