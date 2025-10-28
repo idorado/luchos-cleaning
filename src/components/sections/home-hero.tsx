@@ -12,24 +12,27 @@ const HomeHero = () => {
     <HeroSection>
       <div className="space-y-2 text-white text-center p-4 md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          <span className="text-primary">House & Commercial Cleaning</span>
+          <span className="text-primary">Top Rated Cleaning Company</span>
           <br />
-          <span className="text-background">Experts in Denver, Centennial, Parker & Castle Rock.</span>
+          <span className="text-background">in Centennial ,CO</span>
         </h1>
         <p className="text-lg">
-          We deliver spotless, healthy, and welcoming environments—perfect for busy homes, productive offices, and everything in between.
+          We deliver spotless, healthy, and welcoming environments—perfect for
+          busy homes, productive offices, and everything in between.
         </p>
         <div className="pt-4 flex flex-col md:flex-row gap-4">
-          <Button
-            variant="default"
-            className="font-medium"
-            asChild
-          >
-            <CtaButton href="/request-quote">
-              REQUEST A QUOTE
-            </CtaButton>
+          <Button variant="default" className="font-medium" asChild>
+            <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
           </Button>
           <PhoneButton />
+          <a
+            href="sms:3036812559"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] 
+                border border-input bg-background text-foreground 
+                [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0"
+          >
+            <span className="text-black hover:text-cyan-500">TEXT US</span>
+          </a>
         </div>
         <FeatureBar />
       </div>

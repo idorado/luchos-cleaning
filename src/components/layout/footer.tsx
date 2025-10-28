@@ -9,7 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Services Column */}
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-6">Services</h3>
+            <h3 className="text-xl font-semibold text-primary mb-6">
+              Services
+            </h3>
             <ul className="space-y-4">
               <li>
                 <Link
@@ -51,22 +53,34 @@ export function Footer() {
             <h3 className="text-xl font-semibold text-primary mb-6">Company</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/about-us" className="text-white hover:text-cyan-500">
+                <Link
+                  href="/about-us"
+                  className="text-white hover:text-cyan-500"
+                >
                   About us
                 </Link>
               </li>
               <li>
-                <Link href="/service-areas" className="text-white hover:text-cyan-500">
+                <Link
+                  href="/service-areas"
+                  className="text-white hover:text-cyan-500"
+                >
                   Service Areas
                 </Link>
               </li>
               <li>
-                <Link href="/request-quote" className="text-white hover:text-cyan-500">
+                <Link
+                  href="/request-quote"
+                  className="text-white hover:text-cyan-500"
+                >
                   Get a Quote
                 </Link>
               </li>
               <li>
-                <Link href="/work-with-us" className="text-white hover:text-cyan-500">
+                <Link
+                  href="/work-with-us"
+                  className="text-white hover:text-cyan-500"
+                >
                   Work with us
                 </Link>
               </li>
@@ -75,7 +89,9 @@ export function Footer() {
 
           {/* Contact Us Column */}
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-6">Contact Us</h3>
+            <h3 className="text-xl font-semibold text-primary mb-6">
+              Contact Us
+            </h3>
             <div className="space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
@@ -164,21 +180,25 @@ export function Footer() {
 
           {/* Address & Map Column */}
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-6">Our Location</h3>
+            <h3 className="text-xl font-semibold text-primary mb-6">
+              Our Location
+            </h3>
             <div className="space-y-4">
-              <a 
+              <a
                 href="https://maps.app.goo.gl/GT4b5vZXN9h1Y3u4A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-cyan-500 block"
               >
-                7500 E Arapahoe Rd #200,<br />
-                Centennial, CO 80112,<br />
+                7500 E Arapahoe Rd #200,
+                <br />
+                Centennial, CO 80112,
+                <br />
                 United States
               </a>
               <div className="mt-2 w-full h-48 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.6472000000003!2d-104.8992226235619!3d39.59619197172898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c86d8c8f8e0f1%3A0x1c3e6c7d8e2e3f4d!2s7500%20E%20Arapahoe%20Rd%20%23200%2C%20Centennial%2C%20CO%2080112%2C%20USA!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3074.4602054854167!2d-104.90122579999999!3d39.594314399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c983b74cfaa6f%3A0xbe376be57cdb01a4!2sKathy%20Clean!5e0!3m2!1sen!2sin!4v1761682608683!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
