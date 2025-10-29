@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export function Footer() {
@@ -212,7 +213,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary">
-          <p>© 2023 Kathy Clean. All rights reserved.</p>
+          <p> 2023 Kathy Clean. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-primary">
               Privacy Policy
