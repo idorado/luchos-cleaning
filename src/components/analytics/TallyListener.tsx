@@ -30,6 +30,9 @@ export default function TallyListener() {
           // eslint-disable-next-line no-console
           console.debug('[TallyListener] postMessage payload:', payload);
         }
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', { send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_' });
+        }
       }
     };
 
@@ -52,6 +55,9 @@ export default function TallyListener() {
         if ((window as any).__tallyDebug) {
           // eslint-disable-next-line no-console
           console.debug('[TallyListener] customEvent detail:', detail);
+        }
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', { send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_' });
         }
       }
     };
