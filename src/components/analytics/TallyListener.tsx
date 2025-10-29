@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    dataLayer: Object[] | undefined;
+    dataLayer: any[];
     gtag?: (...args: any[]) => void;
     __tallyDebug?: boolean;
   }
