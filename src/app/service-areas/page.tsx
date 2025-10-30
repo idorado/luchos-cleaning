@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
+import { LocationCard } from "@/components/sections/our-locations";
 
 export const metadata: Metadata = {
-  title: "Kathy Clean | Cleaning Services in Denver & Surrounding Areas",
+  title:
+    "Service Areas for House Cleaning Service in Colorado - Kathy Clean Service",
   description:
-    "Expert Cleaning Services in Denver, Castle Rock, Littleton, Centennial, Englewood, and more. Residential and Commercial Cleaning.",
+    "Service Areas for Expert House Cleaning Service in Colorado by Kathy Clean Service. Residential and Commercial Cleaning. Call Now!",
   alternates: {
     canonical: canonicalPath("service-areas"),
   },
@@ -47,7 +49,8 @@ export default function ServiceAreas() {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-full lg:pr-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center lg:text-left">
-                Kathy Clean Service Locations
+                Service Areas for House Cleaning Service in Colorado - Kathy
+                Clean Service
               </h1>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
@@ -149,48 +152,40 @@ export default function ServiceAreas() {
               Select your city below for location-specific information
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Castle Rock",
-                "Centennial",
-                "Denver",
-                "Englewood",
-                "Greenwood Village",
-                "Highlands Ranch",
-                "Littleton",
-                "Lone Tree",
-                "Parker",
+                {
+                  title: "Arapahoe County, CO",
+                  imageUrl: "/images/locations/arapahoe-county.jpg",
+                  imageAlt: "House Cleaning Service in Arapahoe County, CO",
+                  link: "/service-areas/arapahoe-county-co",
+                },
+                {
+                  title: "Denver County, CO",
+                  imageUrl: "/images/locations/denver-county.jpeg",
+                  imageAlt: "House Cleaning Service in Denver County, CO",
+                  link: "/service-areas/denver-county-co",
+                },
+                {
+                  title: "Douglas County, CO",
+                  imageUrl: "/images/locations/douglas-county.jpeg",
+                  imageAlt: "House Cleaning Service in Douglas County, CO",
+                  link: "/service-areas/douglas-county-co",
+                },
+                {
+                  title: "Jefferson County, CO",
+                  imageUrl: "/images/locations/jefferson-county.jpeg",
+                  imageAlt: "House Cleaning Service in Jefferson County, CO",
+                  link: "/service-areas/jefferson-county-co",
+                },
               ].map((location, index) => (
-                <a
+                <LocationCard
                   key={index}
-                  href={`/cleaning-services-${location
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
-                  className="group flex items-center justify-center p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="text-blue-600 group-hover:text-blue-700 transition-colors">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-6 h-6"
-                      >
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                    </div>
-                    <span className="text-lg font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
-                      {location}
-                    </span>
-                  </div>
-                </a>
+                  title={location.title}
+                  imageUrl={location.imageUrl}
+                  imageAlt={location.imageAlt}
+                  link={location.link}
+                />
               ))}
             </div>
           </div>
