@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://kathyclean.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://luchoscleaning.com',
   generateRobotsTxt: true,
 
   // No listar en el sitemap rutas que no queremos posicionar

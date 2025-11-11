@@ -1,10 +1,10 @@
 export const home = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Lucho's Cleaning",
+  "name": "Luchos Cleaning",
   "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
-  "@id": "https://www.kathyclean.com",
-  "url": "https://www.kathyclean.com",
+  "@id": "https://luchoscleaning.com",
+  "url": "https://luchoscleaning.com",
   "telephone": "+1-303-681-2559",
   "address": {
     "@type": "PostalAddress",
@@ -63,7 +63,7 @@ export const houseCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Lucho's Cleaning",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {
@@ -108,8 +108,8 @@ export const houseCleaning = (location: string) => {
       "https://www.instagram.com/kathyclean",
       "https://g.co/kgs/tifVeFC"
     ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase
@@ -141,7 +141,7 @@ export const commercialCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {
@@ -186,8 +186,8 @@ export const commercialCleaning = (location: string) => {
       "https://www.instagram.com/kathyclean",
       "https://g.co/kgs/tifVeFC"
     ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase
@@ -219,7 +219,7 @@ export const windowCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {
@@ -264,8 +264,8 @@ export const windowCleaning = (location: string) => {
       "https://www.instagram.com/kathyclean",
       "https://g.co/kgs/tifVeFC"
     ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase
@@ -297,7 +297,7 @@ export const cleaningServices = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {
@@ -342,8 +342,8 @@ export const cleaningServices = (location: string) => {
       "https://www.instagram.com/kathyclean",
       "https://g.co/kgs/tifVeFC"
     ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase
@@ -397,7 +397,7 @@ export const moveInOutCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {
@@ -442,8 +442,8 @@ export const moveInOutCleaning = (location: string) => {
       "https://www.instagram.com/kathyclean",
       "https://g.co/kgs/tifVeFC"
     ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase

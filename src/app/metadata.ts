@@ -1,24 +1,24 @@
 import { Metadata } from 'next';
 
 export const homePageMetadata: Metadata = {
-  title: "Residential & Commercial Cleaning in Houston | Lucho's Cleaning",
-  description: "Top-rated cleaning in Houston & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
+  title: "Residential & Commercial Cleaning in Houston | Luchos Cleaning",
+  description: "Top-rated cleaning in Houston & nearby. Residential & commercial cleaning. 48h guarantee",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
-  keywords: "cleaning, Houston, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
+  keywords: "cleaning, Houston, residential, commercial, 48h guarantee",
   alternates: {
-    canonical: "https://kathyclean.com/",
+    canonical: "https://luchoscleaning.com/",
     languages: {
-      "en-US": "https://kathyclean.com/"
+      "en-US": "https://luchoscleaning.com/"
     }
   },
   other: {
     'application-ld+json': JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Lucho's Cleaning",
+      "name": "Luchos Cleaning",
       "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
-      "@id": "https://www.kathyclean.com",
-      "url": "https://www.kathyclean.com",
+      "@id": "https://luchoscleaning.com",
+      "url": "https://luchoscleaning.com",
       "telephone": "+1-303-681-2559",
       "address": {
         "@type": "PostalAddress",

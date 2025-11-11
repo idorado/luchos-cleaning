@@ -13,19 +13,19 @@ import TallyListener from "@/components/analytics/TallyListener";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathyclean.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://luchoscleaning.com"
   ),
   title: {
-    default: "Top Rated Cleaning Company in Houston, TX | Lucho's Cleaning",
-    template: "%s | Lucho's Cleaning",
+    default: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
+    template: "%s | Luchos Cleaning",
   },
   description:
-    "Professional Cleaning Company in Houston, TX: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
+    "Professional Cleaning Company in Houston, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
   openGraph: {
     type: "website",
-    url: "https://kathyclean.com",
-    siteName: "Lucho's Cleaning",
-    title: "Top Rated Cleaning Company in Houston, TX | Lucho's Cleaning",
+    url: "https://luchoscleaning.com",
+    siteName: "Luchos Cleaning",
+    title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
     description:
       "Professional Cleaning Company in Houston, TX: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
     images: [
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
         url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
         width: 1200,
         height: 630,
-        alt: "Lucho's Cleaning — Professional Cleaning Services",
+        alt: "Luchos Cleaning — Professional Cleaning Services",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Rated Cleaning Company in Houston, TX | Lucho's Cleaning",
+    title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
     description:
       "Professional cleaning services in Houston & surrounding areas. Get a fast quote.",
     images: [
