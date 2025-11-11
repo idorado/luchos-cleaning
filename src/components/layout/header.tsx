@@ -47,7 +47,7 @@ export function Header() {
 						<Link href="/" className="flex items-center">
 							<Image
 								src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM"
-								alt="Kathy Clean Logo"
+								alt="Luchos Cleaning Logo"
 								width={150}
 								height={40}
 								className="h-10 w-auto"

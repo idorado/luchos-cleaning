@@ -248,7 +248,7 @@ export default async function CleaningServicesComponent({
             Professional Cleaning Services in <span style={{ color: '#02FDF1' }}>{location}</span>
           </h1>
           <p className="text-base sm:text-lg mb-6">
-            Kathy Clean offers top-rated, affordable, and reliable cleaning services in {location}.<br /> From homes to offices, we deliver a spotless clean every time.
+            Lucho's Cleaning offers top-rated, affordable, and reliable cleaning services in {location}.<br /> From homes to offices, we deliver a spotless clean every time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button
@@ -413,7 +413,7 @@ export default async function CleaningServicesComponent({
         <section className="py-12 md:py-24 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-foreground">Neighborhoods We Serve in {location}</h2>
-            <p className="text-lg text-center text-gray-700 mb-8">Kathy Clean provides cleaning services across the most vibrant and established communities in {location}. Our cleaning crews are already active in these neighborhoods, ensuring fast response times and local knowledge.</p>
+            <p className="text-lg text-center text-gray-700 mb-8">Lucho's Cleaning provides cleaning services across the most vibrant and established communities in {location}. Our cleaning crews are already active in these neighborhoods, ensuring fast response times and local knowledge.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {locationNeighborhoods.map(hood => <div key={hood} className="bg-white p-4 rounded-lg shadow-sm text-center">{hood}</div>)}
             </div>

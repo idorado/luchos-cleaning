@@ -4,15 +4,15 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 const faqItems = [
   {
-    question: "What cleaning services does Kathy Clean offer in the Denver area?",
-    answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, commercial cleaning, and window cleaning across Denver, Centennial, Parker, Castle Rock, and nearby areas."
+    question: "What cleaning services does Lucho's Cleaning offer in the Houston area?",
+    answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, commercial cleaning, and window cleaning across Houston, Centennial, Parker, Castle Rock, and nearby areas."
   },
   {
     question: "Are you licensed, bonded, and insured in Colorado?",
-    answer: "Yes! Kathy Clean is fully licensed, bonded, and insured for residential and commercial cleaning throughout Colorado. We'll gladly provide a Certificate of Insurance upon request."
+    answer: "Yes! Lucho's Cleaning is fully licensed, bonded, and insured for residential and commercial cleaning throughout Colorado. We'll gladly provide a Certificate of Insurance upon request."
   },
   {
-    question: "How do I get a quote for cleaning services near Denver?",
+    question: "How do I get a quote for cleaning services near Houston?",
     answer: "You can request a free, no-obligation quote directly on our website or by calling (303) 681-2559. We'll confirm your address, service type, and home size to give you an exact estimate."
   },
   {
@@ -25,14 +25,14 @@ const faqItems = [
   },
   {
     question: "Which areas do you serve?",
-    answer: "We serve Denver, Centennial, Parker, Castle Rock, Greenwood Village, Highlands Ranch, Englewood, Lone Tree, and surrounding communities."
+    answer: "We serve Houston, Centennial, Parker, Castle Rock, Greenwood Village, Highlands Ranch, Englewood, Lone Tree, and surrounding communities."
   },
   {
     question: "What if I'm not satisfied with the cleaning?",
     answer: "Your satisfaction is guaranteed. If something wasn't cleaned to your expectations, let us know within 48 hours and we'll re-clean the area at no extra cost."
   },
   {
-    question: "What makes Kathy Clean different?",
+    question: "What makes Lucho's Cleaning different?",
     answer: "We focus on reliability, consistency, and communication. You'll get the same trusted cleaner whenever possible, a dedicated support team for scheduling, and quality guaranteed after every visit."
   }
 ]

@@ -125,7 +125,7 @@ export default function RequestQuote() {
             {/* Why Choose Kathy Clean Card */}
             <div className="bg-white/50 p-6 rounded-lg shadow-md border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Choose Kathy Clean?
+                Why Choose Lucho's Cleaning?
               </h3>
 
               {/* Item 1 */}

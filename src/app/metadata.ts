@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const homePageMetadata: Metadata = {
-  title: "Residential & Commercial Cleaning in Denver | Kathy Clean",
-  description: "Top-rated cleaning in Denver & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
+  title: "Residential & Commercial Cleaning in Houston | Lucho's Cleaning",
+  description: "Top-rated cleaning in Houston & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
-  keywords: "cleaning, Denver, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
+  keywords: "cleaning, Houston, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
   alternates: {
     canonical: "https://kathyclean.com/",
     languages: {
@@ -15,7 +15,7 @@ export const homePageMetadata: Metadata = {
     'application-ld+json': JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Kathy Clean",
+      "name": "Lucho's Cleaning",
       "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
       "@id": "https://www.kathyclean.com",
       "url": "https://www.kathyclean.com",
@@ -51,7 +51,7 @@ export const homePageMetadata: Metadata = {
       "areaServed": [
         { "@type": "Place", "name": "Castle Rock" },
         { "@type": "Place", "name": "Centennial" },
-        { "@type": "Place", "name": "Denver" },
+        { "@type": "Place", "name": "Houston" },
         { "@type": "Place", "name": "Englewood" },
         { "@type": "Place", "name": "Greenwood Village" },
         { "@type": "Place", "name": "Highlands Ranch" },

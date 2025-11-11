@@ -1,7 +1,7 @@
 export const home = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Kathy Clean",
+  "name": "Lucho's Cleaning",
   "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
   "@id": "https://www.kathyclean.com",
   "url": "https://www.kathyclean.com",
@@ -41,7 +41,7 @@ export const home = () => ({
   "areaServed": [
     { "@type": "Place", "name": "Castle Rock" },
     { "@type": "Place", "name": "Centennial" },
-    { "@type": "Place", "name": "Denver" },
+    { "@type": "Place", "name": "Houston" },
     { "@type": "Place", "name": "Englewood" },
     { "@type": "Place", "name": "Greenwood Village" },
     { "@type": "Place", "name": "Highlands Ranch" },
@@ -63,7 +63,7 @@ export const houseCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Lucho's Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1-303-681-2559",
     "address": {

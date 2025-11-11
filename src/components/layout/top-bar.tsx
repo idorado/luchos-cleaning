@@ -6,7 +6,7 @@ export function TopBar() {
       <div className="container mx-auto px-4 py-2 flex justify-between text-sm">
         <div className="flex items-center gap-2">
           <MapPin className="w-4 h-4" />
-          <span>Denver, Colorado</span>
+          <span>Houston, Texas</span>
         </div>
         <div className="flex items-center gap-2">
           <Phone className="w-4 h-4" />

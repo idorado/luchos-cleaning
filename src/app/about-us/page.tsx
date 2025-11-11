@@ -21,7 +21,8 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-col items-center gap-8">
-          <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNUQbUO28Qqho34HzWAgdjRlcDPJntsL1f2TI" alt="Kathy Clean logo" width={180} height={90} className="mb-2 rounded" />
+          <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNUQbUO28Qqho34HzWAgdjRlcDPJntsL1f2TI" alt="Luchos Cleaning logo" width={180} height={90} className="mb-2 rounded" />
+          
           <div className="text-center text-sm text-muted">Professional Cleaning Services</div>
           <div className="mt-8 flex flex-col items-center">
             <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUpJdm8uxbLyY5TVln2vGePNI6BEHMuo4rXcz" alt="C-thru logo" width={180} height={90} className="rounded" />
@@ -53,7 +54,7 @@ export default function About() {
         </p>
       </div>
       <div className="flex justify-center mt-8">
-        <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" alt="Kathy Clean logo large" width={200} height={100} className="rounded" />
+        <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" alt="Luchos Cleaning logo large" width={200} height={100} className="rounded" />
       </div>
     </section>
   );

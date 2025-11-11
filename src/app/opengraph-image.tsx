@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "Kathy Clean - Professional Cleaning Services"
+export const alt = "Lucho's Cleaning - Professional Cleaning Services"
 export const size = {
   width: 1200,
   height: 630,
@@ -30,7 +30,7 @@ export default async function Image() {
           width={160}
           height={80}
           style={{ marginBottom: 32, borderRadius: 12 }}
-          alt="Kathy Clean Logo"
+          alt="Lucho's Cleaning Logo"
         />
         <h1
           style={{
@@ -40,7 +40,7 @@ export default async function Image() {
             textAlign: "center",
           }}
         >
-          Residential & Commercial Cleaning in Denver
+          Residential & Commercial Cleaning in Houston
         </h1>
         <div
           style={{

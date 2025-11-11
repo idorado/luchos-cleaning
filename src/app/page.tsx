@@ -45,10 +45,10 @@ export default async function Home() {
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">Quality Cleaning Services From Denver to Castle Rock</h2>
-              <p className="text-gray-600 mb-6">We provide top-quality cleaning services across the Denver metro area, from the heart of Denver to the beautiful city of Castle Rock. Our professional team is committed to delivering exceptional cleaning services to homes and businesses throughout the region.</p>
+              <h2 className="text-3xl font-bold mb-6">Quality Cleaning Services From Houston to Castle Rock</h2>
+              <p className="text-gray-600 mb-6">We provide top-quality cleaning services across the Houston metro area, from the heart of Houston to the beautiful city of Castle Rock. Our professional team is committed to delivering exceptional cleaning services to homes and businesses throughout the region.</p>
               <div className="text-gray-600 mb-8">
-                <p>Aurora, Bow Mar, Castle Rock, Centennial, Central Park, Cherry Creek, Cherry Hills Village, Denver, Englewood, Glendale, Greenwood Village, Highlands Ranch, Highland, Hilltop, Ken Caryl, Lakewood, Littleton, Lone Tree, Parker, Roxborough Park, Sheridan, The Pinery, University Park, Washington Park</p>
+                <p>Aurora, Bow Mar, Castle Rock, Centennial, Central Park, Cherry Creek, Cherry Hills Village, Houston, Englewood, Glendale, Greenwood Village, Highlands Ranch, Highland, Hilltop, Ken Caryl, Lakewood, Littleton, Lone Tree, Parker, Roxborough Park, Sheridan, The Pinery, University Park, Washington Park</p>
               </div>
               <RequestQuoteButton />
             </div>

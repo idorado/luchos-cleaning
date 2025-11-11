@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!service) {
     return {
-      title: 'Service Not Found | Kathy Clean',
+      title: "Service Not Found | Lucho's Cleaning",
       description: 'The requested service could not be found.',
     };
   }
@@ -112,7 +112,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title, 
       description,
       url: canonical,
-      siteName: 'Kathy Clean',
+      siteName: "Lucho's Cleaning",
       locale: 'en_US',
       type: 'website',
     }, 

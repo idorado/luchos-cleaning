@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Terms of Service | Kathy Clean',
-  description: 'Terms of Service for Kathy Clean.',
+  title: "Terms of Service | Lucho's Cleaning",
+  description: "Terms of Service for Lucho's Cleaning.",
 };
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
 
       <p>
         These Terms of Service ("Terms") govern your access to and use of the website and cleaning
-        services provided by Kathy Clean ("Kathy Clean," "we," "us," or "our"). By booking or using
+        services provided by Lucho's Cleaning ("Lucho's Cleaning," "we," "us," or "our"). By booking or using
         our services, you agree to these Terms.
       </p>
 
@@ -90,7 +90,7 @@ export default function Page() {
 
       <h2>12. Website & Intellectual Property</h2>
       <p>
-        All website content (texts, logos, images) is owned by Kathy Clean or its licensors and protected
+        All website content (texts, logos, images) is owned by Lucho's Cleaning or its licensors and protected
         by applicable IP laws. You may not copy, distribute, or modify content without permission.
       </p>
 
