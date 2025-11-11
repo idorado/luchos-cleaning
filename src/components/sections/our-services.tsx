@@ -60,7 +60,7 @@ export default async function OurServices() {
     {
       title: "House Cleaning",
       description:
-        "Enjoy a spotless home with our trusted house cleaning services in Denver and surrounding areas. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.",
+        "Enjoy a spotless home with our trusted house cleaning services in Houston and throughout Harris County. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.",
       imageUrl:
         "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
       imageAlt:
@@ -70,7 +70,7 @@ export default async function OurServices() {
     {
       title: "Commercial Cleaning",
       description:
-        "Keep your workspace clean, healthy, and professional with our expert janitorial services. We serve offices, clinics, retail stores, and more across Denver area. Trusted by brands like Whole Foods, Starbucks, IKEA, Rivian, and PetSmart.",
+        "Keep your workspace clean, healthy, and professional with our expert janitorial services. We serve offices, clinics, retail stores, and more across the Houston area. Trusted by leading brands.",
       imageUrl:
         "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV",
       imageAlt: "Professional cleaners working in an office space",
@@ -84,15 +84,13 @@ export default async function OurServices() {
         <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center">
           Our House and Commercial Cleaning
           <br />
-          Services in Denver, CO
+          Services in Houston, TX
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-          With over <strong>10 years of experience</strong>, Kathy Clean
-          delivers top-rated house cleaning and commercial cleaning services
-          across the Denver area. We proudly serve neighborhoods and cities
-          including Denver, Parker, Lone Tree, Highlands Ranch, Centennial,
-          Central Park, Hilltop, Washington Park, Cherry Creek, University Park,
-          Highland, and Castle Rock.
+          Luchos Cleaning delivers top-rated house cleaning and commercial cleaning services
+          across the Houston area. We proudly serve Harris County, including
+          Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial,
+          Uptown, Bellaire, and the Medical Center Area.
         </p>
 
         <div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">

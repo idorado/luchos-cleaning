@@ -8,7 +8,7 @@ const faqItems = [
     answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, and commercial cleaning across Houston, Spring Branch, The Heights, Upper Kirby, and nearby areas."
   },
   {
-    question: "Are you licensed, bonded, and insured in Colorado?",
+    question: "Is Luchos Cleaning licensed, bonded, and insured in Texas?",
     answer: "Yes! Lucho's Cleaning is fully licensed, bonded, and insured for residential and commercial cleaning throughout Texas. We'll gladly provide a Certificate of Insurance upon request."
   },
   {

@@ -29,22 +29,6 @@ export function Footer() {
                   Commercial cleaning
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/window-cleaning-denver"
-                  className="text-white hover:text-cyan-500"
-                >
-                  Window Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/other-services-denver"
-                  className="text-white hover:text-cyan-500"
-                >
-                  Other services
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -138,10 +122,10 @@ export function Footer() {
                     </svg>
                   </div>
                   <a
-                    href="mailto:support@kathyclean.com"
+                    href="mailto:contact@luchoscleaning.com"
                     className="text-white hover:text-cyan-500"
                   >
-                    support@kathyclean.com
+                    contact@luchoscleaning.com
                   </a>
                 </div>
 
@@ -185,22 +169,22 @@ export function Footer() {
             </h3>
             <div className="space-y-4">
               <a
-                href="https://maps.app.goo.gl/GT4b5vZXN9h1Y3u4A"
+                href="https://www.google.com/maps/search/?api=1&query=Luchos+Cleaning+Houston+TX"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-cyan-500 block"
               >
-                7500 E Arapahoe Rd #200,
+                9219 Katy Fwy #136,
                 <br />
-                Centennial, CO 80112,
+                Houston, TX 77024,
                 <br />
                 United States
               </a>
               <div className="mt-2 w-full h-48 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3074.4602054854167!2d-104.90122579999999!3d39.594314399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c983b74cfaa6f%3A0xbe376be57cdb01a4!2sKathy%20Clean!5e0!3m2!1sen!2sin!4v1761682608683!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56140.24123621904!2d-95.54139096191744!3d29.78370877266356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c5ff44dce045%3A0x3df9c8e8305733d4!2sLuchos%20Cleaning!5e0!3m2!1sen!2sar!4v1762890192457!5m2!1sen!2sar"
                   width="100%"
-                  height="100%"
+                  height="250"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -212,7 +196,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary">
-          <p> 2023 Kathy Clean. All rights reserved.</p>
+          <p>© 2025 Luchos Cleaning. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-primary">
               Privacy Policy

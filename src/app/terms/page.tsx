@@ -127,7 +127,7 @@ export default function Page() {
 
       <h2>18. Contact</h2>
       <p>
-        Questions? <a href="mailto:support@kathyclean.com">support@kathyclean.com</a>
+        Questions? <a href="mailto:contact@luchoscleaning.com">contact@luchoscleaning.com</a>
       </p>
 
       <hr />

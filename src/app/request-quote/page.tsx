@@ -30,8 +30,8 @@ export default function RequestQuote() {
           </h1>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Join hundreds of satisfied customers who trust us with their homes.
-            Professional, reliable, and affordable cleaning services in Denver
-            Area.
+            Professional, reliable, and affordable cleaning services in the Houston
+            area.
           </p>
 
           {/* Trust Indicators */}
@@ -114,7 +114,7 @@ export default function RequestQuote() {
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                title="Get your free cleaning quote | Kathy Clean"
+                title="Get your free cleaning quote | Luchos Cleaning"
                 className="absolute top-0 left-0 w-full h-full"
               ></iframe>
             </div>
@@ -122,10 +122,10 @@ export default function RequestQuote() {
 
           {/* Left Column - Cards */}
           <div className="w-full lg:w-1/2 space-y-6">
-            {/* Why Choose Kathy Clean Card */}
+            {/* Why Choose Luchos Cleaning Card */}
             <div className="bg-white/50 p-6 rounded-lg shadow-md border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Choose Lucho's Cleaning?
+                Why Choose Luchos Cleaning?
               </h3>
 
               {/* Item 1 */}
@@ -260,7 +260,7 @@ export default function RequestQuote() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic">
-                    "Kathy Clean transformed my home! Their attention to detail
+                    "Luchos Cleaning transformed my home! Their attention to detail
                     is incredible and the team is so professional."
                   </p>
                 </div>
@@ -310,7 +310,7 @@ export default function RequestQuote() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic">
-                    "I've tried many cleaning services, but Kathy Clean is by
+                    "I've tried many cleaning services, but Luchos Cleaning is by
                     far the best. They're reliable and do amazing work."
                   </p>
                 </div>
@@ -373,8 +373,9 @@ export default function RequestQuote() {
                     />
                   </svg>
                   <span className="text-gray-700">
-                    Serving Denver, Aurora, Centennial, Parker, Englewood,
-                    Castle Rock & nearby areas
+                    Serving Houston and Harris County, including Houston, Spring Branch,
+                    Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the
+                    Medical Center Area
                   </span>
                 </div>
               </div>
@@ -504,9 +505,9 @@ export default function RequestQuote() {
                   Do you serve my area?
                 </h3>
                 <p>
-                  We serve Denver, Centennial, Parker, Castle Rock, Greenwood
-                  Village, Highlands Ranch, Englewood, Littleton and surrounding
-                  areas. If you’re nearby, we likely already clean for one of
+                  We serve Houston and Harris County, including Houston, Spring Branch,
+                  Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the
+                  Medical Center Area. If you’re nearby, we likely already clean for one of
                   your neighbors!
                 </p>
               </div>
@@ -567,7 +568,7 @@ export default function RequestQuote() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Why should I choose Kathy Clean?
+                  Why should I choose Luchos Cleaning?
                 </h3>
                 <p>
                   Because we make cleaning simple, reliable, and stress-free.

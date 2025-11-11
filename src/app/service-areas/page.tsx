@@ -5,9 +5,9 @@ import { LocationCard } from "@/components/sections/our-locations";
 
 export const metadata: Metadata = {
   title:
-    "Service Areas for House Cleaning Service in Colorado - Kathy Clean Service",
+    "Service Areas for House Cleaning Service in Texas - Luchos Cleaning",
   description:
-    "Service Areas for Expert House Cleaning Service in Colorado by Kathy Clean Service. Residential and Commercial Cleaning. Call Now!",
+    "Service Areas for Expert House Cleaning Service in Houston and Harris County by Luchos Cleaning. Residential and Commercial Cleaning. Call Now!",
   alternates: {
     canonical: canonicalPath("service-areas"),
   },
@@ -49,16 +49,16 @@ export default function ServiceAreas() {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-full lg:pr-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center lg:text-left">
-                Service Areas for House Cleaning Service in Colorado - Kathy
-                Clean Service
+                Service Areas for House Cleaning Service in Texas - Luchos
+                Cleaning
               </h1>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Kathy Clean proudly provides reliable house and commercial
-                  cleaning services across the Denver Metro Area and surrounding
-                  cities. From Lakewood, Littleton, Highlands Ranch, and Castle
-                  Rock, our trusted team is ready to keep your home or business
-                  spotless.
+                  Luchos Cleaning proudly provides reliable house and commercial
+                  cleaning services across the Houston area. We serve Harris County,
+                  including Houston, Spring Branch, Houston Heights, Upper Kirby,
+                  Memorial, Uptown, Bellaire, and the Medical Center Area. Our trusted
+                  team is ready to keep your home or business spotless.
                 </p>
                 <p>
                   We specialize in house cleaning, move-in/move-out cleaning,
@@ -108,12 +108,12 @@ export default function ServiceAreas() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-6">
-              Our Cleaning Services in Colorado
+              Our Cleaning Services in Houston, TX
             </h2>
             <div className="bg-white p-8 rounded-lg">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Kathy Clean proudly serves the entire Denver metropolitan area
+                  Luchos Cleaning proudly serves the entire Houston metropolitan area
                   and surrounding communities. Our strategically located service
                   areas ensure we can provide prompt, reliable cleaning services
                   to homes and businesses throughout the region.

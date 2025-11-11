@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "tv7odam5so.ufs.sh",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "xsgames.co",
         pathname: "/randomusers/**",
       },

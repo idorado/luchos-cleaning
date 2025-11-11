@@ -36,19 +36,23 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto">
             <div className="w-full md:w-1/2">
               <div className="overflow-hidden rounded-lg shadow-lg">
-                <img 
-                  src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomniDJSKwNq3haW9IjyTl7dbP5tZX4mrvg1GQH" 
-                  alt="Service Areas Map" 
-                  className="w-full h-auto"
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d552616.7299064723!2d-95.76425224736101!3d29.833542222776323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cc8afd7f30f5%3A0x2eaf5277b2bbd2da!2sHarris%20County%2C%20TX%2C%20USA!5e1!3m2!1sen!2sar!4v1762800860247!5m2!1sen!2sar"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
                   loading="lazy"
-                />
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Harris County, TX - Service Area Map"
+                ></iframe>
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">Quality Cleaning Services From Houston to Castle Rock</h2>
-              <p className="text-gray-600 mb-6">We provide top-quality cleaning services across the Houston metro area, from the heart of Houston to the beautiful city of Castle Rock. Our professional team is committed to delivering exceptional cleaning services to homes and businesses throughout the region.</p>
+              <h2 className="text-3xl font-bold mb-6">Quality Cleaning Services Across Harris County, TX</h2>
+              <p className="text-gray-600 mb-6">We provide top-quality cleaning services across the Houston area. From downtown Houston to the surrounding neighborhoods of Harris County, our professional team is committed to delivering spotless results for both homes and businesses.</p>
               <div className="text-gray-600 mb-8">
-                <p>Aurora, Bow Mar, Castle Rock, Centennial, Central Park, Cherry Creek, Cherry Hills Village, Houston, Englewood, Glendale, Greenwood Village, Highlands Ranch, Highland, Hilltop, Ken Caryl, Lakewood, Littleton, Lone Tree, Parker, Roxborough Park, Sheridan, The Pinery, University Park, Washington Park</p>
+                <p>We proudly serve: Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area.</p>
               </div>
               <RequestQuoteButton />
             </div>

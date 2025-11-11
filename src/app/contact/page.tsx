@@ -29,21 +29,21 @@ export default function ContactPage() {
               <div className="w-full md:w-1/2">
                 <Image 
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8WFaPuKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" 
-                  alt="Kathy Clean office" 
+                  alt="Luchos Cleaning office" 
                   width={500} 
                   height={400}
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />
               </div>
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">Kathy Clean</h2>
+                <h2 className="text-2xl font-bold">Luchos Cleaning</h2>
                 <address className="not-italic text-gray-600 space-y-2">
                   <p>7500 E. Arapahoe Road</p>
                   <p>Suite 200</p>
                   <p>Centennial, CO 80112</p>
                 </address>
                 <div className="space-y-2">
-                  <p className="font-medium">Email: <a href="mailto:support@kathyclean.com" className="text-blue-600 hover:underline">support@kathyclean.com</a></p>
+                  <p className="font-medium">Email: <a href="mailto:contact@luchoscleaning.com" className="text-blue-600 hover:underline">contact@luchoscleaning.com</a></p>
                   <p className="font-medium">Phone: <a href="tel:+13464886044" className="text-blue-600 hover:underline">(346) 488-6044</a></p>
                 </div>
               </div>
@@ -52,13 +52,12 @@ export default function ContactPage() {
             <div className="mt-8">
               <h3 className="text-xl font-semibold mb-4">Service Areas</h3>
               <p className="text-gray-600 mb-2">
-                Serving South Denver, Castle Rock, Littleton, Englewood, Colorado Springs, Parker, Centennial, 
-                Highlands Ranch, Lone Tree, Castle Pines and Aurora.
+                Serving Houston and Harris County, including Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area.
               </p>
               <div className="mt-6 w-full rounded-lg overflow-hidden shadow-md">
                 <Image 
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomai17bhrN0W8yorQH6lnDudV4OjgIFLEC2YpM"
-                  alt="Kathy Clean Service Areas"
+                  alt="Luchos Cleaning Service Areas"
                   width={1200}
                   height={800}
                   className="w-full h-auto object-cover"
