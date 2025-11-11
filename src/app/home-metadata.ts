@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 
 export const homePageMetadata: Metadata = {
   title: "Residential & Commercial Cleaning in Houston | Lucho's Cleaning",
-  description: "Top-rated cleaning in Houston & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
+  description: "Top-rated cleaning in Houston & nearby. Residential & commercial cleaning. 48h guarantee",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
-  keywords: "cleaning, Houston, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
+  keywords: "cleaning, Houston, residential, commercial, 48h guarantee",
   alternates: {
     canonical: "https://kathyclean.com/",
     languages: {
@@ -19,7 +19,7 @@ export const homePageMetadata: Metadata = {
       "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
       "@id": "https://www.kathyclean.com",
       "url": "https://www.kathyclean.com",
-      "telephone": "+1-303-681-2559",
+      "telephone": "+1 346-488-6044",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "7500 E Arapahoe Rd #200",

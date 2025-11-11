@@ -5,15 +5,15 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 const faqItems = [
   {
     question: "What cleaning services does Lucho's Cleaning offer in the Houston area?",
-    answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, commercial cleaning, and window cleaning across Houston, Centennial, Parker, Castle Rock, and nearby areas."
+    answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, and commercial cleaning across Houston, Spring Branch, The Heights, Upper Kirby, and nearby areas."
   },
   {
     question: "Are you licensed, bonded, and insured in Colorado?",
-    answer: "Yes! Lucho's Cleaning is fully licensed, bonded, and insured for residential and commercial cleaning throughout Colorado. We'll gladly provide a Certificate of Insurance upon request."
+    answer: "Yes! Lucho's Cleaning is fully licensed, bonded, and insured for residential and commercial cleaning throughout Texas. We'll gladly provide a Certificate of Insurance upon request."
   },
   {
     question: "How do I get a quote for cleaning services near Houston?",
-    answer: "You can request a free, no-obligation quote directly on our website or by calling (303) 681-2559. We'll confirm your address, service type, and home size to give you an exact estimate."
+    answer: "You can request a free, no-obligation quote directly on our website or by calling (346) 488-6044. We'll confirm your address, service type, and home size to give you an exact estimate."
   },
   {
     question: "Do you bring your own supplies and equipment?",
@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: "Which areas do you serve?",
-    answer: "We serve Houston, Centennial, Parker, Castle Rock, Greenwood Village, Highlands Ranch, Englewood, Lone Tree, and surrounding communities."
+    answer: "We serve Houston, Spring Branch, The Heights, Upper Kirby, Memorial, Uptown, Bellaire, Medical Center and surrounding communities."
   },
   {
     question: "What if I'm not satisfied with the cleaning?",

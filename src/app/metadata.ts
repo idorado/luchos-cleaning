@@ -19,7 +19,7 @@ export const homePageMetadata: Metadata = {
       "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
       "@id": "https://luchoscleaning.com",
       "url": "https://luchoscleaning.com",
-      "telephone": "+1-303-681-2559",
+      "telephone": "+1 346-488-6044",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "7500 E Arapahoe Rd #200",

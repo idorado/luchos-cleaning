@@ -26,8 +26,8 @@ import React, { useState } from "react";
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const services = [
-		{ href: '/house-cleaning-denver', title: 'House Cleaning', description: 'Professional home cleaning services' },
-		{ href: '/commercial-cleaning-denver', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
+		{ href: '/house-cleaning-houston', title: 'House Cleaning', description: 'Professional home cleaning services' },
+		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 	];
 	const locations = [
 		{ href: '/service-areas/harris-county-tx', name: 'Harris County, TX' },
@@ -40,11 +40,12 @@ export function Header() {
 					<div className="flex items-center gap-8">
 						<Link href="/" className="flex items-center">
 							<Image
-								src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM"
-								alt="Luchos Cleaning Logo"
-								width={150}
-								height={40}
-								className="h-10 w-auto"
+								src="/images/luchos-cleaning-logo.png"
+								alt="Luchos Cleaning logo"
+								width={260}
+								height={80}
+								priority
+								className="h-20 w-auto"
 							/>
 						</Link>
 					</div>

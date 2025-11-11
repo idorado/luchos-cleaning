@@ -44,7 +44,7 @@ export default function ContactPage() {
                 </address>
                 <div className="space-y-2">
                   <p className="font-medium">Email: <a href="mailto:support@kathyclean.com" className="text-blue-600 hover:underline">support@kathyclean.com</a></p>
-                  <p className="font-medium">Phone: <a href="tel:3036812559" className="text-blue-600 hover:underline">(303) 681-2559</a></p>
+                  <p className="font-medium">Phone: <a href="tel:+13464886044" className="text-blue-600 hover:underline">(346) 488-6044</a></p>
                 </div>
               </div>
             </div>

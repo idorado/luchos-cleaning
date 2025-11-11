@@ -11,8 +11,8 @@ export default function PhoneButton() {
     >
       <Phone className="h-5 w-5 text-black" />
       <span className="text-black">
-        <a href="tel:3036812559" className="hover:text-cyan-500">
-          (303) 681-2559
+        <a href="tel:+13464886044" className="hover:text-cyan-500">
+          (346) 488-6044
         </a>
       </span>
     </div>

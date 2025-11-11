@@ -15,7 +15,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="/house-cleaning-denver"
+                  href="/house-cleaning-houston"
                   className="text-white hover:text-cyan-500"
                 >
                   Residential cleaning
@@ -23,7 +23,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/commercial-cleaning-denver"
+                  href="/commercial-cleaning-houston"
                   className="text-white hover:text-cyan-500"
                 >
                   Commercial cleaning
@@ -112,10 +112,10 @@ export function Footer() {
                     </svg>
                   </div>
                   <a
-                    href="tel:3036812559"
+                    href="tel:+13464886044"
                     className="text-white hover:text-cyan-500"
                   >
-                    (303) 681-2559
+                    (346) 488-6044
                   </a>
                 </div>
 

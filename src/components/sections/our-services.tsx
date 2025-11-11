@@ -65,7 +65,7 @@ export default async function OurServices() {
         "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
       imageAlt:
         "Professional cleaner with cleaning supplies in a modern kitchen",
-      link: "/house-cleaning-denver",
+      link: "/house-cleaning-houston",
     },
     {
       title: "Commercial Cleaning",
@@ -74,7 +74,7 @@ export default async function OurServices() {
       imageUrl:
         "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2kyI8hJ6JbmpXdcT7olMHiQWCShrEqx84YZV",
       imageAlt: "Professional cleaners working in an office space",
-      link: "/commercial-cleaning-denver",
+      link: "/commercial-cleaning-houston",
     },
   ];
 
