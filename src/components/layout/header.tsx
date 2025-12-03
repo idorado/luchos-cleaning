@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import PhoneButton from "@/components/PhoneButton";
-import { CtaButton } from "@/components/ui/CtaButton";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 
 import React, { useState } from "react";
 
@@ -96,7 +96,7 @@ export function Header() {
 									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
-									<CtaButton href="/request-quote" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Request a Quote</CtaButton>
+									<RequestQuoteButton location="location_components_layout_header" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)} />
 									<div className="mt-2"><PhoneButton /></div>
 								</nav>
 							</div>
@@ -165,11 +165,7 @@ export function Header() {
 					{/* Right: Buttons */}
 					<div className="hidden md:block">
 						<div className="flex flex-row gap-3 items-center">
-							<Button variant="default" className="font-medium" asChild>
-								<CtaButton href="/request-quote">
-									REQUEST A QUOTE
-								</CtaButton>
-							</Button>
+							<RequestQuoteButton location="location_components_layout_header" className="font-medium" />
 							<PhoneButton />
 						</div>
 					</div>

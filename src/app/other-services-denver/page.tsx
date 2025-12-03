@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { canonicalPath } from "@/lib/canonical";
-import { Button } from "@/components/ui/button";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import PhoneButton from "@/components/PhoneButton";
-import { CtaButton } from '@/components/ui/CtaButton';
 import { ArrowRight, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,11 +66,7 @@ export default function OtherServicesPage() {
                 We offer pressure washing, gutter cleaning, solar panel cleaning, and emergency cleans across Denver and surrounding areas. Fast, reliable service to keep your home or business spotless and protected.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild className="bg-primary hover:bg-primary/90 text-black">
-                  <CtaButton href="/request-quote" className="flex items-center">
-                    Request a Quote
-                  </CtaButton>
-                </Button>
+                <RequestQuoteButton location="location_app_other_services_denver_page" className="bg-primary hover:bg-primary/90 text-black flex items-center" />
                 <PhoneButton />
               </div>
             </div>
@@ -127,12 +122,10 @@ export default function OtherServicesPage() {
         <div className="max-w-3xl mx-auto rounded-3xl bg-[#17224D] px-6 py-10 flex flex-col items-center text-center shadow-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Book One of Our Specialty Services?</h2>
           <p className="text-base md:text-lg text-white mb-8">Get fast, reliable pressure washing, gutter cleaning, solar panel care, or emergency cleanup - done right the first time. Serving Denver and surrounding areas.</p>
-          <CtaButton 
-            href="/request-quote" 
+          <RequestQuoteButton 
+            location="location_app_other_services_denver_page"
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 has-[>svg]:px-3 mt-8 font-medium mx-auto px-8 py-3 text-lg shadow-lg hover:scale-105 transition-all"
-          >
-            REQUEST A QUOTE
-          </CtaButton>
+          />
         </div>
       </section>
     </main>

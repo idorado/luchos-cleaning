@@ -1,9 +1,8 @@
 import HeroSection from "@/components/HeroSection";
-import { Button } from "@/components/ui/button";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { CtaButton } from "@/components/ui/CtaButton";
 import PhoneButton from "@/components/PhoneButton";
 import FeatureBar from "@/components/ui/FeatureBar";
 
@@ -21,9 +20,7 @@ const HomeHero = () => {
           busy homes, productive offices, and everything in between.
         </p>
         <div className="pt-4 flex flex-col md:flex-row gap-4">
-          <Button variant="default" className="font-medium" asChild>
-            <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
-          </Button>
+          <RequestQuoteButton location="location_components_sections_home_hero" className="font-medium" />
           <PhoneButton />
           <a
             href="sms:+13464886044"

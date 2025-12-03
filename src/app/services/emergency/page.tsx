@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Form,
@@ -18,7 +19,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import { toast } from "sonner"
-import { CtaButton } from "@/components/ui/CtaButton"
 
 type EmergencyService = {
   id: string;
@@ -94,9 +94,7 @@ export default function EmergencyPage() {
               </p>
             </div>
             <div>
-              <Button size="lg" className="bg-blue-800 hover:bg-blue-900" asChild>
-                <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
-              </Button>
+              <RequestQuoteButton location="location_app_services_emergency_page" className="bg-blue-800 hover:bg-blue-900" />
             </div>
           </div>
         </div>
