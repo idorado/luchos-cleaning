@@ -86,6 +86,10 @@ export function Header() {
 									<DropdownMenu>
 										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
 										<DropdownMenuContent className="bg-foreground text-white">
+											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}>
+												<Link href="/service-areas">View All Locations</Link>
+											</DropdownMenuItem>
+											<DropdownMenuSeparator />
 											{locations.map(l => (
 												<DropdownMenuItem asChild key={l.href} onClick={() => setMobileMenuOpen(false)}>
 													<Link href={l.href}>{l.name}</Link>
@@ -153,6 +157,16 @@ export function Header() {
 											</NavigationMenuTrigger>
 											<NavigationMenuContent>
 												<ul className="grid w-[300px] gap-3 p-4">
+													<li>
+														<NavigationMenuLink asChild>
+															<Link href="/service-areas" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+																<div className="text-sm font-medium leading-none">View All Locations</div>
+															</Link>
+														</NavigationMenuLink>
+													</li>
+													<li aria-hidden>
+														<div className="h-px w-full bg-border" />
+													</li>
 													{locations.map(l => (
 														<li key={l.href}>
 															<NavigationMenuLink asChild>
