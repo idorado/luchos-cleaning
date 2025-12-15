@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import { LocationCard } from "@/components/sections/our-locations";
+import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 export const metadata: Metadata = {
   title:
@@ -14,33 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function ServiceAreas() {
-  const areas = [
-    "Aurora",
-    "Bow Mar",
-    "Castle Rock",
-    "Centennial",
-    "Central Park",
-    "Cherry Creek",
-    "Cherry Hills Village",
-    "Denver",
-    "Englewood",
-    "Glendale",
-    "Greenwood Village",
-    "Highlands Ranch",
-    "Highland",
-    "Hilltop",
-    "Ken Caryl",
-    "Lakewood",
-    "Littleton",
-    "Lone Tree",
-    "Parker",
-    "Roxborough Park",
-    "Sheridan",
-    "The Pinery",
-    "University Park",
-    "Washington Park",
-  ];
-
   return (
     <main className="flex-1">
       {/* Hero Section */}
@@ -146,28 +120,20 @@ export default function ServiceAreas() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Quick Access by Location
+              Cities We Serve
             </h2>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
               Select your city below for location-specific information
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Harris County, TX",
-                  imageUrl:
-                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeAO6EjqYlkE2QmblsJDhG6viRqZSt3UT5oMOC",
-                  imageAlt: "House Cleaning Service in Harris County, TX",
-                  link: "/service-areas/harris-county-tx",
-                },
-              ].map((location, index) => (
+              {houstonServiceAreas.map((location, index) => (
                 <LocationCard
                   key={index}
-                  title={location.title}
+                  title={location.name}
                   imageUrl={location.imageUrl}
                   imageAlt={location.imageAlt}
-                  link={location.link}
+                  link={`/service-areas/${location.slug}`}
                 />
               ))}
             </div>

@@ -20,6 +20,7 @@ import {
 import { Menu } from "lucide-react";
 import PhoneButton from "@/components/PhoneButton";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
+import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 import React, { useState } from "react";
 
@@ -29,9 +30,9 @@ export function Header() {
 		{ href: '/house-cleaning-houston', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 	];
-	const locations = [
-		{ href: '/service-areas/harris-county-tx', name: 'Harris County, TX' },
-	];
+	const locations = [...houstonServiceAreas]
+		.sort((a, b) => a.name.localeCompare(b.name))
+		.map((area) => ({ href: `/service-areas/${area.slug}`, name: area.name }));
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">
 			<div className="container mx-auto px-4">

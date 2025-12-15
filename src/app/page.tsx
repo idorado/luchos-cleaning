@@ -37,7 +37,7 @@ export default async function Home() {
             <div className="w-full md:w-1/2">
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d552616.7299064723!2d-95.76425224736101!3d29.833542222776323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cc8afd7f30f5%3A0x2eaf5277b2bbd2da!2sHarris%20County%2C%20TX%2C%20USA!5e1!3m2!1sen!2sar!4v1762800860247!5m2!1sen!2sar"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443016.33462230774!2d-95.76425224736101!3d29.833542222776323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cc8afd7f30f5%3A0x2eaf5277b2bbd2da!2sHarris%20County%2C%20TX%2C%20USA!5e0!3m2!1sen!2sar!4v1765819264808!5m2!1sen!2sar"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}

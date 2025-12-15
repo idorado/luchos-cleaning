@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { CtaButton } from "@/components/ui/CtaButton";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface LocationCardProps {
@@ -29,9 +28,20 @@ export const LocationCard: FC<LocationCardProps> = ({
         />
       </div>
       <div className="p-4 sm:p-6 flex flex-col flex-1">
-        <h2 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-1 sm:mb-3">
+        <h2 className="text-xl sm:text-2xl font-semibold text-navy-700 min-h-[3.25rem] leading-tight">
           {title}
         </h2>
+        {link ? (
+          <div className="mt-auto pt-6">
+            <Link
+              href={link}
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            >
+              Explore Service Area
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        ) : null}
       </div>
     </div>
   );

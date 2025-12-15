@@ -7,7 +7,20 @@ const staticRoutes: string[] = [
   "/about-us",
   "/request-quote",
   "/service-areas",
-  "/service-areas/harris-county-tx",
+  "/service-areas/houston",
+  "/service-areas/spring-branch",
+  "/service-areas/greater-heights",
+  "/service-areas/greenway-upper-kirby-area",
+  "/service-areas/memorial",
+  "/service-areas/greater-uptown",
+  "/service-areas/bellaire",
+  "/service-areas/medical-center-area",
+  "/service-areas/the-memorial-villages",
+  "/service-areas/river-oaks",
+  "/service-areas/mid-west",
+  "/service-areas/briar-forest",
+  "/service-areas/west-university-place",
+  "/service-areas/washington-ave-memorial-park",
   "/house-cleaning-houston",
   "/commercial-cleaning-houston",
   "/our-services",
@@ -24,10 +37,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       route === "/house-cleaning-houston" ||
       route === "/commercial-cleaning-houston" ||
       route === "/service-areas" ||
-      route === "/service-areas/harris-county-tx" ||
       route === "/request-quote"
     ) {
       priority = 0.9;
+    } else if (route.startsWith("/service-areas/")) {
+      priority = 0.8;
     }
 
     return {
