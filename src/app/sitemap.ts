@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 const baseUrl = "https://luchoscleaning.com";
 
@@ -6,24 +7,14 @@ const staticRoutes: string[] = [
   "/",
   "/about-us",
   "/request-quote",
+  "/faq",
+  "/work-with-us",
   "/service-areas",
-  "/service-areas/houston",
-  "/service-areas/spring-branch",
-  "/service-areas/greater-heights",
-  "/service-areas/greenway-upper-kirby-area",
-  "/service-areas/memorial",
-  "/service-areas/greater-uptown",
-  "/service-areas/bellaire",
-  "/service-areas/medical-center-area",
-  "/service-areas/the-memorial-villages",
-  "/service-areas/river-oaks",
-  "/service-areas/mid-west",
-  "/service-areas/briar-forest",
-  "/service-areas/west-university-place",
-  "/service-areas/washington-ave-memorial-park",
+  ...houstonServiceAreas.map((area) => `/service-areas/${area.slug}`),
   "/house-cleaning-houston",
   "/commercial-cleaning-houston",
   "/our-services",
+  "/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

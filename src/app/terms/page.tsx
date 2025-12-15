@@ -115,8 +115,8 @@ export default function Page() {
 
       <h2>16. Governing Law</h2>
       <p>
-        These Terms are governed by the laws of the State of Colorado, without regard to conflict-of-law
-        provisions, and applicable U.S. federal law. Venue and jurisdiction lie in Colorado courts.
+        These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law
+        provisions, and applicable U.S. federal law. Venue and jurisdiction lie in Texas courts.
       </p>
 
       <h2>17. Changes to These Terms</h2>

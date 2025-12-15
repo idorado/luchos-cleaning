@@ -13,16 +13,16 @@ interface WhyTrustUsProps {
 
 const defaultContent = {
   title: "Why {location} Trusts Our {serviceType} Services",
-  description: `Since 2010, we've been providing top-quality cleaning services to homes and businesses throughout Denver and the surrounding Colorado communities.\n\nOur team of experienced professionals is committed to delivering exceptional results with attention to detail and a personal touch that large cleaning chains simply can't match.`
+  description: `For years, we've been providing top-quality cleaning services to homes and businesses throughout Houston and the surrounding communities.\n\nOur team of experienced professionals is committed to delivering exceptional results with attention to detail and a personal touch that large cleaning chains simply can't match.`
 };
 
 export default function WhyTrustUsSection({ location, serviceType, locationContent }: WhyTrustUsProps) {
   const content = locationContent || defaultContent;
   const title = content.title
     ? content.title
-      .replace('{location}', location || 'Denver')
+      .replace('{location}', location || 'Houston')
       .replace('{serviceType}', serviceType || 'Cleaning')
-    : `Why ${location || 'Denver'} Trusts Our ${serviceType || 'Cleaning'} Services`;
+    : `Why ${location || 'Houston'} Trusts Our ${serviceType || 'Cleaning'} Services`;
 
   const description =
     (location === "Houston" || location === "Houston, TX")

@@ -6,15 +6,15 @@ interface WhyTrustJanitorialProps {
 }
 
 export default function WhyTrustJanitorialSection({ location }: WhyTrustJanitorialProps) {
+  const loc = location || "Houston";
   return (
     <section className="bg-[#F4F4F4] border-t border-b border-border py-12 md:py-16">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-navy-800 mb-4">
-          Why {location} Trusts Our Janitorial Services
+          Why {loc} Trusts Our Janitorial Services
         </h2>
         <p className="text-base md:text-lg text-[#454545] max-w-4xl text-left mb-10">
-          For over a decade, Kathy Clean has delivered high-quality commercial cleaning across Colorado, from offices and retail stores to restaurants and medical facilities. Our professional team is known for consistency, reliability, and attention to detail, helping businesses maintain clean, safe, and welcoming environments.
-          We are now transfering this knowledge to Houston, to provide our top rated cleaning services through Lucho's Cleaning
+          Lucho's Cleaning delivers high-quality commercial cleaning for offices, retail stores, restaurants, and medical facilities across the Houston area. Our professional team is known for consistency, reliability, and attention to detail, helping businesses maintain clean, safe, and welcoming environments.
         </p>
         <div className="w-full flex flex-col items-center justify-center py-8">
           <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-8 text-center">We've earned the trust of top businesses through consistent quality, reliability, and attention to detail.</h3>
@@ -81,7 +81,7 @@ export default function WhyTrustJanitorialSection({ location }: WhyTrustJanitori
             </div>
           </div>
           <div className="text-center mt-4">
-            <span className="text-lg text-gray-700">And by many businesses across {location || 'Denver'}…</span>
+            <span className="text-lg text-gray-700">And by many businesses across {loc}…</span>
           </div>
         </div>
         <div className="flex justify-center">

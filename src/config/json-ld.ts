@@ -8,16 +8,14 @@ export const home = () => ({
   "telephone": "+1 346-488-6044",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "7500 E Arapahoe Rd #200",
-    "addressLocality": "Centennial",
-    "addressRegion": "CO",
-    "postalCode": "80112",
+    "addressLocality": "Houston",
+    "addressRegion": "TX",
     "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 39.5952,
-    "longitude": -104.9003
+    "latitude": 29.7604,
+    "longitude": -95.3698
   },
   "openingHoursSpecification": [
     {
@@ -49,11 +47,7 @@ export const home = () => ({
     { "@type": "Place", "name": "Bellaire" },
     { "@type": "Place", "name": "Medical Center Area" }
   ],
-  "sameAs": [
-    "https://www.facebook.com/kathyclean",
-    "https://www.instagram.com/kathyclean",
-    "https://g.co/kgs/tifVeFC"
-  ]
+  "sameAs": []
 });
 
 export const houseCleaning = (location: string) => {
@@ -68,16 +62,14 @@ export const houseCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -103,11 +95,7 @@ export const houseCleaning = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
+    "sameAs": [],
     "@id": `https://luchoscleaning.com/${slug}`,
     "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
@@ -146,16 +134,14 @@ export const commercialCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -181,11 +167,7 @@ export const commercialCleaning = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
+    "sameAs": [],
     "@id": `https://luchoscleaning.com/${slug}`,
     "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
@@ -224,16 +206,14 @@ export const windowCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -259,11 +239,7 @@ export const windowCleaning = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
+    "sameAs": [],
     "@id": `https://luchoscleaning.com/${slug}`,
     "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
@@ -302,16 +278,14 @@ export const cleaningServices = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -337,11 +311,7 @@ export const cleaningServices = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
+    "sameAs": [],
     "@id": `https://luchoscleaning.com/${slug}`,
     "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
@@ -402,16 +372,14 @@ export const moveInOutCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -437,11 +405,7 @@ export const moveInOutCleaning = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
+    "sameAs": [],
     "@id": `https://luchoscleaning.com/${slug}`,
     "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
@@ -475,21 +439,19 @@ export const postConstructionCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Kathy Clean",
+    "name": "Luchos Cleaning",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7500 E Arapahoe Rd #200",
-      "addressLocality": "Centennial",
-      "addressRegion": "CO",
-      "postalCode": "80112",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 39.5952,
-      "longitude": -104.9003
+      "latitude": 29.7604,
+      "longitude": -95.3698
     },
     "openingHoursSpecification": [
       {
@@ -515,13 +477,9 @@ export const postConstructionCleaning = (location: string) => {
       }
     ],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/kathyclean",
-      "https://www.instagram.com/kathyclean",
-      "https://g.co/kgs/tifVeFC"
-    ],
-    "@id": `https://www.kathyclean.com/${slug}`,
-    "url": `https://www.kathyclean.com/${slug}`,
+    "sameAs": [],
+    "@id": `https://luchoscleaning.com/${slug}`,
+    "url": `https://luchoscleaning.com/${slug}`,
     "areaServed": {
       "@type": "Place",
       "name": locationTitleCase

@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { LocationCard } from "@/components/sections/our-locations";
 import { canonicalPath } from "@/lib/canonical";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Comprehensive House and Commercial Cleaning Service in Harris County, TX",
@@ -28,11 +29,16 @@ export const metadata = {
     "Luchos Cleaning",
   ],
   alternates: {
-    canonical: "https://kathyclean.com/service-areas/harris-county-tx",
+    canonical: "https://luchoscleaning.com/service-areas",
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 
 export default async function Home() {
+  redirect("/service-areas");
   return (
     <main className="flex flex-col min-h-screen">
       <JsonLd data={home()} />

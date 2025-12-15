@@ -4,7 +4,8 @@ interface WhyBusinessesHomesChooseUsProps {
   location?: string;
 }
 
-export default function WhyBusinessesHomesChooseUs({ location = 'Denver' }: WhyBusinessesHomesChooseUsProps) {
+export default function WhyBusinessesHomesChooseUs({ location = 'Houston' }: WhyBusinessesHomesChooseUsProps) {
+  const loc = location || 'Houston';
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -26,7 +27,7 @@ export default function WhyBusinessesHomesChooseUs({ location = 'Denver' }: WhyB
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">
             <PartyPopper size={36} className="text-navy-800 mb-4" />
             <h3 className="font-bold text-lg mb-1 text-navy-800">15+ Years of Experience</h3>
-            <p className="text-gray-700">Trusted across {location || 'Denver'} for over a decade. What began as C-Thru Cleaning is now Kathy Window Cleaning.</p>
+            <p className="text-gray-700">Trusted across {loc} for years. Our experienced team delivers consistent results with care and professionalism.</p>
           </div>
           {/* Card 4 */}
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">

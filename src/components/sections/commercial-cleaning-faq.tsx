@@ -29,7 +29,7 @@ const faqItems = [
   }
 ]
 
-export function CommercialCleaningFAQ({ location = 'Denver' }: CommercialCleaningFAQProps) {
+export function CommercialCleaningFAQ({ location = 'Houston' }: CommercialCleaningFAQProps) {
   // Replace {Location} placeholder with actual location
   const processedFaqItems = faqItems.map(item => ({
     question: item.question.replace(/{Location}/g, location),

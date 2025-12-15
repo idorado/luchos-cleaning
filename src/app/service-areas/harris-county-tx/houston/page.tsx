@@ -1,11 +1,12 @@
 import JsonLd from "@/components/json-ld";
 import { home } from "@/config/json-ld";
 import LocationServiceAreaPage from "@/components/service-areas/LocationServiceAreaPage";
+import { redirect } from "next/navigation";
 
 const title = "Reliable House Cleaning Service in Houston";
 const description =
   "Lucho’s Cleaning provides trusted recurring, deep, and move-out cleaning services in Houston and Harris County.";
-const canonical = "https://luchoscleaning.com/service-areas/harris-county-tx/houston";
+const canonical = "https://luchoscleaning.com/service-areas/houston";
 
 export const metadata = {
   title: "Reliable House Cleaning Service in Houston",
@@ -13,9 +14,14 @@ export const metadata = {
   alternates: {
     canonical,
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function HoustonServiceAreaPage() {
+  redirect("/service-areas/houston");
   return (
     <LocationServiceAreaPage
       title={title}

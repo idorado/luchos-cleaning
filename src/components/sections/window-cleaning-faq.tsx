@@ -33,7 +33,7 @@ const faqItems = [
   }
 ]
 
-export function WindowCleaningFAQ({ location = 'Denver' }: WindowCleaningFAQProps) {
+export function WindowCleaningFAQ({ location = 'Houston' }: WindowCleaningFAQProps) {
   // Replace {Location} placeholder with actual location
   const processedFaqItems = faqItems.map(item => ({
     question: item.question.replace(/{Location}/g, location),

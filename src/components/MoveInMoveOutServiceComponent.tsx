@@ -22,7 +22,7 @@ interface MoveInMoveOutServiceComponentProps {
   location?: string;
 }
 
-export async function MoveInMoveOutServiceComponent({ location = 'Denver' }: MoveInMoveOutServiceComponentProps) {
+export async function MoveInMoveOutServiceComponent({ location = 'Houston' }: MoveInMoveOutServiceComponentProps) {
   return (
     <main className="flex flex-col min-h-screen">
       <JsonLd data={moveInOutCleaning(location)} />

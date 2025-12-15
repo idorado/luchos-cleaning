@@ -11,10 +11,10 @@ export default function WhyTrustWindowCleaning({ location }: WhyTrustWindowClean
     <section className="bg-[#F4F4F4] border-t border-b border-border py-12 md:py-16">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-navy-800 mb-4">
-          Why {location || 'Denver'} Trusts Our Window Cleaning Services
+          Why {location || 'Houston'} Trusts Our Window Cleaning Services
         </h2>
         <p className="text-base md:text-lg text-[#454545] max-w-4xl mx-auto text-left mb-10">
-          We've been cleaning windows across Colorado for over a decade, from homes to storefronts, and even solar panels. Previously known as Cthru Cleaning Services, our experienced team delivers spotless results with care, professionalism, and attention to detail.
+          We provide professional window cleaning for homes and businesses with careful attention to detail. Our experienced team delivers spotless results with care, professionalism, and consistent quality.
         </p>
         <WhyTrustBenefits />
         

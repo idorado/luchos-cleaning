@@ -1,7 +1,7 @@
 import React from "react";
 import { Industry, IndustriesSpecializedProps } from "../types";
 
-export default function IndustriesSpecialized({ location = "Denver" }: IndustriesSpecializedProps) {
+export default function IndustriesSpecialized({ location = "Houston" }: IndustriesSpecializedProps) {
   const industries = [
     {
       title: "Preschools & Daycares",

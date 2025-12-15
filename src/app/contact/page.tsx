@@ -38,9 +38,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold">Luchos Cleaning</h2>
                 <address className="not-italic text-gray-600 space-y-2">
-                  <p>7500 E. Arapahoe Road</p>
-                  <p>Suite 200</p>
-                  <p>Centennial, CO 80112</p>
+                  <p>Houston, TX</p>
                 </address>
                 <div className="space-y-2">
                   <p className="font-medium">Email: <a href="mailto:contact@luchoscleaning.com" className="text-blue-600 hover:underline">contact@luchoscleaning.com</a></p>

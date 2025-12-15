@@ -9,7 +9,7 @@ interface HouseCleaningFAQProps {
 const faqItems = [
   {
     question: 'What cleaning services do you offer in {Location}?',
-    answer: `Kathy Clean provides professional house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, and window cleaning in {Location} and nearby areas. Whether you need a one-time cleaning or recurring service, we’ll make your space shine.`
+    answer: `Lucho's Cleaning provides professional house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, and window cleaning in {Location} and nearby areas. Whether you need a one-time cleaning or recurring service, we’ll make your space shine.`
   },
   {
     question: 'How much does cleaning cost in {Location}?',
@@ -23,7 +23,7 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'Are you licensed, bonded, and insured in {Location}?',
-    answer: `Absolutely. Kathy Clean is fully licensed, bonded, and insured in the state of Colorado. We protect your home, our cleaners, and your business for complete peace of mind.`
+    answer: `Absolutely. Lucho's Cleaning is fully licensed, bonded, and insured. We protect your home, our cleaners, and your business for complete peace of mind.`
   },
   {
     question: 'Do you bring cleaning supplies and equipment?',
@@ -63,12 +63,12 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'How can I get a cleaning quote in {Location}?',
-    answer: `You can request a free quote at kathyclean.com or call (346) 488-6044.
+    answer: `You can request a free quote at luchoscleaning.com or call (346) 488-6044.
 We’ll confirm your details and send a customized estimate—usually within minutes.`
   }
 ]
 
-export function HouseCleaningFAQ({ location = 'Denver' }: HouseCleaningFAQProps) {
+export function HouseCleaningFAQ({ location = 'Houston' }: HouseCleaningFAQProps) {
   // Replace {Location} placeholder with actual location
   const processedFaqItems = faqItems.map(item => ({
     question: item.question.replace(/{Location}/g, location),

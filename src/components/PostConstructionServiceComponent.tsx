@@ -17,7 +17,7 @@ interface PostConstructionServiceComponentProps {
   location?: string;
 }
 
-export default async function PostConstructionServiceComponent({ location = 'Denver' }: PostConstructionServiceComponentProps) {
+export default async function PostConstructionServiceComponent({ location = 'Houston' }: PostConstructionServiceComponentProps) {
   return (
     <main className="flex flex-col min-h-screen">
       <JsonLd data={postConstructionCleaning(location)} />

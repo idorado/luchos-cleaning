@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Privacy Policy | Kathy Clean',
-  description: 'Privacy Policy for Kathy Clean.',
+  title: "Privacy Policy | Lucho's Cleaning",
+  description: "Privacy Policy for Lucho's Cleaning.",
 };
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
       <p><em>Last updated: {new Date().toLocaleDateString()}</em></p>
 
       <p>
-        This Privacy Policy explains how Kathy Clean ("we," "us," or "our") collects, uses, discloses,
+        This Privacy Policy explains how Lucho's Cleaning ("we," "us," or "our") collects, uses, discloses,
         and safeguards your information when you visit our website or use our cleaning services.
       </p>
 

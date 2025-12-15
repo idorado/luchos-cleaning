@@ -22,16 +22,14 @@ export const homePageMetadata: Metadata = {
       "telephone": "+1 346-488-6044",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "7500 E Arapahoe Rd #200",
-        "addressLocality": "Centennial",
-        "addressRegion": "CO",
-        "postalCode": "80112",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 39.5952,
-        "longitude": -104.9003
+        "latitude": 29.7604,
+        "longitude": -95.3698
       },
       "openingHoursSpecification": [
         {
@@ -59,11 +57,7 @@ export const homePageMetadata: Metadata = {
         { "@type": "Place", "name": "Bellaire" },
         { "@type": "Place", "name": "Medical Center Area" }
       ],
-      "sameAs": [
-        "https://www.facebook.com/kathyclean",
-        "https://www.instagram.com/kathyclean",
-        "https://g.co/kgs/tifVeFC"
-      ]
+      "sameAs": []
     })
   }
 };
